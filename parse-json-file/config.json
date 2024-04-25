@@ -1,0 +1,6 @@
+{
+    "api_endpoint":"http://example.com",
+    "method" : "GET",
+    "ttl": 3600,
+    "rate_limit": false
+}
