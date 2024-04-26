@@ -28,9 +28,15 @@ func getValue(key string) interface{} {
 func main() {
 	fmt.Println("Fetching Data...")
 	// Since first value is not present getValue() will call expensiveOperation()
-	fmt.Println(getValue("myData"))
+	fmt.Println(getValue("myData")) // slow output
 	fmt.Println("Fetching Data again...")
 	// now value present in cache, expensiveOperation() will not be called
 	fmt.Println(getValue("myData")) // immediate output
 
 }
+
+// Output:
+// Fetching Data...
+// Executing Query...
+// Result for myData
+// Result for myData
