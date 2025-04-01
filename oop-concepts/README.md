@@ -7,3 +7,6 @@
 - [3] Struct as class: [https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-struct-as-class](https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-struct-as-class)
 
 - [4] Composition of struct: [https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-composition](https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-composition)
+
+- [5] Polymorphism example: [https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-polymorphism](https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-polymorphism)
+
