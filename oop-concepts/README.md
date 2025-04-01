@@ -10,3 +10,4 @@
 
 - [5] Polymorphism example: [https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-polymorphism](https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-polymorphism)
 
+- [6] Polymorphism using Shapes interface and struct like Circle and Recatangle: [https://github.com/pillaiharish/golang-codes/tree/main/oop-polymorphism-shape-interface](https://github.com/pillaiharish/golang-codes/tree/main/oop-concepts/oop-polymorphism-shape-interface
