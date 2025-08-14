@@ -1,0 +1,114 @@
+AI Response:
+---------------
+Quick reflection question 🟢
+Suppose the two goroutines needed to return a computed value (say, a slice of strings) to main. Which primitive would you reach for first—WaitGroup or channels—and why?
+
+Give me your reasoning (one or two sentences is fine). 
+After that we’ll step into the fan-out / fan-in pattern the Udemy course covers—building a tiny concurrent web-crawler where multiple workers fetch URLs and push results back through a single channel.
+
+My Response
+-------------
+i think i would reach out to waitgroup first but eventually deliver channels and that too buffered might be needed since we have goroutine producing data asynchronously and then there needs to be a consumer to accept that data and that can be achieved with buffered channels. not sure how only waitgroup would help.
+
+
+AI Response:
+---------------
+
+
+Spot-on: a WaitGroup is great for knowing when every worker is done, but it can’t carry the results those workers produce. For that you still need a channel (often buffered so producers don’t block each other) 
+Medium
+.
+In practice top-end Go devs mix the two:
+
+jobs ───▶  workers  ───▶ results
+              │            ▲
+              └─ wg.Done() │
+
+
+jobs channel → distributes work (fan-out)
+
+each worker pushes its answer on results
+
+a WaitGroup tracks when all workers have called Done(); once wg.Wait() returns we close results so the collector knows no more data is coming.
+This “fan-out / fan-in” loop is the first bigger pattern in the Udemy course.
+
+ 
+Mini-project #2 — your first worker-pool
+Goal: square the numbers 1–20 concurrently with three workers.
+
+1. Channels & WG
+jobs    := make(chan int)      // fan-out
+results := make(chan int)      // fan-in
+var wg sync.WaitGroup
+
+2. Worker function
+func worker(id int, jobs <-chan int, results chan<- int, wg *sync.WaitGroup) {
+    defer wg.Done()
+    for n := range jobs {           // keep pulling until jobs is closed
+        results <- n * n            // send the square
+    }
+}
+
+3. main steps (but don’t code them yet)
+
+add 3 to the WaitGroup
+
+launch three worker goroutines
+
+send 1-20 down jobs, then close(jobs)
+
+in a separate goroutine wait on wg, then close(results)
+
+range over results in main and fmt.Println each square
+
+
+My Response:
+---------------
+what i tried is giving me deadlock not sure why. i think i have not handled the closure of waitgroups correctly. please review
+
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func worker(id int, jobs <- chan int, results chan<- int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	for n := range(jobs) {
+		results <- n*n
+	}
+}
+
+func main() {
+
+	jobs    := make(chan int)      // fan-out
+	results := make(chan int)      // fan-in
+	var wg sync.WaitGroup
+	wg.Add(3)
+	for i:=0;i<3;i++ {
+		go worker(i, jobs, results, &wg)
+	}
+	for j:=0;j<20;j++ {
+		jobs <- j
+	}
+	wg.Wait()
+	for k:=0;k<20;k++{
+		go func(){
+			fmt.Println("square: ",<-results)
+		}()
+	}
+}
+
+
+
+Reasoning from AI:
+You’re super close. The deadlock comes from two things in your code:
+
+No receiver while workers are sending.
+Workers do results <- n*n on an unbuffered channel. That send blocks until someone receives. But main only starts receiving from results after wg.Wait(). So workers block on send → they never reach wg.Done() → wg.Wait() never returns. Deadlock.
+
+jobs is never closed.
+for n := range jobs only stops when the channel is closed. Since it isn’t, workers wait forever (even if we fixed #1).
+
+
