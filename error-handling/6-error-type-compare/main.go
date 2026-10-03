@@ -25,6 +25,8 @@ func main() {
 
 	// A. errors.Is(err, target)
 	// Checks if the error, or any error in its wrap chain, matches a specific target (usually a sentinel error).
+	// Go's current documentation explicitly recommends errors.Is over equality when wrapped errors may be involved.
+	// for error comparison use errors.Is() instead of ==
 	fmt.Println("Check if ErrNotAuthorized data is present in returned error: ",
 		errors.Is(finalError, ErrNotAuthorized))
 
