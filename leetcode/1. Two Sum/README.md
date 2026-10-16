@@ -1,5 +1,16 @@
 # 1 — Two Sum
 
+## Before you solve: prerequisite basics
+
+Study these in sequence and type the tiny Go example in each before reopening this solution:
+
+1. [01 arrays and slices](../0-problem-solving-building-blocks/01-arrays-and-slices/README.md)
+2. [02 loops and bounds](../0-problem-solving-building-blocks/02-loops-and-bounds/README.md)
+3. [03 maps sets frequency and grouping](../0-problem-solving-building-blocks/03-maps-sets-frequency-and-grouping/README.md)
+4. [17 complexity amortization and input contracts](../0-problem-solving-building-blocks/17-complexity-amortization-and-input-contracts/README.md)
+
+[Full mapping for all 23 LeetCode problems](../0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-23-problem-folders) · [Practice log](../REVISION-LOG.md)
+
 [← Index](../README.md) · [Building block: previously seen map](../0-problem-solving-building-blocks/README.md#1-a-hash-map-remembers-information-you-already-saw) · [Go solution](main.go) · [Tests](main_test.go) · [Revision log](../REVISION-LOG.md) · [LeetCode](https://leetcode.com/problems/two-sum/)
 
 ## Recognition: how do I know it's this pattern?
