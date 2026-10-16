@@ -42,7 +42,7 @@ Insert `apple`, then answer `Search(app)=false`, `StartsWith(app)=true`. After I
 - A `[26]*Node` array uses many child pointers even when most links are empty.
 
 ## Problem links from this repository
-- [#208 Implement Trie (Prefix Tree)](../../208.%20Implement%20Trie%20(Prefix%20Tree)/main.go)
+- [#208 Implement Trie (Prefix Tree)](../../208.%20Implement%20Trie%20%28Prefix%20Tree%29/main.go)
 - [#242 Valid Anagram](../../242.%20Valid%20Anagram/main.go)
 - [#49 Group Anagrams](../../49.%20Group%20Anagrams/main.go)
 
