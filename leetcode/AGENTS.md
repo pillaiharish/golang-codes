@@ -45,6 +45,18 @@ The README must include: problem/constraints; pattern recognition clue; naïve i
 
 **Record reality:** After each attempt, append `YYYY-MM-DD | Problem # | Cold recall? | Correct? | Time | Confidence 1–5 | Missed invariant or syntax | Next review` to `REVISION-LOG.md`. Confidence: 1 cannot start; 2 recognizes pattern; 3 explains with notes; 4 codes from memory; 5 handles variations and defends tradeoffs.
 
+## Foundation-first rule for every newly added problem
+
+Before adding the hard problem implementation, identify the **basic Go operations** it depends on: arrays/slices and indexing, loops/ranges, maps/sets/counters, string bytes/runes, sorting/comparators, and then algorithm-specific structures (queues/BFS, two pointers, binary search, stacks/recursion, deque, pointers/lists, tries, greedy, or in-place placement).
+
+1. Read the [foundation map](0-problem-solving-building-blocks/README.md) and inspect the 19 existing topic lessons.
+2. Reuse an existing lesson where possible; if a *new* prerequisite appears, create a numbered topic folder inside `0-problem-solving-building-blocks/` containing its Go operations, **complete runnable example**, dry run, mini exercise, invariants, common mistakes and links to LeetCode problems.
+3. Update **both navigation directions**: foundation topic → relevant problem folders; problem → ordered list of prerequisite foundation lessons in the foundation index.
+4. For existing problem READMEs, add a short `Prerequisites` section linking the foundational lessons; preserve prior explanations.
+5. Update [the LeetCode problem index](README.md) so every problem stays discoverable, not just newly documented ones.
+6. Run `python3 leetcode/0-problem-solving-building-blocks/verify-examples.py` (the 19 Go programs and link checks), and `bash leetcode/test-all.sh` for the nine fully guided Go problem implementations. If you cannot run them, say so and do not assert they passed.
+7. Keep the seven-step recall pattern and revision log unchanged. Never claim a lesson is mastered simply because examples were read.
+
 ## Adding a problem in the future
 
 1. Inspect `leetcode/` and search for its LeetCode number (avoid duplicates).
