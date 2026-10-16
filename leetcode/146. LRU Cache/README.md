@@ -1,5 +1,16 @@
 # 146 — LRU Cache
 
+## Before you solve: prerequisite basics
+
+Study these in sequence and type the tiny Go example in each before reopening this solution:
+
+1. [03 maps sets frequency and grouping](../0-problem-solving-building-blocks/03-maps-sets-frequency-and-grouping/README.md)
+2. [11 structs pointers methods and linked lists](../0-problem-solving-building-blocks/11-structs-pointers-methods-and-linked-lists/README.md)
+3. [16 stateful simulation and sequential comparison](../0-problem-solving-building-blocks/16-stateful-simulation-and-sequential-comparison/README.md)
+4. [17 complexity amortization and input contracts](../0-problem-solving-building-blocks/17-complexity-amortization-and-input-contracts/README.md)
+
+[Full mapping for all 23 LeetCode problems](../0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-23-problem-folders) · [Practice log](../REVISION-LOG.md)
+
 [← Index](../README.md) · [Building block: map + doubly linked list](../0-problem-solving-building-blocks/README.md#5-map--doubly-linked-list--fast-membership--fast-reorder) · [Go solution](main.go) · [Tests](main_test.go) · [Revision log](../REVISION-LOG.md) · [LeetCode](https://leetcode.com/problems/lru-cache/)
 
 ## Recognition
