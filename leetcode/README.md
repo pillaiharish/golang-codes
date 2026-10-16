@@ -27,6 +27,20 @@
 
 Leave confidence and dates blank until a genuine attempt. **Reading a solution is not the same as recalling it.**
 
+## Start with basic building blocks (now covers 23 problems)
+
+Before solving an unfamiliar question, follow the **[foundation prerequisite map for all 23 problem folders](0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-23-problem-folders)**. It explains which Go operations and DSA patterns each problem assumes, in the order worth learning.
+
+Start small: [arrays and slices](0-problem-solving-building-blocks/01-arrays-and-slices/README.md) → [loops and indexing](0-problem-solving-building-blocks/02-loops-and-bounds/README.md) → [maps, sets, and counters](0-problem-solving-building-blocks/03-maps-sets-frequency-and-grouping/README.md) → [Two Sum #1](1.%20Two%20Sum/README.md). Each of the **19 foundation lessons** has a standalone Go example, dry run, tiny exercise, mistakes to avoid, and backlinks to solved problems.
+
+Run the foundation examples and validate links with:
+
+```bash
+python3 leetcode/0-problem-solving-building-blocks/verify-examples.py
+```
+
+This is separate from `bash leetcode/test-all.sh`, which tests the nine newly documented problem implementations.
+
 ## Pattern quick-reference
 
 | Trigger in problem | Recall this state / invariant | Relevant questions |
@@ -71,6 +85,13 @@ These are already present and are **not renamed or rewritten** by this PR. They 
 | 757 | [Set Intersection Size At Least Two](757.%20Set%20Intersection%20Size%20At%20Least%20Two/main.go) |
 | 1366 | [Rank Teams by Votes](1366.%20Rank%20Teams%20by%20Votes/main.go) |
 | 2678 | [Number of Senior Citizens](2678.%20Number%20of%20Senior%20Citizens/main.go) |
+| 102 | [Binary Tree Level Order Traversal](102.%20Binary%20Tree%20Level%20Order%20Traversal/main.go) — BFS layers |
+| 153 | [Find Minimum in Rotated Sorted Array](153.%20Find%20Minimum%20in%20Rotated%20Sorted%20Array/main.go) — binary search |
+| 200 | [Number of Islands](200.%20Number%20of%20Islands/main.go) — grid BFS |
+| 441 | [Arranging Coins](441.%20Arranging%20Coins/main.go) — binary search on triangular sums |
+| 1460 | [Make Two Arrays Equal by Reversing Subarrays](1460.%20Make%20Two%20Arrays%20Equal%20by%20Reversing%20Subarrays/main.go) — multiset counts |
+| 1508 | [Range Sum of Sorted Subarray Sums](1508.%20Range%20Sum%20of%20Sorted%20Subarray%20Sums/main.go) — enumeration and sorting |
+| 2273 | [Find Resultant Array After Removing Anagrams](2273.%20Find%20Resultant%20Array%20After%20Removing%20Anagrams/main.go) — adjacent canonical signature |
 
 ## Example: one repeatable study session
 
