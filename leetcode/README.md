@@ -2,7 +2,7 @@
 
 **Purpose:** turn individual Go solutions into **understandable, revisable, repeatable, recallable** mental patterns. Do not learn every problem from scratch before each new interview.
 
-[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md)
+[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all nine problem tests](test-all.sh)
 
 ## How to use this index
 
@@ -11,8 +11,8 @@
 3. **Recreate the algorithm** without copying and dry-run a non-trivial example.
 4. **Write Go from memory** and compare with the committed source.
 5. **Test** from the individual problem directory: `GO111MODULE=off go test -v` (or `GO111MODULE=off go test -race`).
-6. **Record uncertainty**, especially which *idea* or Go construct you forgot, in [REVISION-LOG.md](REVISION-LOG.md).
-7. **Review deliberately** after roughly 1, 3, 7 and 21 days. If cold recall fails, revise sooner.
+6. **Repeat all examples** with `bash leetcode/test-all.sh` from the repository root (runs each documented folder with the race detector).\n7. **Record uncertainty**, especially which *idea* or Go construct you forgot, in [REVISION-LOG.md](REVISION-LOG.md).
+8. **Review deliberately** after roughly 1, 3, 7 and 21 days. If cold recall fails, revise sooner.
 
 ### Confidence levels
 
