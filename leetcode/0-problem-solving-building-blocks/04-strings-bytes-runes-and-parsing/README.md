@@ -42,7 +42,7 @@ Extract the age from `5303914400F9211`; answer 92. Explain why `[26]int` is not 
 ## Apply to the existing repository
 - [49. Group Anagrams](../../49.%20Group%20Anagrams/main.go)
 - [242. Valid Anagram](../../242.%20Valid%20Anagram/main.go)
-- [208. Implement Trie (Prefix Tree)](../../208.%20Implement%20Trie%20(Prefix%20Tree)/main.go)
+- [208. Implement Trie (Prefix Tree)](../../208.%20Implement%20Trie%20%28Prefix%20Tree%29/main.go)
 - [2273. Find Resultant Array After Removing Anagrams](../../2273.%20Find%20Resultant%20Array%20After%20Removing%20Anagrams/main.go)
 - [2678. Number of Senior Citizens](../../2678.%20Number%20of%20Senior%20Citizens/main.go)
 
