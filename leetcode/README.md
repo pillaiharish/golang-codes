@@ -11,7 +11,8 @@
 3. **Recreate the algorithm** without copying and dry-run a non-trivial example.
 4. **Write Go from memory** and compare with the committed source.
 5. **Test** from the individual problem directory: `GO111MODULE=off go test -v` (or `GO111MODULE=off go test -race`).
-6. **Repeat all examples** with `bash leetcode/test-all.sh` from the repository root (runs each documented folder with the race detector).\n7. **Record uncertainty**, especially which *idea* or Go construct you forgot, in [REVISION-LOG.md](REVISION-LOG.md).
+6. **Repeat all examples** with `bash leetcode/test-all.sh` from the repository root (runs each documented folder with the race detector).
+7. **Record uncertainty**, especially which *idea* or Go construct you forgot, in [REVISION-LOG.md](REVISION-LOG.md).
 8. **Review deliberately** after roughly 1, 3, 7 and 21 days. If cold recall fails, revise sooner.
 
 ### Confidence levels
