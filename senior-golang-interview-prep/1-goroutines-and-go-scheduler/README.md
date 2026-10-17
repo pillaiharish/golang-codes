@@ -1,5 +1,7 @@
 [← Senior Go interview preparation index](../README.md) · [Personal notes](NOTES.md) · [Revision log](../REVISION-LOG.md)
 
+**Focused doubts:** [6. Goroutine blocking on network I/O versus blocking system calls](../doubts/06-network-io-and-blocking-syscalls.md)
+
 > Study notes adapted from the supplied transcript. Technical examples are preserved for review; code blocks are illustrative unless separately validated.
 
 # 1 — Goroutines and the Go Scheduler
