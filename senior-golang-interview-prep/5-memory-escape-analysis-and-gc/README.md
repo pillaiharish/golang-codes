@@ -1,5 +1,7 @@
 [← Senior Go interview preparation index](../README.md) · [Personal notes](NOTES.md) · [Revision log](../REVISION-LOG.md)
 
+**Focused doubts:** [1. Variable declarations, initialization, assignment, and memory](../doubts/01-declarations-assignment-and-memory.md) · [2. Zero values, nil, make, and new](../doubts/02-zero-values-make-and-new.md) · [3. Bytes, runes, UTF-8, and visible characters](../doubts/03-bytes-runes-and-utf8.md)
+
 > Study notes adapted from the supplied transcript. Technical examples are preserved for review; code blocks are illustrative unless separately validated.
 
 # 5 — Memory Management, Escape Analysis, and GC
