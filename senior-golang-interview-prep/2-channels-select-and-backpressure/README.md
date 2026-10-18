@@ -1,5 +1,7 @@
 [← Senior Go interview preparation index](../README.md) · [Personal notes](NOTES.md) · [Revision log](../REVISION-LOG.md)
 
+**Slice follow-up:** [Length, capacity, growth, and explicit limits](../doubts/07-slice-length-capacity-growth-and-limits.md).
+
 **Focused doubts:** [5. Bounded buffers, blocking, and producer-consumer policy](../doubts/05-buffers-blocking-and-backpressure.md)
 
 > Study notes adapted from the supplied transcript. Technical examples are preserved for review; code blocks are illustrative unless separately validated.

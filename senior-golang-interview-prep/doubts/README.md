@@ -2,7 +2,7 @@
 
 [Senior Go preparation](../README.md) · [Repository](../../README.md)
 
-Six questions explored individually, progressing from language rules to concurrent system behavior. Read in the order below; each guide contains a direct answer, worked examples, pitfalls, practice, interview checkpoints, and primary sources. Invalid snippets are explicitly labeled and are not included in runnable programs.
+Seven questions explored individually, progressing from language rules to concurrent system behavior. Read in the order below; each guide contains a direct answer, worked examples, pitfalls, practice, interview checkpoints, and primary sources. Invalid snippets are explicitly labeled and are not included in runnable programs.
 
 ## Study plan and topic index
 
@@ -14,8 +14,9 @@ Six questions explored individually, progressing from language rules to concurre
 | 4 | [Increments and for loops](04-increments-and-for-loops.md) | Statements versus expressions, continue/post, overflow, loop capture | Predict all loop output |
 | 5 | [Buffers, blocking, and backpressure](05-buffers-blocking-and-backpressure.md) | Capacity versus wait policy, combo matrix, nil/closed behavior, Kafka overload | Defend an admission and loss policy |
 | 6 | [Network I/O and blocking syscalls](06-network-io-and-blocking-syscalls.md) | G/M/P, poller parking versus blocked thread, deadlines, serial worker bottleneck | Capture a real TCP wait trace |
+| 7 | [Slice length, capacity, growth, and limits](07-slice-length-capacity-growth-and-limits.md) | Indexing versus capacity, append allocation, aliasing, explicit bounds, arrays | Predict growth and enforce a batch limit |
 
-Suggested sessions: 1–2 together for declarations/storage; 3–4 for text and syntax prediction; 5–6 for producer-consumer design. Spend 30–45 minutes per guide initially, then revisit the checkpoints without notes. These are planning estimates, not a fixed deadline or a claim of mastery.
+Suggested sessions: 1–2 together for declarations/storage; 3–4 for text and syntax prediction; 5–6 for producer-consumer design. Read guide 7 after guide 2, then connect it to guide 5. Spend 30–45 minutes per guide initially, then revisit the checkpoints without notes. These are planning estimates, not a fixed deadline or a claim of mastery.
 
 ## Detailed section index
 
@@ -82,6 +83,22 @@ Suggested sessions: 1–2 together for declarations/storage; 3–4 for text and 
 - [Why this does not fix a serial Kafka consumer](06-network-io-and-blocking-syscalls.md#why-this-does-not-fix-a-serial-kafka-consumer)
 - [Interview checkpoints](06-network-io-and-blocking-syscalls.md#interview-checkpoints)
 
+### 7. Slice length, capacity, growth, and explicit limits
+
+- [Answers to the three scenarios](07-slice-length-capacity-growth-and-limits.md#answers-to-the-three-scenarios)
+- [Length and capacity describe different things](07-slice-length-capacity-growth-and-limits.md#length-and-capacity-describe-different-things)
+- [Scenario 1: three ways to write the first element](07-slice-length-capacity-growth-and-limits.md#scenario-1-three-ways-to-write-the-first-element)
+- [Scenario 2: what happens at the growth boundary](07-slice-length-capacity-growth-and-limits.md#scenario-2-what-happens-at-the-growth-boundary)
+- [Language guarantee versus runtime policy](07-slice-length-capacity-growth-and-limits.md#language-guarantee-versus-runtime-policy)
+- [Why extra capacity helps](07-slice-length-capacity-growth-and-limits.md#why-extra-capacity-helps)
+- [Aliasing and why append returns a slice](07-slice-length-capacity-growth-and-limits.md#aliasing-and-why-append-returns-a-slice)
+- [Scenario 3: growth is possible, not infinite](07-slice-length-capacity-growth-and-limits.md#scenario-3-growth-is-possible-not-infinite)
+- [Enforce a logical maximum explicitly](07-slice-length-capacity-growth-and-limits.md#enforce-a-logical-maximum-explicitly)
+- [Restricting capacity does not prohibit append](07-slice-length-capacity-growth-and-limits.md#restricting-capacity-does-not-prohibit-append)
+- [Should you switch to an array?](07-slice-length-capacity-growth-and-limits.md#should-you-switch-to-an-array)
+- [Where the design is useful](07-slice-length-capacity-growth-and-limits.md#where-the-design-is-useful)
+- [Practice and interview checkpoints](07-slice-length-capacity-growth-and-limits.md#practice-and-interview-checkpoints)
+
 ## Runnable examples
 
 This folder is an independent Go module using Go 1.22 language semantics, with only standard-library dependencies. Run commands **from `senior-golang-interview-prep/doubts`**, not the repository root. This leaves existing independent examples/modules unchanged.
@@ -89,6 +106,7 @@ This folder is an independent Go module using Go 1.22 language semantics, with o
 ```sh
 go run ./examples/allocations
 go run ./examples/values
+go run ./examples/slices
 go run ./examples/text
 go run ./examples/loops
 go run ./examples/queues
@@ -98,7 +116,7 @@ go vet ./...
 go build ./...
 ```
 
-[Example index](examples/README.md) documents expected observations. Go examples demonstrate valid behavior; compile-failure/panic illustrations in the guides are deliberately commented out. Runtime traces and compiler diagnostics vary by platform/toolchain. Temporary binaries/traces should stay outside the repository.
+[Example index](examples/README.md) documents expected observations. Go examples demonstrate valid behavior; compile-failure/panic illustrations in the guides are explicitly identified; the slices demonstration catches its deliberate indexing panic. Runtime traces and compiler diagnostics vary by platform/toolchain. Temporary binaries/traces should stay outside the repository.
 
 ## Revision tracking
 
