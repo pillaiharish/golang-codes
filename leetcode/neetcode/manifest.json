@@ -1,0 +1,2579 @@
+{
+  "source": "https://github.com/neetcode-gh/leetcode/blob/main/.problemSiteData.json",
+  "source_sha256": "436dd487beb9126e30e9da8717ff76f2a78e3a94ca0ec4181d9d04de9f7b953c",
+  "checked_on": "2026-10-20",
+  "problems": [
+    {
+      "id": 217,
+      "title": "Contains Duplicate",
+      "folder": "217. Contains Duplicate",
+      "category": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/contains-duplicate/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0217-contains-duplicate",
+      "status": "unsolved"
+    },
+    {
+      "id": 242,
+      "title": "Valid Anagram",
+      "folder": "242. Valid Anagram",
+      "category": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/valid-anagram/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0242-valid-anagram",
+      "status": "unsolved"
+    },
+    {
+      "id": 1,
+      "title": "Two Sum",
+      "folder": "1. Two Sum",
+      "category": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/two-sum/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0001-two-sum",
+      "status": "unsolved"
+    },
+    {
+      "id": 49,
+      "title": "Group Anagrams",
+      "folder": "49. Group Anagrams",
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/group-anagrams/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0049-group-anagrams",
+      "status": "unsolved"
+    },
+    {
+      "id": 347,
+      "title": "Top K Frequent Elements",
+      "folder": "347. Top K Frequent Elements",
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0347-top-k-frequent-elements",
+      "status": "unsolved"
+    },
+    {
+      "id": 238,
+      "title": "Product of Array Except Self",
+      "folder": "238. Product of Array Except Self",
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/product-of-array-except-self/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "23-prefixes-suffixes-and-aggregates"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0238-product-of-array-except-self",
+      "status": "unsolved"
+    },
+    {
+      "id": 36,
+      "title": "Valid Sudoku",
+      "folder": "36. Valid Sudoku",
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/valid-sudoku/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0036-valid-sudoku",
+      "status": "unsolved"
+    },
+    {
+      "id": 271,
+      "title": "Encode and Decode Strings",
+      "folder": "271. Encode and Decode Strings",
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/encode-and-decode-strings/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "04-text-and-encoding",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": false,
+      "neetcode_code": "0271-encode-and-decode-strings",
+      "status": "unsolved"
+    },
+    {
+      "id": 128,
+      "title": "Longest Consecutive Sequence",
+      "folder": "128. Longest Consecutive Sequence",
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0128-longest-consecutive-sequence",
+      "status": "unsolved"
+    },
+    {
+      "id": 125,
+      "title": "Valid Palindrome",
+      "folder": "125. Valid Palindrome",
+      "category": "Two Pointers",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/valid-palindrome/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "06-two-pointers-and-windows",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0125-valid-palindrome",
+      "status": "unsolved"
+    },
+    {
+      "id": 167,
+      "title": "Two Sum II - Input Array Is Sorted",
+      "folder": "167. Two Sum II - Input Array Is Sorted",
+      "category": "Two Pointers",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "06-two-pointers-and-windows",
+        "05-sorting-and-order"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0167-two-sum-ii-input-array-is-sorted",
+      "status": "unsolved"
+    },
+    {
+      "id": 15,
+      "title": "3Sum",
+      "folder": "15. 3Sum",
+      "category": "Two Pointers",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/3sum/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "06-two-pointers-and-windows",
+        "05-sorting-and-order"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0015-3sum",
+      "status": "unsolved"
+    },
+    {
+      "id": 11,
+      "title": "Container With Most Water",
+      "folder": "11. Container With Most Water",
+      "category": "Two Pointers",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/container-with-most-water/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "06-two-pointers-and-windows"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0011-container-with-most-water",
+      "status": "unsolved"
+    },
+    {
+      "id": 42,
+      "title": "Trapping Rain Water",
+      "folder": "42. Trapping Rain Water",
+      "category": "Two Pointers",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/trapping-rain-water/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "06-two-pointers-and-windows",
+        "23-prefixes-suffixes-and-aggregates"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0042-trapping-rain-water",
+      "status": "unsolved"
+    },
+    {
+      "id": 121,
+      "title": "Best Time to Buy and Sell Stock",
+      "folder": "121. Best Time to Buy and Sell Stock",
+      "category": "Sliding Window",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "06-two-pointers-and-windows"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0121-best-time-to-buy-and-sell-stock",
+      "status": "unsolved"
+    },
+    {
+      "id": 3,
+      "title": "Longest Substring Without Repeating Characters",
+      "folder": "3. Longest Substring Without Repeating Characters",
+      "category": "Sliding Window",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "06-two-pointers-and-windows",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0003-longest-substring-without-repeating-characters",
+      "status": "unsolved"
+    },
+    {
+      "id": 424,
+      "title": "Longest Repeating Character Replacement",
+      "folder": "424. Longest Repeating Character Replacement",
+      "category": "Sliding Window",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "06-two-pointers-and-windows",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0424-longest-repeating-character-replacement",
+      "status": "unsolved"
+    },
+    {
+      "id": 567,
+      "title": "Permutation in String",
+      "folder": "567. Permutation in String",
+      "category": "Sliding Window",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/permutation-in-string/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "06-two-pointers-and-windows",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0567-permutation-in-string",
+      "status": "unsolved"
+    },
+    {
+      "id": 76,
+      "title": "Minimum Window Substring",
+      "folder": "76. Minimum Window Substring",
+      "category": "Sliding Window",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/minimum-window-substring/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "06-two-pointers-and-windows",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0076-minimum-window-substring",
+      "status": "unsolved"
+    },
+    {
+      "id": 239,
+      "title": "Sliding Window Maximum",
+      "folder": "239. Sliding Window Maximum",
+      "category": "Sliding Window",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/sliding-window-maximum/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "06-two-pointers-and-windows"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0239-sliding-window-maximum",
+      "status": "unsolved"
+    },
+    {
+      "id": 20,
+      "title": "Valid Parentheses",
+      "folder": "20. Valid Parentheses",
+      "category": "Stack",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/valid-parentheses/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "07-stacks-queues-and-deques",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0020-valid-parentheses",
+      "status": "unsolved"
+    },
+    {
+      "id": 155,
+      "title": "Min Stack",
+      "folder": "155. Min Stack",
+      "category": "Stack",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/min-stack/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "07-stacks-queues-and-deques"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0155-min-stack",
+      "status": "unsolved"
+    },
+    {
+      "id": 150,
+      "title": "Evaluate Reverse Polish Notation",
+      "folder": "150. Evaluate Reverse Polish Notation",
+      "category": "Stack",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "07-stacks-queues-and-deques",
+        "04-text-and-encoding",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0150-evaluate-reverse-polish-notation",
+      "status": "unsolved"
+    },
+    {
+      "id": 22,
+      "title": "Generate Parentheses",
+      "folder": "22. Generate Parentheses",
+      "category": "Stack",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/generate-parentheses/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "07-stacks-queues-and-deques",
+        "12-backtracking-and-snapshots"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0022-generate-parentheses",
+      "status": "unsolved"
+    },
+    {
+      "id": 739,
+      "title": "Daily Temperatures",
+      "folder": "739. Daily Temperatures",
+      "category": "Stack",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/daily-temperatures/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "07-stacks-queues-and-deques"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0739-daily-temperatures",
+      "status": "unsolved"
+    },
+    {
+      "id": 853,
+      "title": "Car Fleet",
+      "folder": "853. Car Fleet",
+      "category": "Stack",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/car-fleet/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "07-stacks-queues-and-deques",
+        "05-sorting-and-order",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0853-car-fleet",
+      "status": "unsolved"
+    },
+    {
+      "id": 84,
+      "title": "Largest Rectangle in Histogram",
+      "folder": "84. Largest Rectangle in Histogram",
+      "category": "Stack",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "07-stacks-queues-and-deques"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0084-largest-rectangle-in-histogram",
+      "status": "unsolved"
+    },
+    {
+      "id": 704,
+      "title": "Binary Search",
+      "folder": "704. Binary Search",
+      "category": "Binary Search",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/binary-search/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "08-binary-search-and-monotonicity"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0704-binary-search",
+      "status": "unsolved"
+    },
+    {
+      "id": 74,
+      "title": "Search a 2D Matrix",
+      "folder": "74. Search a 2D Matrix",
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/search-a-2d-matrix/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "08-binary-search-and-monotonicity",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0074-search-a-2d-matrix",
+      "status": "unsolved"
+    },
+    {
+      "id": 875,
+      "title": "Koko Eating Bananas",
+      "folder": "875. Koko Eating Bananas",
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/koko-eating-bananas/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "08-binary-search-and-monotonicity"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0875-koko-eating-bananas",
+      "status": "unsolved"
+    },
+    {
+      "id": 153,
+      "title": "Find Minimum in Rotated Sorted Array",
+      "folder": "153. Find Minimum in Rotated Sorted Array",
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "08-binary-search-and-monotonicity"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0153-find-minimum-in-rotated-sorted-array",
+      "status": "unsolved"
+    },
+    {
+      "id": 33,
+      "title": "Search in Rotated Sorted Array",
+      "folder": "33. Search in Rotated Sorted Array",
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "08-binary-search-and-monotonicity"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0033-search-in-rotated-sorted-array",
+      "status": "unsolved"
+    },
+    {
+      "id": 981,
+      "title": "Time Based Key-Value Store",
+      "folder": "981. Time Based Key-Value Store",
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/time-based-key-value-store/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "08-binary-search-and-monotonicity",
+        "03-maps-sets-and-counts",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0981-time-based-key-value-store",
+      "status": "unsolved"
+    },
+    {
+      "id": 4,
+      "title": "Median of Two Sorted Arrays",
+      "folder": "4. Median of Two Sorted Arrays",
+      "category": "Binary Search",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "08-binary-search-and-monotonicity",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0004-median-of-two-sorted-arrays",
+      "status": "unsolved"
+    },
+    {
+      "id": 206,
+      "title": "Reverse Linked List",
+      "folder": "206. Reverse Linked List",
+      "category": "Linked List",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/reverse-linked-list/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0206-reverse-linked-list",
+      "status": "unsolved"
+    },
+    {
+      "id": 21,
+      "title": "Merge Two Sorted Lists",
+      "folder": "21. Merge Two Sorted Lists",
+      "category": "Linked List",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0021-merge-two-sorted-lists",
+      "status": "unsolved"
+    },
+    {
+      "id": 143,
+      "title": "Reorder List",
+      "folder": "143. Reorder List",
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/reorder-list/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0143-reorder-list",
+      "status": "unsolved"
+    },
+    {
+      "id": 19,
+      "title": "Remove Nth Node From End of List",
+      "folder": "19. Remove Nth Node From End of List",
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0019-remove-nth-node-from-end-of-list",
+      "status": "unsolved"
+    },
+    {
+      "id": 138,
+      "title": "Copy List with Random Pointer",
+      "folder": "138. Copy List with Random Pointer",
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "03-maps-sets-and-counts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0138-copy-list-with-random-pointer",
+      "status": "unsolved"
+    },
+    {
+      "id": 2,
+      "title": "Add Two Numbers",
+      "folder": "2. Add Two Numbers",
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/add-two-numbers/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0002-add-two-numbers",
+      "status": "unsolved"
+    },
+    {
+      "id": 141,
+      "title": "Linked List Cycle",
+      "folder": "141. Linked List Cycle",
+      "category": "Linked List",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/linked-list-cycle/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0141-linked-list-cycle",
+      "status": "unsolved"
+    },
+    {
+      "id": 287,
+      "title": "Find the Duplicate Number",
+      "folder": "287. Find the Duplicate Number",
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/find-the-duplicate-number/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "01-go-sequences-and-bounds"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0287-find-the-duplicate-number",
+      "status": "unsolved"
+    },
+    {
+      "id": 146,
+      "title": "LRU Cache",
+      "folder": "146. LRU Cache",
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/lru-cache/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "03-maps-sets-and-counts",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0146-lru-cache",
+      "status": "unsolved"
+    },
+    {
+      "id": 23,
+      "title": "Merge k Sorted Lists",
+      "folder": "23. Merge k Sorted Lists",
+      "category": "Linked List",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "11-heaps-and-priority-queues"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0023-merge-k-sorted-lists",
+      "status": "unsolved"
+    },
+    {
+      "id": 25,
+      "title": "Reverse Nodes in k-Group",
+      "folder": "25. Reverse Nodes in k-Group",
+      "category": "Linked List",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0025-reverse-nodes-in-k-group",
+      "status": "unsolved"
+    },
+    {
+      "id": 226,
+      "title": "Invert Binary Tree",
+      "folder": "226. Invert Binary Tree",
+      "category": "Trees",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/invert-binary-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0226-invert-binary-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 104,
+      "title": "Maximum Depth of Binary Tree",
+      "folder": "104. Maximum Depth of Binary Tree",
+      "category": "Trees",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0104-maximum-depth-of-binary-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 543,
+      "title": "Diameter of Binary Tree",
+      "folder": "543. Diameter of Binary Tree",
+      "category": "Trees",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0543-diameter-of-binary-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 110,
+      "title": "Balanced Binary Tree",
+      "folder": "110. Balanced Binary Tree",
+      "category": "Trees",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/balanced-binary-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0110-balanced-binary-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 100,
+      "title": "Same Tree",
+      "folder": "100. Same Tree",
+      "category": "Trees",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/same-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0100-same-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 572,
+      "title": "Subtree of Another Tree",
+      "folder": "572. Subtree of Another Tree",
+      "category": "Trees",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/subtree-of-another-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0572-subtree-of-another-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 235,
+      "title": "Lowest Common Ancestor of a Binary Search Tree",
+      "folder": "235. Lowest Common Ancestor of a Binary Search Tree",
+      "category": "Trees",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0235-lowest-common-ancestor-of-a-binary-search-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 102,
+      "title": "Binary Tree Level Order Traversal",
+      "folder": "102. Binary Tree Level Order Traversal",
+      "category": "Trees",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion",
+        "07-stacks-queues-and-deques"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0102-binary-tree-level-order-traversal",
+      "status": "unsolved"
+    },
+    {
+      "id": 199,
+      "title": "Binary Tree Right Side View",
+      "folder": "199. Binary Tree Right Side View",
+      "category": "Trees",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/binary-tree-right-side-view/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion",
+        "07-stacks-queues-and-deques"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0199-binary-tree-right-side-view",
+      "status": "unsolved"
+    },
+    {
+      "id": 1448,
+      "title": "Count Good Nodes in Binary Tree",
+      "folder": "1448. Count Good Nodes in Binary Tree",
+      "category": "Trees",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "1448-count-good-nodes-in-binary-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 98,
+      "title": "Validate Binary Search Tree",
+      "folder": "98. Validate Binary Search Tree",
+      "category": "Trees",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/validate-binary-search-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0098-validate-binary-search-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 230,
+      "title": "Kth Smallest Element in a BST",
+      "folder": "230. Kth Smallest Element in a BST",
+      "category": "Trees",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0230-kth-smallest-element-in-a-bst",
+      "status": "unsolved"
+    },
+    {
+      "id": 105,
+      "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+      "folder": "105. Construct Binary Tree from Preorder and Inorder Traversal",
+      "category": "Trees",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion",
+        "03-maps-sets-and-counts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0105-construct-binary-tree-from-preorder-and-inorder-traversal",
+      "status": "unsolved"
+    },
+    {
+      "id": 124,
+      "title": "Binary Tree Maximum Path Sum",
+      "folder": "124. Binary Tree Maximum Path Sum",
+      "category": "Trees",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0124-binary-tree-maximum-path-sum",
+      "status": "unsolved"
+    },
+    {
+      "id": 297,
+      "title": "Serialize and Deserialize Binary Tree",
+      "folder": "297. Serialize and Deserialize Binary Tree",
+      "category": "Trees",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "09-pointers-and-linked-structures",
+        "10-trees-and-recursion",
+        "04-text-and-encoding",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0297-serialize-and-deserialize-binary-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 208,
+      "title": "Implement Trie (Prefix Tree)",
+      "folder": "208. Implement Trie (Prefix Tree)",
+      "category": "Tries",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "04-text-and-encoding",
+        "09-pointers-and-linked-structures",
+        "21-tries-and-prefix-state",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0208-implement-trie-prefix-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 211,
+      "title": "Design Add and Search Words Data Structure",
+      "folder": "211. Design Add and Search Words Data Structure",
+      "category": "Tries",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "04-text-and-encoding",
+        "09-pointers-and-linked-structures",
+        "21-tries-and-prefix-state",
+        "12-backtracking-and-snapshots",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0211-design-add-and-search-words-data-structure",
+      "status": "unsolved"
+    },
+    {
+      "id": 212,
+      "title": "Word Search II",
+      "folder": "212. Word Search II",
+      "category": "Tries",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/word-search-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "04-text-and-encoding",
+        "09-pointers-and-linked-structures",
+        "21-tries-and-prefix-state",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0212-word-search-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 703,
+      "title": "Kth Largest Element in a Stream",
+      "folder": "703. Kth Largest Element in a Stream",
+      "category": "Heap / Priority Queue",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "11-heaps-and-priority-queues",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0703-kth-largest-element-in-a-stream",
+      "status": "unsolved"
+    },
+    {
+      "id": 1046,
+      "title": "Last Stone Weight",
+      "folder": "1046. Last Stone Weight",
+      "category": "Heap / Priority Queue",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/last-stone-weight/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "11-heaps-and-priority-queues"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "1046-last-stone-weight",
+      "status": "unsolved"
+    },
+    {
+      "id": 973,
+      "title": "K Closest Points to Origin",
+      "folder": "973. K Closest Points to Origin",
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "11-heaps-and-priority-queues"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0973-k-closest-points-to-origin",
+      "status": "unsolved"
+    },
+    {
+      "id": 215,
+      "title": "Kth Largest Element in an Array",
+      "folder": "215. Kth Largest Element in an Array",
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "11-heaps-and-priority-queues"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0215-kth-largest-element-in-an-array",
+      "status": "unsolved"
+    },
+    {
+      "id": 621,
+      "title": "Task Scheduler",
+      "folder": "621. Task Scheduler",
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/task-scheduler/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "11-heaps-and-priority-queues"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0621-task-scheduler",
+      "status": "unsolved"
+    },
+    {
+      "id": 355,
+      "title": "Design Twitter",
+      "folder": "355. Design Twitter",
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/design-twitter/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "11-heaps-and-priority-queues",
+        "03-maps-sets-and-counts",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0355-design-twitter",
+      "status": "unsolved"
+    },
+    {
+      "id": 295,
+      "title": "Find Median from Data Stream",
+      "folder": "295. Find Median from Data Stream",
+      "category": "Heap / Priority Queue",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "11-heaps-and-priority-queues",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0295-find-median-from-data-stream",
+      "status": "unsolved"
+    },
+    {
+      "id": 78,
+      "title": "Subsets",
+      "folder": "78. Subsets",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/subsets/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0078-subsets",
+      "status": "unsolved"
+    },
+    {
+      "id": 39,
+      "title": "Combination Sum",
+      "folder": "39. Combination Sum",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/combination-sum/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0039-combination-sum",
+      "status": "unsolved"
+    },
+    {
+      "id": 46,
+      "title": "Permutations",
+      "folder": "46. Permutations",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/permutations/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0046-permutations",
+      "status": "unsolved"
+    },
+    {
+      "id": 90,
+      "title": "Subsets II",
+      "folder": "90. Subsets II",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/subsets-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots",
+        "05-sorting-and-order"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0090-subsets-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 40,
+      "title": "Combination Sum II",
+      "folder": "40. Combination Sum II",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/combination-sum-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots",
+        "05-sorting-and-order"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0040-combination-sum-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 79,
+      "title": "Word Search",
+      "folder": "79. Word Search",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/word-search/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0079-word-search",
+      "status": "unsolved"
+    },
+    {
+      "id": 131,
+      "title": "Palindrome Partitioning",
+      "folder": "131. Palindrome Partitioning",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/palindrome-partitioning/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0131-palindrome-partitioning",
+      "status": "unsolved"
+    },
+    {
+      "id": 17,
+      "title": "Letter Combinations of a Phone Number",
+      "folder": "17. Letter Combinations of a Phone Number",
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0017-letter-combinations-of-a-phone-number",
+      "status": "unsolved"
+    },
+    {
+      "id": 51,
+      "title": "N-Queens",
+      "folder": "51. N-Queens",
+      "category": "Backtracking",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/n-queens/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "10-trees-and-recursion",
+        "12-backtracking-and-snapshots",
+        "13-graphs-and-grids"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0051-n-queens",
+      "status": "unsolved"
+    },
+    {
+      "id": 200,
+      "title": "Number of Islands",
+      "folder": "200. Number of Islands",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/number-of-islands/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0200-number-of-islands",
+      "status": "unsolved"
+    },
+    {
+      "id": 133,
+      "title": "Clone Graph",
+      "folder": "133. Clone Graph",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/clone-graph/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "09-pointers-and-linked-structures"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0133-clone-graph",
+      "status": "unsolved"
+    },
+    {
+      "id": 695,
+      "title": "Max Area of Island",
+      "folder": "695. Max Area of Island",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/max-area-of-island/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0695-max-area-of-island",
+      "status": "unsolved"
+    },
+    {
+      "id": 417,
+      "title": "Pacific Atlantic Water Flow",
+      "folder": "417. Pacific Atlantic Water Flow",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0417-pacific-atlantic-water-flow",
+      "status": "unsolved"
+    },
+    {
+      "id": 130,
+      "title": "Surrounded Regions",
+      "folder": "130. Surrounded Regions",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/surrounded-regions/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0130-surrounded-regions",
+      "status": "unsolved"
+    },
+    {
+      "id": 994,
+      "title": "Rotting Oranges",
+      "folder": "994. Rotting Oranges",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/rotting-oranges/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0994-rotting-oranges",
+      "status": "unsolved"
+    },
+    {
+      "id": 286,
+      "title": "Walls and Gates",
+      "folder": "286. Walls and Gates",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/walls-and-gates/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": false,
+      "neetcode_code": "0286-walls-and-gates",
+      "status": "unsolved"
+    },
+    {
+      "id": 207,
+      "title": "Course Schedule",
+      "folder": "207. Course Schedule",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/course-schedule/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "14-topology-and-disjoint-sets"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0207-course-schedule",
+      "status": "unsolved"
+    },
+    {
+      "id": 210,
+      "title": "Course Schedule II",
+      "folder": "210. Course Schedule II",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/course-schedule-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "14-topology-and-disjoint-sets"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0210-course-schedule-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 684,
+      "title": "Redundant Connection",
+      "folder": "684. Redundant Connection",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/redundant-connection/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "14-topology-and-disjoint-sets"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0684-redundant-connection",
+      "status": "unsolved"
+    },
+    {
+      "id": 323,
+      "title": "Number of Connected Components in an Undirected Graph",
+      "folder": "323. Number of Connected Components in an Undirected Graph",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "14-topology-and-disjoint-sets"
+      ],
+      "interface_verified": false,
+      "neetcode_code": "0323-number-of-connected-components-in-an-undirected-graph",
+      "status": "unsolved"
+    },
+    {
+      "id": 261,
+      "title": "Graph Valid Tree",
+      "folder": "261. Graph Valid Tree",
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/graph-valid-tree/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "14-topology-and-disjoint-sets"
+      ],
+      "interface_verified": false,
+      "neetcode_code": "0261-graph-valid-tree",
+      "status": "unsolved"
+    },
+    {
+      "id": 127,
+      "title": "Word Ladder",
+      "folder": "127. Word Ladder",
+      "category": "Graphs",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/word-ladder/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "03-maps-sets-and-counts",
+        "07-stacks-queues-and-deques",
+        "13-graphs-and-grids",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0127-word-ladder",
+      "status": "unsolved"
+    },
+    {
+      "id": 332,
+      "title": "Reconstruct Itinerary",
+      "folder": "332. Reconstruct Itinerary",
+      "category": "Advanced Graphs",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/reconstruct-itinerary/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "03-maps-sets-and-counts",
+        "11-heaps-and-priority-queues",
+        "13-graphs-and-grids",
+        "15-weighted-paths-and-connectivity",
+        "04-text-and-encoding",
+        "07-stacks-queues-and-deques"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0332-reconstruct-itinerary",
+      "status": "unsolved"
+    },
+    {
+      "id": 1584,
+      "title": "Min Cost to Connect All Points",
+      "folder": "1584. Min Cost to Connect All Points",
+      "category": "Advanced Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "03-maps-sets-and-counts",
+        "11-heaps-and-priority-queues",
+        "13-graphs-and-grids",
+        "15-weighted-paths-and-connectivity",
+        "14-topology-and-disjoint-sets",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "1584-min-cost-to-connect-all-points",
+      "status": "unsolved"
+    },
+    {
+      "id": 743,
+      "title": "Network Delay Time",
+      "folder": "743. Network Delay Time",
+      "category": "Advanced Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/network-delay-time/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "03-maps-sets-and-counts",
+        "11-heaps-and-priority-queues",
+        "13-graphs-and-grids",
+        "15-weighted-paths-and-connectivity"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0743-network-delay-time",
+      "status": "unsolved"
+    },
+    {
+      "id": 778,
+      "title": "Swim in Rising Water",
+      "folder": "778. Swim in Rising Water",
+      "category": "Advanced Graphs",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/swim-in-rising-water/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "03-maps-sets-and-counts",
+        "11-heaps-and-priority-queues",
+        "13-graphs-and-grids",
+        "15-weighted-paths-and-connectivity",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0778-swim-in-rising-water",
+      "status": "unsolved"
+    },
+    {
+      "id": 269,
+      "title": "Alien Dictionary",
+      "folder": "269. Alien Dictionary",
+      "category": "Advanced Graphs",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/alien-dictionary/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "03-maps-sets-and-counts",
+        "11-heaps-and-priority-queues",
+        "13-graphs-and-grids",
+        "15-weighted-paths-and-connectivity",
+        "04-text-and-encoding",
+        "14-topology-and-disjoint-sets"
+      ],
+      "interface_verified": false,
+      "neetcode_code": "0269-alien-dictionary",
+      "status": "unsolved"
+    },
+    {
+      "id": 787,
+      "title": "Cheapest Flights Within K Stops",
+      "folder": "787. Cheapest Flights Within K Stops",
+      "category": "Advanced Graphs",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "03-maps-sets-and-counts",
+        "11-heaps-and-priority-queues",
+        "13-graphs-and-grids",
+        "15-weighted-paths-and-connectivity",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0787-cheapest-flights-within-k-stops",
+      "status": "unsolved"
+    },
+    {
+      "id": 70,
+      "title": "Climbing Stairs",
+      "folder": "70. Climbing Stairs",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/climbing-stairs/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0070-climbing-stairs",
+      "status": "unsolved"
+    },
+    {
+      "id": 746,
+      "title": "Min Cost Climbing Stairs",
+      "folder": "746. Min Cost Climbing Stairs",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0746-min-cost-climbing-stairs",
+      "status": "unsolved"
+    },
+    {
+      "id": 198,
+      "title": "House Robber",
+      "folder": "198. House Robber",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/house-robber/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0198-house-robber",
+      "status": "unsolved"
+    },
+    {
+      "id": 213,
+      "title": "House Robber II",
+      "folder": "213. House Robber II",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/house-robber-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0213-house-robber-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 5,
+      "title": "Longest Palindromic Substring",
+      "folder": "5. Longest Palindromic Substring",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "04-text-and-encoding",
+        "06-two-pointers-and-windows"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0005-longest-palindromic-substring",
+      "status": "unsolved"
+    },
+    {
+      "id": 647,
+      "title": "Palindromic Substrings",
+      "folder": "647. Palindromic Substrings",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/palindromic-substrings/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "04-text-and-encoding",
+        "06-two-pointers-and-windows"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0647-palindromic-substrings",
+      "status": "unsolved"
+    },
+    {
+      "id": 91,
+      "title": "Decode Ways",
+      "folder": "91. Decode Ways",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/decode-ways/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0091-decode-ways",
+      "status": "unsolved"
+    },
+    {
+      "id": 322,
+      "title": "Coin Change",
+      "folder": "322. Coin Change",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/coin-change/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0322-coin-change",
+      "status": "unsolved"
+    },
+    {
+      "id": 152,
+      "title": "Maximum Product Subarray",
+      "folder": "152. Maximum Product Subarray",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/maximum-product-subarray/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "23-prefixes-suffixes-and-aggregates"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0152-maximum-product-subarray",
+      "status": "unsolved"
+    },
+    {
+      "id": 139,
+      "title": "Word Break",
+      "folder": "139. Word Break",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/word-break/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "03-maps-sets-and-counts",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0139-word-break",
+      "status": "unsolved"
+    },
+    {
+      "id": 300,
+      "title": "Longest Increasing Subsequence",
+      "folder": "300. Longest Increasing Subsequence",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "08-binary-search-and-monotonicity"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0300-longest-increasing-subsequence",
+      "status": "unsolved"
+    },
+    {
+      "id": 416,
+      "title": "Partition Equal Subset Sum",
+      "folder": "416. Partition Equal Subset Sum",
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0416-partition-equal-subset-sum",
+      "status": "unsolved"
+    },
+    {
+      "id": 62,
+      "title": "Unique Paths",
+      "folder": "62. Unique Paths",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/unique-paths/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0062-unique-paths",
+      "status": "unsolved"
+    },
+    {
+      "id": 1143,
+      "title": "Longest Common Subsequence",
+      "folder": "1143. Longest Common Subsequence",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/longest-common-subsequence/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "1143-longest-common-subsequence",
+      "status": "unsolved"
+    },
+    {
+      "id": 309,
+      "title": "Best Time to Buy and Sell Stock with Cooldown",
+      "folder": "309. Best Time to Buy and Sell Stock with Cooldown",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0309-best-time-to-buy-and-sell-stock-with-cooldown",
+      "status": "unsolved"
+    },
+    {
+      "id": 518,
+      "title": "Coin Change II",
+      "folder": "518. Coin Change II",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/coin-change-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0518-coin-change-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 494,
+      "title": "Target Sum",
+      "folder": "494. Target Sum",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/target-sum/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0494-target-sum",
+      "status": "unsolved"
+    },
+    {
+      "id": 97,
+      "title": "Interleaving String",
+      "folder": "97. Interleaving String",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/interleaving-string/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0097-interleaving-string",
+      "status": "unsolved"
+    },
+    {
+      "id": 329,
+      "title": "Longest Increasing Path in a Matrix",
+      "folder": "329. Longest Increasing Path in a Matrix",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0329-longest-increasing-path-in-a-matrix",
+      "status": "unsolved"
+    },
+    {
+      "id": 115,
+      "title": "Distinct Subsequences",
+      "folder": "115. Distinct Subsequences",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/distinct-subsequences/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0115-distinct-subsequences",
+      "status": "unsolved"
+    },
+    {
+      "id": 72,
+      "title": "Edit Distance",
+      "folder": "72. Edit Distance",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/edit-distance/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0072-edit-distance",
+      "status": "unsolved"
+    },
+    {
+      "id": 312,
+      "title": "Burst Balloons",
+      "folder": "312. Burst Balloons",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/burst-balloons/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0312-burst-balloons",
+      "status": "unsolved"
+    },
+    {
+      "id": 10,
+      "title": "Regular Expression Matching",
+      "folder": "10. Regular Expression Matching",
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/regular-expression-matching/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "16-dynamic-programming-state",
+        "17-dp-dimensions-and-choice-models",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0010-regular-expression-matching",
+      "status": "unsolved"
+    },
+    {
+      "id": 53,
+      "title": "Maximum Subarray",
+      "folder": "53. Maximum Subarray",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/maximum-subarray/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts",
+        "23-prefixes-suffixes-and-aggregates"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0053-maximum-subarray",
+      "status": "unsolved"
+    },
+    {
+      "id": 55,
+      "title": "Jump Game",
+      "folder": "55. Jump Game",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/jump-game/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0055-jump-game",
+      "status": "unsolved"
+    },
+    {
+      "id": 45,
+      "title": "Jump Game II",
+      "folder": "45. Jump Game II",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/jump-game-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0045-jump-game-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 134,
+      "title": "Gas Station",
+      "folder": "134. Gas Station",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/gas-station/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts",
+        "23-prefixes-suffixes-and-aggregates"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0134-gas-station",
+      "status": "unsolved"
+    },
+    {
+      "id": 846,
+      "title": "Hand of Straights",
+      "folder": "846. Hand of Straights",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/hand-of-straights/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts",
+        "03-maps-sets-and-counts",
+        "05-sorting-and-order"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0846-hand-of-straights",
+      "status": "unsolved"
+    },
+    {
+      "id": 1899,
+      "title": "Merge Triplets to Form Target Triplet",
+      "folder": "1899. Merge Triplets to Form Target Triplet",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "1899-merge-triplets-to-form-target-triplet",
+      "status": "unsolved"
+    },
+    {
+      "id": 763,
+      "title": "Partition Labels",
+      "folder": "763. Partition Labels",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/partition-labels/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts",
+        "03-maps-sets-and-counts",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0763-partition-labels",
+      "status": "unsolved"
+    },
+    {
+      "id": 678,
+      "title": "Valid Parenthesis String",
+      "folder": "678. Valid Parenthesis String",
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/valid-parenthesis-string/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "18-greedy-and-interval-contracts",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0678-valid-parenthesis-string",
+      "status": "unsolved"
+    },
+    {
+      "id": 57,
+      "title": "Insert Interval",
+      "folder": "57. Insert Interval",
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/insert-interval/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "18-greedy-and-interval-contracts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0057-insert-interval",
+      "status": "unsolved"
+    },
+    {
+      "id": 56,
+      "title": "Merge Intervals",
+      "folder": "56. Merge Intervals",
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/merge-intervals/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "18-greedy-and-interval-contracts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0056-merge-intervals",
+      "status": "unsolved"
+    },
+    {
+      "id": 435,
+      "title": "Non-overlapping Intervals",
+      "folder": "435. Non-overlapping Intervals",
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "18-greedy-and-interval-contracts"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0435-non-overlapping-intervals",
+      "status": "unsolved"
+    },
+    {
+      "id": 252,
+      "title": "Meeting Rooms",
+      "folder": "252. Meeting Rooms",
+      "category": "Intervals",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/meeting-rooms/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "18-greedy-and-interval-contracts"
+      ],
+      "interface_verified": false,
+      "neetcode_code": "0252-meeting-rooms",
+      "status": "unsolved"
+    },
+    {
+      "id": 253,
+      "title": "Meeting Rooms II",
+      "folder": "253. Meeting Rooms II",
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/meeting-rooms-ii/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "18-greedy-and-interval-contracts"
+      ],
+      "interface_verified": false,
+      "neetcode_code": "0253-meeting-rooms-ii",
+      "status": "unsolved"
+    },
+    {
+      "id": 1851,
+      "title": "Minimum Interval to Include Each Query",
+      "folder": "1851. Minimum Interval to Include Each Query",
+      "category": "Intervals",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "05-sorting-and-order",
+        "18-greedy-and-interval-contracts",
+        "11-heaps-and-priority-queues"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "1851-minimum-interval-to-include-each-query",
+      "status": "unsolved"
+    },
+    {
+      "id": 48,
+      "title": "Rotate Image",
+      "folder": "48. Rotate Image",
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/rotate-image/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0048-rotate-image",
+      "status": "unsolved"
+    },
+    {
+      "id": 54,
+      "title": "Spiral Matrix",
+      "folder": "54. Spiral Matrix",
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/spiral-matrix/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0054-spiral-matrix",
+      "status": "unsolved"
+    },
+    {
+      "id": 73,
+      "title": "Set Matrix Zeroes",
+      "folder": "73. Set Matrix Zeroes",
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/set-matrix-zeroes/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety",
+        "24-matrix-coordinates-and-mutation"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0073-set-matrix-zeroes",
+      "status": "unsolved"
+    },
+    {
+      "id": 202,
+      "title": "Happy Number",
+      "folder": "202. Happy Number",
+      "category": "Math & Geometry",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/happy-number/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0202-happy-number",
+      "status": "unsolved"
+    },
+    {
+      "id": 66,
+      "title": "Plus One",
+      "folder": "66. Plus One",
+      "category": "Math & Geometry",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/plus-one/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0066-plus-one",
+      "status": "unsolved"
+    },
+    {
+      "id": 50,
+      "title": "Pow(x, n)",
+      "folder": "50. Pow(x, n)",
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/powx-n/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0050-powx-n",
+      "status": "unsolved"
+    },
+    {
+      "id": 43,
+      "title": "Multiply Strings",
+      "folder": "43. Multiply Strings",
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/multiply-strings/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety",
+        "04-text-and-encoding"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0043-multiply-strings",
+      "status": "unsolved"
+    },
+    {
+      "id": 2013,
+      "title": "Detect Squares",
+      "folder": "2013. Detect Squares",
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/detect-squares/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "01-go-sequences-and-bounds",
+        "19-math-and-integer-safety",
+        "03-maps-sets-and-counts",
+        "22-stateful-apis-and-local-harnesses"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "2013-detect-squares",
+      "status": "unsolved"
+    },
+    {
+      "id": 136,
+      "title": "Single Number",
+      "folder": "136. Single Number",
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/single-number/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0136-single-number",
+      "status": "unsolved"
+    },
+    {
+      "id": 191,
+      "title": "Number of 1 Bits",
+      "folder": "191. Number of 1 Bits",
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/number-of-1-bits/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0191-number-of-1-bits",
+      "status": "unsolved"
+    },
+    {
+      "id": 338,
+      "title": "Counting Bits",
+      "folder": "338. Counting Bits",
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/counting-bits/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0338-counting-bits",
+      "status": "unsolved"
+    },
+    {
+      "id": 190,
+      "title": "Reverse Bits",
+      "folder": "190. Reverse Bits",
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/reverse-bits/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0190-reverse-bits",
+      "status": "unsolved"
+    },
+    {
+      "id": 268,
+      "title": "Missing Number",
+      "folder": "268. Missing Number",
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/missing-number/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0268-missing-number",
+      "status": "unsolved"
+    },
+    {
+      "id": 371,
+      "title": "Sum of Two Integers",
+      "folder": "371. Sum of Two Integers",
+      "category": "Bit Manipulation",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/sum-of-two-integers/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0371-sum-of-two-integers",
+      "status": "unsolved"
+    },
+    {
+      "id": 7,
+      "title": "Reverse Integer",
+      "folder": "7. Reverse Integer",
+      "category": "Bit Manipulation",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/reverse-integer/",
+      "concepts": [
+        "02-contracts-complexity-and-tests",
+        "19-math-and-integer-safety",
+        "20-bit-width-and-operations"
+      ],
+      "interface_verified": true,
+      "neetcode_code": "0007-reverse-integer",
+      "status": "unsolved"
+    }
+  ]
+}
