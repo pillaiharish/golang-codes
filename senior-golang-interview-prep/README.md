@@ -2,7 +2,7 @@
 
 An evolving, **company-neutral**, senior-level Go learning and interview-revision library. The goal is to revise concepts confidently before future interviews, rather than restarting preparation each time.
 
-These first seven modules are adapted from the supplied long-form interview-preparation transcript. The order is **topic order (1–N)**, not a daily schedule. Add new topics as `8-<topic>`, `9-<topic>`, and so on; keep existing paths stable so bookmarks continue to work.
+The first seven modules are adapted from the supplied long-form interview-preparation transcript; Module 8 adds a standalone foundational guide for structs and object construction. The order is **topic order (1–N)**, not a daily schedule. Add future topics as `9-<topic>`, `10-<topic>`, and so on; keep existing paths stable so bookmarks continue to work.
 
 ## How to revise effectively
 
@@ -25,6 +25,7 @@ These first seven modules are adapted from the supplied long-form interview-prep
 | 5 | [Memory Management, Escape Analysis, and GC](5-memory-escape-analysis-and-gc/README.md) | Escape analysis, memory retention, allocation hotspots, concurrent GC and tuning | — | — | — | [Notes](5-memory-escape-analysis-and-gc/NOTES.md) |
 | 6 | [Benchmarking, Profiling, and Production Debugging](6-benchmarking-profiling-and-debugging/README.md) | Microbenchmarks, race detector, profiling, traces, production-debugging workflow | — | — | — | [Notes](6-benchmarking-profiling-and-debugging/NOTES.md) |
 | 7 | [Bounded Concurrent Telemetry Publisher](7-bounded-concurrent-telemetry-publisher/README.md) | End-to-end practice: bounded publisher, tests, race detection, benchmarks and design defense | — | — | — | [Notes](7-bounded-concurrent-telemetry-publisher/NOTES.md) |
+| 8 | [Structs, Constructors, and Persistent State](8-structs-constructors-and-state/README.md) | Counter from scratch; instance state, constructors, map zero values, receivers, copies, method sets, concurrency and tests | — | — | — | [Notes](8-structs-constructors-and-state/NOTES.md) |
 
 > **Status:** The guide contains source material, not evidence of mastered skills. Leave confidence and dates blank until a genuine review. Record detailed revision history in the log instead of overwriting past attempts.
 
@@ -385,10 +386,28 @@ The links below cover main topics and meaningful subtopics (including interview 
 
 **Practice and tracking:** [Revision checkpoint](7-bounded-concurrent-telemetry-publisher/README.md#revision-checkpoint) · [Personal clarity notes](7-bounded-concurrent-telemetry-publisher/NOTES.md)
 
-## Add a new topic (module 8 onward)
+### 8. [Structs, Constructors, and Persistent State](8-structs-constructors-and-state/README.md)
 
-1. Create `8-short-topic-name/README.md` with a numbered module title, concept explanation, failure modes, examples, interview questions, and a revision checkpoint.
-2. Create `8-short-topic-name/NOTES.md` with personal gaps and experiments (copy the format of another module's notes).
+- [8.1 A complete Counter, from the first line](8-structs-constructors-and-state/README.md#81-a-complete-counter-from-the-first-line)
+- [8.2 Lifetime and ownership: local variables vs struct fields](8-structs-constructors-and-state/README.md#82-lifetime-and-ownership-local-variables-vs-struct-fields)
+- [8.3 Creation syntax and zero values](8-structs-constructors-and-state/README.md#83-creation-syntax-and-zero-values)
+- [8.4 Struct declarations, literals, visibility, and embedding](8-structs-constructors-and-state/README.md#84-struct-declarations-literals-visibility-and-embedding)
+- [8.5 Constructor functions: design, return types, and invariants](8-structs-constructors-and-state/README.md#85-constructor-functions-design-return-types-and-invariants)
+- [8.6 Receiver methods, implicit address-taking, and interfaces](8-structs-constructors-and-state/README.md#86-receiver-methods-implicit-address-taking-and-interfaces)
+- [8.7 Copying a struct is not cloning its state](8-structs-constructors-and-state/README.md#87-copying-a-struct-is-not-cloning-its-state)
+- [8.8 Designing a usable zero value](8-structs-constructors-and-state/README.md#88-designing-a-usable-zero-value)
+- [8.9 Concurrency: object construction does not imply thread safety](8-structs-constructors-and-state/README.md#89-concurrency-object-construction-does-not-imply-thread-safety)
+- [8.10 The complete instance lifecycle](8-structs-constructors-and-state/README.md#810-the-complete-instance-lifecycle)
+- [8.11 Common syntax mistakes and runtime traps](8-structs-constructors-and-state/README.md#811-common-syntax-mistakes-and-runtime-traps)
+- [8.12 Interview questions (answer without opening code)](8-structs-constructors-and-state/README.md#812-interview-questions-answer-without-opening-code)
+- [8.13 Hands-on exercises and recall checkpoints](8-structs-constructors-and-state/README.md#813-hands-on-exercises-and-recall-checkpoints)
+
+**Practice and tracking:** [Runnable Counter and variants](8-structs-constructors-and-state/examples/) · [Personal clarity notes](8-structs-constructors-and-state/NOTES.md)
+
+## Add a new topic (module 9 onward)
+
+1. Create `9-short-topic-name/README.md` with a numbered module title, concept explanation, failure modes, examples, interview questions, and a revision checkpoint.
+2. Create `9-short-topic-name/NOTES.md` with personal gaps and experiments (copy the format of another module's notes).
 3. Add its link to the dashboard and its topic/subtopic links to this index.
 4. Record the first recall attempt in [REVISION-LOG.md](REVISION-LOG.md). Do not mark a topic confident until you can explain it without notes.
 

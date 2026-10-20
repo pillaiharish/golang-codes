@@ -8,7 +8,7 @@ An append-only record of *what you can recall and defend today*. A module being 
 
 | Date | Module | Confidence (1–5) | Recall without notes | Missed concepts / symptoms | Hands-on proof | Next review |
 |---|---|---|---|---|---|---|
-| _YYYY-MM-DD_ | _1–7 or future module_ | _1–5_ | _Yes/partial/no_ | _Specific gap_ | _Command, test, benchmark or code note_ | _YYYY-MM-DD_ |
+| _YYYY-MM-DD_ | _1–8 or future module_ | _1–5_ | _Yes/partial/no_ | _Specific gap_ | _Command, test, benchmark or code note_ | _YYYY-MM-DD_ |
 
 ## Before each new interview
 
