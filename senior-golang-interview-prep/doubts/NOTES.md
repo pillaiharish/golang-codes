@@ -12,3 +12,4 @@ For each review record the topic, confidence (1–5), prediction, observed outpu
 | Increment and loop semantics | — | — | — |
 | Buffer and blocking combinations | — | — | — |
 | Network I/O and syscalls | — | — | — |
+| Slice length, growth, and limits | — | — | — |

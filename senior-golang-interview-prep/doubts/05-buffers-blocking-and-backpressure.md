@@ -1,5 +1,7 @@
 # 5. Bounded buffers, blocking, and producer-consumer policy
 
+**Follow-up:** [Slice length, growth, and explicit limits](07-slice-length-capacity-growth-and-limits.md).
+
 [All doubts](README.md) · [Previous](04-increments-and-for-loops.md) · [Next: I/O](06-network-io-and-blocking-syscalls.md)
 
 ## Direct answer: three separate questions
