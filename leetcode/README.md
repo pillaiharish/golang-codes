@@ -82,7 +82,7 @@ These are already present and are **not renamed or rewritten** by this PR. They 
 |---|---|
 | 167 | [Two Sum II — Input Array Is Sorted](167.%20Two%20Sum%20II%20-%20Input%20Array%20Is%20Sorted/main.go) — two pointers, 1-based answers |
 | 353 | [Design Snake Game](353%20-%20Design%20Snake%20Game/README.md) |
-| 359 | [Logger Rate Limiter](359.%20Logger%20Rate%20Limiter/main.go) |
+| 359 | [Logger Rate Limiter — problem, example and tests](359.%20Logger%20Rate%20Limiter/README.md) · [Original Go](359.%20Logger%20Rate%20Limiter/main.go) · [Tests](359.%20Logger%20Rate%20Limiter/main_test.go) |
 | 641 | [Design Circular Deque](641.%20Design%20Circular%20Deque/main.go) |
 | 757 | [Set Intersection Size At Least Two](757.%20Set%20Intersection%20Size%20At%20Least%20Two/main.go) |
 | 1366 | [Rank Teams by Votes](1366.%20Rank%20Teams%20by%20Votes/main.go) |
