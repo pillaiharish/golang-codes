@@ -1,5 +1,7 @@
 # 0 — The building-blocks curriculum: Go basics → algorithms → LeetCode
 
+**Additional unsolved practice:** [NeetCode 150 concept-to-problem map](../neetcode/0-concepts/README.md) provides 24 foundation lessons and a prerequisite mapping for all 150 starters.
+
 [← Main LeetCode index](../README.md) · [Study rules](../AGENTS.md) · [Review log](../REVISION-LOG.md) · [Run all foundation examples](verify-examples.py)
 
 Every problem in this repository can be broken down into smaller Go operations and one or two reusable invariants. **Choose either direction:** start with a fundamental, or select a LeetCode problem and study its prerequisites in order. These are **19 specific lessons derived from the 23 problem folders on this PR branch**, not a generic topic wishlist.
