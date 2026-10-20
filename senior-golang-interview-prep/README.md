@@ -30,7 +30,7 @@ These first seven modules are adapted from the supplied long-form interview-prep
 
 ## Doubts and focused clarifications
 
-The [doubts study plan and detailed index](doubts/README.md) answers six foundational questions individually, with runnable examples and interview checkpoints. This supplements the numbered modules without renumbering them.
+The [doubts study plan and detailed index](doubts/README.md) answers seven foundational questions individually, with runnable examples and interview checkpoints. This supplements the numbered modules without renumbering them.
 
 - [1. Variable declarations, initialization, assignment, and memory](doubts/01-declarations-assignment-and-memory.md)
 - [2. Zero values, nil, make, and new](doubts/02-zero-values-make-and-new.md)
@@ -38,6 +38,8 @@ The [doubts study plan and detailed index](doubts/README.md) answers six foundat
 - [4. Increment statements and for-loop traps](doubts/04-increments-and-for-loops.md)
 - [5. Bounded buffers, blocking, and producer-consumer policy](doubts/05-buffers-blocking-and-backpressure.md)
 - [6. Goroutine blocking on network I/O versus blocking system calls](doubts/06-network-io-and-blocking-syscalls.md)
+
+- [7. Slice length, capacity, growth, and explicit limits](doubts/07-slice-length-capacity-growth-and-limits.md)
 
 ## Fast interview refresh plan
 

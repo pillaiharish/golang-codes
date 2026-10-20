@@ -1,5 +1,7 @@
 # 2. Zero values, nil, make, and new
 
+**Follow-up:** [Slice length, growth, and explicit limits](07-slice-length-capacity-growth-and-limits.md).
+
 [All doubts](README.md) · [Previous](01-declarations-assignment-and-memory.md) · [Next: text](03-bytes-runes-and-utf8.md)
 
 ## Direct answer

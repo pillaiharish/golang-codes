@@ -12,5 +12,6 @@ Each subdirectory is a separate `main` package within the parent module. Run fro
 | [loops](loops/main.go) | Body 0/2/3; init 1; declared closures 0/1/2; reused closures 3/3/3 | [Loops](../04-increments-and-for-loops.md) |
 | [queues](queues/main.go) | First enqueue succeeds; full queue rejects; canceled send returns; closed queue drains | [Buffers](../05-buffers-blocking-and-backpressure.md) |
 | [netpoll](netpoll/main.go) | Provide trace path argument; real loopback TCP read expires via deadline | [I/O](../06-network-io-and-blocking-syscalls.md) |
+| [slices](slices/main.go) | Caught index panic; observed growth; bounded overflow rejected | [Slice growth](../07-slice-length-capacity-growth-and-limits.md) |
 
 The examples are demonstrations, not a throughput benchmark or an automated correctness test suite. The netpoll example requires loopback socket permission. Its timeout duration is not a performance claim.
