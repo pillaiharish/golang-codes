@@ -1,26 +1,142 @@
-# 359 Logger Rate Limiter
+# 359. Logger Rate Limiter
 
-To solve LeetCode 359 Logger Rate Limiter, we need to design a logger system that limits printing of the same message based on a time threshold.
+[← LeetCode study index](../README.md) · [Existing Go implementation](main.go) · [Runnable tests](main_test.go) · [AlgoMonster problem #359](https://algo.monster/liteproblems/359)
 
+**Difficulty:** Easy · **Category:** Design / Hash Table / Data Stream
 
-## Problem:
-You need to implement the Logger class:
+> **Source note:** This is a faithful, independently worded version of the problem described by AlgoMonster, not a verbatim copy of its copyrighted question or editorial. The six-call example below follows that page's worked example. Additional tests are separately identified as our own.
 
-shouldPrintMessage(timestamp int, message string) bool: Returns true if the message should be printed (not printed in the last 10 seconds); otherwise, return false.
+## Problem statement — read before opening the implementation
 
+Build a logger that decides whether an incoming message is eligible to be printed. Calls supply a timestamp (an integer number of seconds) and the message text.
 
-## Approach:
-We use a hash map to store the last printed timestamp for each message and check if 10 seconds have passed since the last print.
+For **each distinct message**, allow the first occurrence. Once a message is allowed at time `t`, reject the same message at every timestamp **strictly earlier than `t + 10`**. At `t + 10`, it becomes eligible again. Unrelated messages have independent waiting periods.
 
+Implement the following API:
 
-## Explanation:
-logs is a map where keys are the messages, and values are the last timestamp they were printed.
-In ShouldPrintMessage, we check if the message was printed in the last 10 seconds using the timestamp. If it was, return false; otherwise, update the timestamp and return true.
+~~~go
+type Logger struct {
+    // Choose your state representation.
+}
 
+func Constructor() Logger
 
-## Time Complexity:
-O(1) for both shouldPrintMessage operations (since map operations are O(1)).
+func (l *Logger) ShouldPrintMessage(timestamp int, message string) bool
+~~~
 
+**Return value:**
+- `true` means the caller may print this occurrence.
+- `false` means it is still suppressed for that particular message.
 
-## Space Complexity:
-O(n), where n is the number of unique messages stored in the map.
+**Given behavior / assumptions:**
+- Calls arrive in **non-decreasing timestamp order**; you do not need to support time moving backward.
+- Different messages may arrive in the same second.
+- Several occurrences of the **same** message may arrive in the same second.
+- Only successful/allowed messages start a new 10-second waiting period. A rejected call does **not** extend that period.
+- `ShouldPrintMessage` decides whether to print; the method does **not** itself write to stdout.
+
+The cited AlgoMonster page provides the timing/order requirements but does **not** publish numerical input-size or message-length bounds in its problem-description section. Do not invent those as official constraints.
+
+## Source example — operations and expected results
+
+The following six calls are the sequence used in the [AlgoMonster walkthrough](https://algo.monster/liteproblems/359#example-walkthrough); the presentation below uses the usual design-problem input/output format.
+
+**Input:**
+
+~~~text
+Operations:
+["Logger", "shouldPrintMessage", "shouldPrintMessage",
+ "shouldPrintMessage", "shouldPrintMessage", "shouldPrintMessage",
+ "shouldPrintMessage"]
+
+Arguments:
+[[], [1,"foo"], [2,"bar"], [3,"foo"], [8,"bar"],
+ [11,"foo"], [12,"bar"]]
+~~~
+
+**Expected output:**
+
+~~~text
+[null, true, true, false, false, true, true]
+~~~
+
+`null` represents the constructor, which produces no boolean result.
+
+| Timestamp | Message | Expected | Reason |
+|---:|---|---|---|
+| 1 | `foo` | `true` | First `foo`, allowed; next allowed at 11 |
+| 2 | `bar` | `true` | First `bar`, allowed; next allowed at 12 |
+| 3 | `foo` | `false` | `foo` is waiting until 11 |
+| 8 | `bar` | `false` | `bar` is waiting until 12 |
+| 11 | `foo` | `true` | Exactly ten seconds since `foo` was allowed |
+| 12 | `bar` | `true` | Exactly ten seconds since `bar` was allowed |
+
+**Why the boundary matters:** if `foo` prints at 1, then at 10 it must return `false`; at 11 it must return `true`.
+
+## Extra practice scenarios (not copied from the source)
+
+1. **Repeated arrivals at the same second:** `(5,"ping") → true`, then `(5,"ping") → false`.
+2. **A rejected arrival does not reset the timer:** `(1,"ping") → true`, `(9,"ping") → false`, `(11,"ping") → true`.
+3. **Separate messages:** `(1,"a") → true`, `(2,"b") → true`, `(10,"a") → false`, `(12,"b") → true`.
+4. **New logger state:** a fresh `Logger` instance allows a message even if another instance previously suppressed it.
+
+All these sequences are covered by [`main_test.go`](main_test.go), together with the source example and the exact 9/10/11-second boundary.
+
+### Run tests locally
+
+This repository has independent `package main` problem folders and no root Go module. Run from this problem directory:
+
+~~~bash
+cd "leetcode/359. Logger Rate Limiter"
+GO111MODULE=off go test -v .
+~~~
+
+Or run the existing interactive example:
+
+~~~bash
+go run main.go
+~~~
+
+## Pattern recognition (after attempting the question)
+
+**Trigger:** a streaming decision based on a *key* (message text) and the time at which that key was previously accepted.
+
+A hash map works because each message needs independent timing state. A simple invariant for the existing implementation is:
+
+> After each call, if a message has been printed, the map stores its **most recent successfully printed timestamp**. Suppressed calls must not update it.
+
+If a message has never been seen, accept it. Otherwise, accept when at least 10 seconds have elapsed since its last accepted timestamp. Only then save the new accepted timestamp.
+
+An equally valid alternative is to store each message's **next permitted timestamp** instead. The existing [Go solution](main.go) uses the last-accepted timestamp, so that code is preserved unchanged.
+
+## Dry-run the map (existing implementation)
+
+| Call | Stored most-recent print times after call |
+|---|---|
+| `(1, "foo") → true` | `foo:1` |
+| `(2, "bar") → true` | `foo:1, bar:2` |
+| `(3, "foo") → false` | unchanged |
+| `(8, "bar") → false` | unchanged |
+| `(11, "foo") → true` | `foo:11, bar:2` |
+| `(12, "bar") → true` | `foo:11, bar:12` |
+
+## Complexity and boundaries
+
+**Average-case time:** `O(1)` per call for a hash-map lookup/update.  
+**Additional space:** `O(M)`, where `M` is the number of unique message strings ever encountered.
+
+This interview implementation keeps one entry for each distinct message indefinitely, so storage may grow with new messages. It is **not** a thread-safe or bounded-memory production logger: concurrency protection and stale-key eviction are separate system-design concerns.
+
+## Recall without looking at the solution
+
+1. Why must rejected calls leave the stored timestamp unchanged?
+2. What should happen exactly 9, 10 and 11 seconds after an allowed message at time 1?
+3. Which map value would you store: last accepted time or next eligible time? Why?
+4. Why must `foo` and `bar` maintain separate timestamps?
+5. Recreate the six-call source example and implement `Constructor` plus `ShouldPrintMessage` from memory.
+
+**Personal revision status:** Confidence — · Last recalled — · Next recall —
+
+## Original implementation notes
+
+The original `main.go` already implements this specification by storing last-printed timestamps. This update only improves the question, examples and tests; it intentionally does not replace your code.
