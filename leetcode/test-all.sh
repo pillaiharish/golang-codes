@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Test the nine documented Go LeetCode problems independently.
+# Test the ten documented Go LeetCode problems independently.
 # The repository contains standalone package-main folders rather than a root go.mod.
 set -euo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -9,6 +9,7 @@ problems=(
   "41. First Missing Positive"
   "49. Group Anagrams"
   "94. Binary Tree Inorder Traversal"
+  "128. Longest Consecutive Sequence"
   "146. LRU Cache"
   "208. Implement Trie (Prefix Tree)"
   "217. Contains Duplicate"
@@ -22,4 +23,4 @@ for problem in "${problems[@]}"; do
     GO111MODULE=off go test -count=1 -race .
   )
 done
-printf '\nAll nine problem folders passed tests.\n'
+printf '\nAll ten problem folders passed tests.\n'

@@ -34,6 +34,19 @@ func main() {
 ## Dry run
 Map lookup 7 returns `(0,true)`, so testing only `value!=0` would be wrong. Counter `go` becomes 2. Bucket `aet` contains two original strings.
 
+## Map presence vs Boolean state (learned from LeetCode 128)
+
+A `map[int]bool` can be either a **membership set** (all stored values are `true`) or a **mutable visited/unvisited table** (values change). Do not casually mix these meanings.
+
+| Situation | `m[2]` | `_, ok := m[2]` | Explanation |
+|---|---|---|---|
+| Key 2 never inserted | `false` | `ok == false` | Missing bool keys read as the zero value |
+| `m[2] = true` | `true` | `ok == true` | Key is present and enabled |
+| `m[2] = false` | `false` | `ok == true` | Key **still exists**, but the stored value changed |
+| `delete(m, 2)` | `false` | `ok == false` | The key is now absent |
+
+**Algorithmic lesson:** Only mark a sequence value visited when doing so cannot prevent a later scan from finding a longer sequence. See the preserved [LeetCode 128 original failed implementation and trace](../../128.%20Longest%20Consecutive%20Sequence/LEARNING-NOTES.md). For this problem, using a stable membership set and scanning only from numbers without predecessors avoids visited-state bugs completely.
+
 ## Tiny exercise (do before opening a hard problem)
 Choose one map type for Two Sum, Contains Duplicate, Valid Anagram, Group Anagrams and Logger Rate Limiter, and explain why each value type differs.
 
@@ -45,6 +58,7 @@ Choose one map type for Two Sum, Contains Duplicate, Valid Anagram, Group Anagra
 ## Apply to the existing repository
 - [1. Two Sum](../../1.%20Two%20Sum/main.go)
 - [49. Group Anagrams](../../49.%20Group%20Anagrams/main.go)
+- [128. Longest Consecutive Sequence](../../128.%20Longest%20Consecutive%20Sequence/README.md) — use a membership set; only start walks where the predecessor is missing.
 - [146. LRU Cache](../../146.%20LRU%20Cache/main.go)
 - [1460. Make Two Arrays Equal by Reversing Subarrays](../../1460.%20Make%20Two%20Arrays%20Equal%20by%20Reversing%20Subarrays/main.go)
 - [217. Contains Duplicate](../../217.%20Contains%20Duplicate/main.go)
