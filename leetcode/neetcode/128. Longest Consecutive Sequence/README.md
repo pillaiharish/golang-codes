@@ -84,3 +84,7 @@ No external packages, network services, or Go module are required for this comma
 Confidence: — · Last attempt: — · Next review: —
 
 Log actual attempts in [REVISION-LOG.md](../REVISION-LOG.md). Running a starter does not mark the problem solved.
+
+### Optional: review after your independent attempt
+
+This is intentionally still an **unsolved starter**. Once you have attempted the problem without help, compare your reasoning against the separate [worked Go solution, tests, and failure-mode notes](../../128.%20Longest%20Consecutive%20Sequence/README.md).
