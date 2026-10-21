@@ -6,11 +6,13 @@
 
 ## Problem in your own words
 
-Determine whether an undirected graph is a single valid tree.
+A graph has `n` nodes numbered `0` through `n-1`, plus undirected edges `edges[i] = [a,b]`. Return `true` exactly when **all** nodes together form one valid tree.
 
-All n vertices must belong to one connected component and the graph must contain no cycle.
+A tree is **connected** (every vertex can be reached from every other vertex) and has **no cycles**. Both properties matter: a graph with two separate groups fails even if each group has no cycle; a connected graph containing a cycle also fails.
 
-This is an original study summary, not a verbatim copy of LeetCode's statement. Consult the official page for its exact wording, diagrams, and further clarifications. Source metadata was checked on 2026-10-20.
+A tree with `n` nodes must have `n-1` edges. Isolated vertices are part of the graph, not silently omitted.
+
+**Readable source:** [AlgoMonster problem #261](https://algo.monster/liteproblems/261) (reviewed 2026-10-21). This README is a paraphrased learning statement, not copied editorial text.
 
 ## Input and output contract
 
@@ -22,13 +24,37 @@ func validTree(n int, edges [][]int) bool { /* TODO */ }
 
 ## Constraints and boundary conditions
 
-- The full numeric bounds are not publicly exposed by the source endpoint. Check the official statement with authorized access; no numeric limits are invented here.
+- Every vertex in the range `0..n-1` matters.
+- Edges are undirected, so `[a,b]` represents a two-way connection.
+- A connected acyclic graph is a tree; disconnected or cyclic graphs are not.
+- The public description does not verify numerical input limits.
 
 ## Example input and output data
 
-The source does not expose the full worked examples publicly. The local demo is an independent fixture, not an official expected-output test.
+**Example 1 — valid tree (local fixture)**
 
-The example data is for understanding the contract. No explanation, solution trace, or algorithm is supplied. The local demo uses the first source fixture where practical; tree/graph/codec identity cases use small independent fixtures described in `localDemo`.
+```text
+Input:  n = 5, edges = [[0,1],[0,2],[0,3],[1,4]]
+Output: true
+```
+
+**Example 2 — cycle (practice)**
+
+```text
+Input:  n = 5, edges = [[0,1],[1,2],[2,3],[1,3],[1,4]]
+Output: false
+```
+
+**Example 3 — disconnected (practice)**
+
+```text
+Input:  n = 4, edges = [[0,1],[2,3]]
+Output: false
+```
+
+**Single-node boundary (practice):** `n = 1, edges = []` describes a valid tree, so the output is `true`.
+
+The Go starter stays unsolved. Reference examples and separately constructed practice cases are labeled; they teach expected behavior without including an algorithm or solution trace.
 
 ## Ordered prerequisites
 

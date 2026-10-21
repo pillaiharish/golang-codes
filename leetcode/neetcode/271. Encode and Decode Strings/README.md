@@ -6,11 +6,13 @@
 
 ## Problem in your own words
 
-Design a reversible conversion between a sequence of strings and one string.
+You are designing a **codec** for a list of strings. Implement `encode(strs)` to turn an ordered list into one string, and `decode(s)` to recover the **exact same list** from a string created by `encode`.
 
-Empty strings and characters that resemble separators must round-trip without loss. This is a codec contract, not compression.
+The required behavior is `decode(encode(strs)) == strs` (compare the list contents, not Go slice identity). Preserve the number of elements, their order, duplicates, empty strings, and spaces or characters that look like separators. For example, joining with `#` without handling embedded `#` would lose information.
 
-This is an original study summary, not a verbatim copy of LeetCode's statement. Consult the official page for its exact wording, diagrams, and further clarifications. Source metadata was checked on 2026-10-20.
+**You choose the representation.** The problem does not specify a unique serialized string or require a particular prefix/delimiter technique. This is a reversible transformation, not compression.
+
+**Readable source:** [AlgoMonster problem #271](https://algo.monster/liteproblems/271) (reviewed 2026-10-21). This README is a paraphrased learning statement, not copied editorial text.
 
 ## Input and output contract
 
@@ -24,13 +26,42 @@ func (this *Codec) decode(s string) []string { /* TODO */ }
 
 ## Constraints and boundary conditions
 
-- The full numeric bounds are not publicly exposed by the source endpoint. Check the official statement with authorized access; no numeric limits are invented here.
+- `[]` (no strings) must be distinguishable from `[""]` (one empty string).
+- Encoding and decoding must agree on the format, even when elements contain spaces, digits, separators, or newlines.
+- Evaluate **round-trip equality**, not a single expected encoded value.
+- The accessible reference does not verify numerical length limits. Do not assume a four-digit length field or an arbitrary 9,999-character cap from an editorial example.
 
 ## Example input and output data
 
-The source does not expose the full worked examples publicly. The local demo is an independent fixture, not an official expected-output test.
+**Example 1 — AlgoMonster scenario**
 
-The example data is for understanding the contract. No explanation, solution trace, or algorithm is supplied. The local demo uses the first source fixture where practical; tree/graph/codec identity cases use small independent fixtures described in `localDemo`.
+```text
+Input:  strs = ["Hello", "World"]
+Action: s = encode(strs)
+Output: decode(s) = ["Hello", "World"]
+```
+
+**Example 2 — local edge-case test**
+
+```text
+Input:  strs = ["a", "", "b#c", "a b", "a"]
+Action: s = encode(strs)
+Output: decode(s) = ["a", "", "b#c", "a b", "a"]
+```
+
+**Example 3 — do not confuse empty list and empty string**
+
+```text
+Input:  strs = []
+Output: decode(encode(strs)) = []
+
+Input:  strs = [""]
+Output: decode(encode(strs)) = [""]
+```
+
+The serialized value `s` is **not fixed**; different correct encoders can produce different strings. Also try consecutive empty strings, `"#"`, and non-ASCII characters as independent robustness checks.
+
+The Go starter stays unsolved. Reference examples and separately constructed practice cases are labeled; they teach expected behavior without including an algorithm or solution trace.
 
 ## Ordered prerequisites
 

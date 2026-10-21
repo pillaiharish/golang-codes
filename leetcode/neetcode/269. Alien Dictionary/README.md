@@ -6,11 +6,13 @@
 
 ## Problem in your own words
 
-Infer a character ordering consistent with a list of words sorted in an unknown alphabet.
+You are given `words` that **claim to be sorted** according to the alphabet of an unknown language. The language uses the same 26 lowercase letters as English, but possibly in a different order.
 
-Return any valid ordering containing all distinct letters, or an empty string for inconsistent input. A longer word cannot precede its exact prefix.
+Return **any** ordering containing **all distinct letters that occur in the input** exactly once, such that the given word list is lexicographically sorted under that alphabet. If no consistent ordering exists, return `""`.
 
-This is an original study summary, not a verbatim copy of LeetCode's statement. Consult the official page for its exact wording, diagrams, and further clarifications. Source metadata was checked on 2026-10-20.
+In dictionary order, the first differing character determines which of two words comes earlier. If one word is a prefix of another, the shorter must come first: `["abc","ab"]` is always invalid. Some valid inputs admit multiple correct alphabet strings; do not require one fixed output in those cases.
+
+**Readable source:** [AlgoMonster problem #269](https://algo.monster/liteproblems/269) (reviewed 2026-10-21). This README is a paraphrased learning statement, not copied editorial text.
 
 ## Input and output contract
 
@@ -22,13 +24,44 @@ func alienOrder(words []string) string { /* TODO */ }
 
 ## Constraints and boundary conditions
 
-- The full numeric bounds are not publicly exposed by the source endpoint. Check the official statement with authorized access; no numeric limits are invented here.
+- Only letters actually appearing in the words need to be returned.
+- Contradictory relative orders or an invalid longer-before-shorter-prefix ordering require `""`.
+- Multiple alphabet strings are acceptable when they all satisfy the supplied word order.
+- The reference confirms lowercase English letters but not authoritative numeric limits for word counts or lengths.
 
 ## Example input and output data
 
-The source does not expose the full worked examples publicly. The local demo is an independent fixture, not an official expected-output test.
+**Example 1 — valid ordering (reference / local fixture)**
 
-The example data is for understanding the contract. No explanation, solution trace, or algorithm is supplied. The local demo uses the first source fixture where practical; tree/graph/codec identity cases use small independent fixtures described in `localDemo`.
+```text
+Input:  words = ["wrt","wrf","er","ett","rftt"]
+Output: "wertf"
+```
+
+**Example 2 — simple valid ordering (practice)**
+
+```text
+Input:  words = ["z","x"]
+Output: "zx"
+```
+
+**Example 3 — contradictory ordering (practice)**
+
+```text
+Input:  words = ["z","x","z"]
+Output: ""
+```
+
+**Example 4 — invalid prefix (reference)**
+
+```text
+Input:  words = ["abc","ab"]
+Output: ""
+```
+
+**Ambiguity test:** `["ab","ac"]` has more than one possible ordering of all its letters; any valid one should be accepted.
+
+The Go starter stays unsolved. Reference examples and separately constructed practice cases are labeled; they teach expected behavior without including an algorithm or solution trace.
 
 ## Ordered prerequisites
 

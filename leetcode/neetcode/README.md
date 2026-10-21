@@ -18,7 +18,9 @@ Each folder is a separate `package main`; no root module or shared dependency is
 
 Membership and category order come from [NeetCode's official metadata](https://github.com/neetcode-gh/leetcode/blob/main/.problemSiteData.json), selecting `neetcode150: true`, checked 2026-10-20. [manifest.json](manifest.json) records all 150 IDs, source links, prerequisites, and a hash of the membership source. Titles, public constraints, example data, and 143 Go interfaces were checked against LeetCode's public question endpoint.
 
-Statements are original summaries with factual input/output details, not verbatim reproductions. Diagrams, full wording, and any additional clarification remain on the official question pages. Seven premium questions (#252, #253, #261, #269, #271, #286, #323) do not expose their statements or Go starters publicly. Their README files explicitly flag adapted local interfaces and unavailable bounds rather than inventing them. Verify those interfaces with authorized access before submission.
+Statements are original study summaries rather than verbatim reproductions. The 143 publicly accessible LeetCode questions already have input/output examples and constraints. For seven premium questions (#252, #253, #261, #269, #271, #286, #323), the problem READMEs now link readable [AlgoMonster](https://algo.monster/) references and provide self-contained problem contracts, labeled reference scenarios, and independent expected-output practice cases. We do not invent numerical bounds absent from accessible references; the premium Go interfaces are local adaptations and should be verified in an authorized judge editor.
+
+**Problem-statement quality rule for future additions:** explain the inputs, requested output or in-place mutation, key boundary semantics, and concrete test cases with expected outcomes. For custom serialization such as #271, assert a round trip rather than guessing a unique encoded string. Keep the question sections self-contained while leaving the algorithm implementation to the learner.
 
 ## Verify this practice track
 

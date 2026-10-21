@@ -6,11 +6,13 @@
 
 ## Problem in your own words
 
-Count connected components in an undirected graph with n labeled vertices.
+You are given `n` nodes labeled `0` to `n-1`, and undirected edges `[a,b]`. An edge connects its endpoints in both directions.
 
-Isolated vertices each count as a component; edges connect the supplied vertex pairs.
+Return the **number of connected components**: separate groups of nodes where each node in a group can reach every other node in that group through some sequence of edges, and no edges connect the group to another group.
 
-This is an original study summary, not a verbatim copy of LeetCode's statement. Consult the official page for its exact wording, diagrams, and further clarifications. Source metadata was checked on 2026-10-20.
+A node with no edges counts as a component of size one. You are counting groups, **not** deciding whether the graph is a tree and not returning the groups themselves.
+
+**Readable source:** [AlgoMonster problem #323](https://algo.monster/liteproblems/323) (reviewed 2026-10-21). This README is a paraphrased learning statement, not copied editorial text.
 
 ## Input and output contract
 
@@ -22,13 +24,46 @@ func countComponents(n int, edges [][]int) int { /* TODO */ }
 
 ## Constraints and boundary conditions
 
-- The full numeric bounds are not publicly exposed by the source endpoint. Check the official statement with authorized access; no numeric limits are invented here.
+- All `n` nodes count, including isolated ones.
+- Two nodes can belong to the same component by a path through intermediate nodes; a direct edge is not necessary.
+- Edges are undirected.
+- The accessible source does not provide verified numeric bounds.
 
 ## Example input and output data
 
-The source does not expose the full worked examples publicly. The local demo is an independent fixture, not an official expected-output test.
+**Example 1 — two components (local fixture)**
 
-The example data is for understanding the contract. No explanation, solution trace, or algorithm is supplied. The local demo uses the first source fixture where practical; tree/graph/codec identity cases use small independent fixtures described in `localDemo`.
+```text
+Input:  n = 5, edges = [[0,1],[1,2],[3,4]]
+Output: 2
+```
+
+The components are `{0,1,2}` and `{3,4}`.
+
+**Example 2 — isolated vertex (reference)**
+
+```text
+Input:  n = 5, edges = [[0,1],[2,3]]
+Output: 3
+```
+
+The components are `{0,1}`, `{2,3}`, and `{4}`.
+
+**Example 3 — no edges (practice)**
+
+```text
+Input:  n = 4, edges = []
+Output: 4
+```
+
+**Example 4 — connected (practice)**
+
+```text
+Input:  n = 4, edges = [[0,1],[1,2],[2,3]]
+Output: 1
+```
+
+The Go starter stays unsolved. Reference examples and separately constructed practice cases are labeled; they teach expected behavior without including an algorithm or solution trace.
 
 ## Ordered prerequisites
 
