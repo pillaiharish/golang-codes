@@ -29,6 +29,15 @@ The first seven modules are adapted from the supplied long-form interview-prepar
 
 > **Status:** The guide contains source material, not evidence of mastered skills. Leave confidence and dates blank until a genuine review. Record detailed revision history in the log instead of overwriting past attempts.
 
+## Concurrency interview and implementation track
+
+The [concurrency track](concurrency/README.md) adds 12 topic guides, 60 representative senior interview questions and 14 unsolved implementation tasks, extending the existing modules with Kafka producer/consumer semantics, offset tracking, rebalances and idempotent effects.
+
+- [Topic-by-topic guide index](concurrency/topics/README.md)
+- [Implementation tasks and local workflow](concurrency/tasks/README.md)
+- [Senior assessment and design-review prompts](concurrency/ASSESSMENT.md)
+- [Recall notes and evidence template](concurrency/NOTES.md)
+
 ## Doubts and focused clarifications
 
 The [doubts study plan and detailed index](doubts/README.md) answers seven foundational questions individually, with runnable examples and interview checkpoints. This supplements the numbered modules without renumbering them.

@@ -298,3 +298,7 @@ Expected `go run .` output: `4`. See [runnable files](examples/) for the two alt
 - [ ] Repeat from memory after 1, 3, 7, 14 and 30 days as needed, recording misses in [NOTES.md](NOTES.md) and [REVISION-LOG.md](../REVISION-LOG.md).
 
 **Primary references:** [Go spec — types and struct types](https://go.dev/ref/spec#Struct_types), [composite literals](https://go.dev/ref/spec#Composite_literals), [method sets](https://go.dev/ref/spec#Method_sets), [Go blog — effective Go allocation](https://go.dev/doc/effective_go#allocation_new), [Go memory model](https://go.dev/ref/mem), [sync package](https://pkg.go.dev/sync).
+
+## Related concurrency practice
+
+Continue with the [senior concurrency topic guides](../concurrency/topics/README.md) and [unsolved implementation tasks](../concurrency/tasks/README.md). Record actual test and recall evidence in the [concurrency notes](../concurrency/NOTES.md).

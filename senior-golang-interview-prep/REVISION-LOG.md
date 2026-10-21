@@ -8,7 +8,7 @@ An append-only record of *what you can recall and defend today*. A module being 
 
 | Date | Module | Confidence (1–5) | Recall without notes | Missed concepts / symptoms | Hands-on proof | Next review |
 |---|---|---|---|---|---|---|
-| _YYYY-MM-DD_ | _1–8 or future module_ | _1–5_ | _Yes/partial/no_ | _Specific gap_ | _Command, test, benchmark or code note_ | _YYYY-MM-DD_ |
+| _YYYY-MM-DD_ | _1–8, concurrency topic/task, or future module_ | _1–5_ | _Yes/partial/no_ | _Specific gap_ | _Command, test, benchmark or code note_ | _YYYY-MM-DD_ |
 
 ## Before each new interview
 
@@ -28,3 +28,7 @@ Treat these as reminders, not claims of learning: revisit hard material after **
 | Date | Exercise | Command / approach | Expected | Observed | Conclusions / follow-up |
 |---|---|---|---|---|---|
 | _YYYY-MM-DD_ | _e.g., race detector counter_ | _`go test -race`_ | | | |
+
+## Concurrency track
+
+Use the [concurrency evidence template](concurrency/NOTES.md) for task results and the [assessment rubric](concurrency/ASSESSMENT.md) for design defense. Record topic/task IDs in the tables above; leave completion and confidence unclaimed until a real attempt.

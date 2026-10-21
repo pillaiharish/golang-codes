@@ -1583,3 +1583,7 @@ Try answering from memory *before* opening the relevant section. Mark the boxes 
 - [ ] Defend the transition from best-effort in-memory queuing to at-least-once delivery.
 
 **After review:** record your confidence, uncertainties, and evidence in [NOTES.md](NOTES.md) and add one entry to the [revision log](../REVISION-LOG.md).
+
+## Related concurrency practice
+
+Continue with the [senior concurrency topic guides](../concurrency/topics/README.md) and [unsolved implementation tasks](../concurrency/tasks/README.md). Record actual test and recall evidence in the [concurrency notes](../concurrency/NOTES.md).
