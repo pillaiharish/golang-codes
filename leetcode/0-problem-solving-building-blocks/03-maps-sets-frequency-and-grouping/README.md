@@ -45,6 +45,7 @@ Choose one map type for Two Sum, Contains Duplicate, Valid Anagram, Group Anagra
 ## Apply to the existing repository
 - [1. Two Sum](../../1.%20Two%20Sum/main.go)
 - [49. Group Anagrams](../../49.%20Group%20Anagrams/main.go)
+- [128. Longest Consecutive Sequence](../../128.%20Longest%20Consecutive%20Sequence/README.md) — use a membership set; only start walks where the predecessor is missing.
 - [146. LRU Cache](../../146.%20LRU%20Cache/main.go)
 - [1460. Make Two Arrays Equal by Reversing Subarrays](../../1460.%20Make%20Two%20Arrays%20Equal%20by%20Reversing%20Subarrays/main.go)
 - [217. Contains Duplicate](../../217.%20Contains%20Duplicate/main.go)
