@@ -6,11 +6,11 @@
 
 ## Problem in your own words
 
-Determine whether one person can attend every scheduled meeting.
+Given meeting intervals `intervals[i] = [start, end]`, decide whether **one person** could attend **every** meeting from start to finish. Return `true` only when no pair of meetings overlaps. Input meetings may appear in any order.
 
-Meetings are half-open time intervals: a meeting may start exactly when another ends.
+An interval finishing at time `t` does **not** conflict with an interval starting at `t`: for example, `[1,3]` and `[3,5]` are compatible. Return a boolean; do not return a count or a reorganized schedule.
 
-This is an original study summary, not a verbatim copy of LeetCode's statement. Consult the official page for its exact wording, diagrams, and further clarifications. Source metadata was checked on 2026-10-20.
+**Readable source:** [AlgoMonster problem #252](https://algo.monster/liteproblems/252) (reviewed 2026-10-21). This README is a paraphrased learning statement, not copied editorial text.
 
 ## Input and output contract
 
@@ -22,13 +22,39 @@ func canAttendMeetings(intervals [][]int) bool { /* TODO */ }
 
 ## Constraints and boundary conditions
 
-- The full numeric bounds are not publicly exposed by the source endpoint. Check the official statement with authorized access; no numeric limits are invented here.
+- Each interval contains its meeting's start and end time.
+- Endpoints that only touch are not an overlap; simultaneous active meetings are.
+- Do not assume the input is sorted.
+- Verified numerical bounds were not available in the accessible description. The empty-list practice case below does not assert that empty input is accepted by the judge.
 
 ## Example input and output data
 
-The source does not expose the full worked examples publicly. The local demo is an independent fixture, not an official expected-output test.
+**Example 1 — overlapping meetings (reference)**
 
-The example data is for understanding the contract. No explanation, solution trace, or algorithm is supplied. The local demo uses the first source fixture where practical; tree/graph/codec identity cases use small independent fixtures described in `localDemo`.
+```text
+Input:  intervals = [[0,30],[5,10],[15,20]]
+Output: false
+```
+
+The meeting from 0 to 30 conflicts with meetings inside that interval.
+
+**Example 2 — nonoverlapping, unsorted input (practice)**
+
+```text
+Input:  intervals = [[7,10],[2,4]]
+Output: true
+```
+
+**Example 3 — shared endpoint (practice)**
+
+```text
+Input:  intervals = [[1,3],[3,5]]
+Output: true
+```
+
+If an empty list is permitted, `intervals = []` has no conflicts and yields `true`.
+
+The Go starter stays unsolved. Reference examples and separately constructed practice cases are labeled; they teach expected behavior without including an algorithm or solution trace.
 
 ## Ordered prerequisites
 

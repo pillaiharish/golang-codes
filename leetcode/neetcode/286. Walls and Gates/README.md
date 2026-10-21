@@ -6,11 +6,17 @@
 
 ## Problem in your own words
 
-Fill each empty room with its shortest four-directional distance to a gate.
+You are given a grid of rooms, walls, and gates. Cells hold one of three values:
 
-Walls are -1, gates are 0, and empty rooms use 2147483647. Unreachable rooms keep that sentinel; mutate the grid.
+- `-1`: wall; movement through it is forbidden.
+- `0`: gate (destination).
+- `2147483647` (`INF`): empty room awaiting a distance.
 
-This is an original study summary, not a verbatim copy of LeetCode's statement. Consult the official page for its exact wording, diagrams, and further clarifications. Source metadata was checked on 2026-10-20.
+**Modify the grid in place** so that each empty room contains the **minimum number of steps needed to reach any gate**. Each step moves horizontally or vertically to an adjacent cell; diagonal moves do not count. Walls block paths.
+
+Keep gates and walls unchanged. If there is no path from a room to any gate, its value stays `INF`. The Go function does **not** return a matrix; the updated argument is the result.
+
+**Readable source:** [AlgoMonster problem #286](https://algo.monster/liteproblems/286) (reviewed 2026-10-21). This README is a paraphrased learning statement, not copied editorial text.
 
 ## Input and output contract
 
@@ -22,13 +28,46 @@ func wallsAndGates(rooms [][]int) { /* TODO */ }
 
 ## Constraints and boundary conditions
 
-- The full numeric bounds are not publicly exposed by the source endpoint. Check the official statement with authorized access; no numeric limits are invented here.
+- Only up/down/left/right movement is allowed; each adjacent move costs one.
+- Walls `-1` and gates `0` must retain their values.
+- Unreachable `INF` cells must stay unchanged.
+- Verified numeric grid dimensions were not exposed by the accessible reference.
 
 ## Example input and output data
 
-The source does not expose the full worked examples publicly. The local demo is an independent fixture, not an official expected-output test.
+**Example 1 — update the input grid (local fixture)**
 
-The example data is for understanding the contract. No explanation, solution trace, or algorithm is supplied. The local demo uses the first source fixture where practical; tree/graph/codec identity cases use small independent fixtures described in `localDemo`.
+```text
+Input:
+rooms = [[INF, -1,   0, INF],
+         [INF, INF, INF,  -1],
+         [INF,  -1, INF,  -1],
+         [  0,  -1, INF, INF]]
+
+Output (same rooms grid after mutation):
+rooms = [[3, -1, 0,  1],
+         [2,  2, 1, -1],
+         [1, -1, 2, -1],
+         [0, -1, 3,  4]]
+```
+
+Here `INF = 2147483647`.
+
+**Example 2 — unreachable room (practice)**
+
+```text
+Input:  rooms = [[0,-1,INF]]
+Output: rooms = [[0,-1,INF]]
+```
+
+**Example 3 — gate only (practice)**
+
+```text
+Input:  rooms = [[0]]
+Output: rooms = [[0]]
+```
+
+The Go starter stays unsolved. Reference examples and separately constructed practice cases are labeled; they teach expected behavior without including an algorithm or solution trace.
 
 ## Ordered prerequisites
 

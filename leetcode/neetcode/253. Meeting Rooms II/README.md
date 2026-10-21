@@ -6,11 +6,13 @@
 
 ## Problem in your own words
 
-Return the smallest number of rooms needed for all meetings.
+You are given meeting intervals `[start, end]`. Meetings must occur at their specified times. Two meetings active at the same instant need **different rooms**.
 
-Overlapping meetings need different rooms; a room can be reused at the moment its previous meeting ends.
+Return the **minimum number of conference rooms** required to schedule all meetings. A room can be assigned to another meeting at the exact instant the previous meeting ends: `[1,3]` and `[3,5]` may share one room.
 
-This is an original study summary, not a verbatim copy of LeetCode's statement. Consult the official page for its exact wording, diagrams, and further clarifications. Source metadata was checked on 2026-10-20.
+This is different from #252: return an **integer** room count, not a boolean about one person's attendance.
+
+**Readable source:** [AlgoMonster problem #253](https://algo.monster/liteproblems/253) (reviewed 2026-10-21). This README is a paraphrased learning statement, not copied editorial text.
 
 ## Input and output contract
 
@@ -22,13 +24,38 @@ func minMeetingRooms(intervals [][]int) int { /* TODO */ }
 
 ## Constraints and boundary conditions
 
-- The full numeric bounds are not publicly exposed by the source endpoint. Check the official statement with authorized access; no numeric limits are invented here.
+- The list may not be sorted.
+- Concurrently active meetings cannot share rooms; end/start equality permits reuse.
+- The publicly accessible description does not establish trustworthy numerical limits. The empty-input case below is a supplemental exercise.
 
 ## Example input and output data
 
-The source does not expose the full worked examples publicly. The local demo is an independent fixture, not an official expected-output test.
+**Example 1 — minimum two rooms (reference)**
 
-The example data is for understanding the contract. No explanation, solution trace, or algorithm is supplied. The local demo uses the first source fixture where practical; tree/graph/codec identity cases use small independent fixtures described in `localDemo`.
+```text
+Input:  intervals = [[0,30],[5,10],[15,20]]
+Output: 2
+```
+
+The long meeting overlaps each short meeting; the two short meetings do not overlap each other.
+
+**Example 2 — only one room (practice)**
+
+```text
+Input:  intervals = [[7,10],[2,4]]
+Output: 1
+```
+
+**Example 3 — three meetings in progress (practice)**
+
+```text
+Input:  intervals = [[1,5],[2,6],[3,7]]
+Output: 3
+```
+
+If an empty list is allowed, `intervals = []` requires `0` rooms.
+
+The Go starter stays unsolved. Reference examples and separately constructed practice cases are labeled; they teach expected behavior without including an algorithm or solution trace.
 
 ## Ordered prerequisites
 
