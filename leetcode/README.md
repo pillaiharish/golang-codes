@@ -4,7 +4,7 @@
 
 **Purpose:** turn individual Go solutions into **understandable, revisable, repeatable, recallable** mental patterns. Do not learn every problem from scratch before each new interview.
 
-[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all nine problem tests](test-all.sh)
+[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all ten problem tests](test-all.sh)
 
 ## How to use this index
 
@@ -41,7 +41,7 @@ Run the foundation examples and validate links with:
 python3 leetcode/0-problem-solving-building-blocks/verify-examples.py
 ```
 
-This is separate from `bash leetcode/test-all.sh`, which tests the nine newly documented problem implementations.
+This is separate from `bash leetcode/test-all.sh`, which tests the ten newly documented problem implementations.
 
 ## Pattern quick-reference
 
@@ -52,6 +52,7 @@ This is separate from `bash leetcode/test-all.sh`, which tests the nine newly do
 | Same letters in a different order | Compare count signatures | [#242](242.%20Valid%20Anagram/README.md), [#49](49.%20Group%20Anagrams/README.md) |
 | Group words with equivalent content | Canonical sorted key or frequency key | [#49](49.%20Group%20Anagrams/README.md) |
 | Max in every moving window | Monotonic deque of indices (front = max) | [#239](239.%20Sliding%20Window%20Maximum/README.md) |
+| Longest run of consecutive values in an unsorted array | Hash set; expand only from a value with no predecessor | [#128](128.%20Longest%20Consecutive%20Sequence/README.md) |
 | Fast key lookup + least recent eviction | Map + doubly linked list; head MRU, tail LRU | [#146](146.%20LRU%20Cache/README.md) |
 | Word/prefix insert and search | Trie: character paths plus isEnd | [#208](208.%20Implement%20Trie%20%28Prefix%20Tree%29/README.md) |
 | Inorder traversal | Left → Node → Right; recursion or explicit stack | [#94](94.%20Binary%20Tree%20Inorder%20Traversal/README.md) |
@@ -60,7 +61,7 @@ This is separate from `bash leetcode/test-all.sh`, which tests the nine newly do
 
 ## Detailed problem index (LeetCode numbers)
 
-These nine problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
+These ten problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
 
 | # | Problem guide | Primary idea / related new variant | Solution | Tests | Your confidence | Last recall | Next recall |
 |---|---|---|---|---|---|---|---|
@@ -68,6 +69,7 @@ These nine problems use the **same guide structure**: recognition → intuition 
 | 41 | [First Missing Positive](41.%20First%20Missing%20Positive/README.md) | In-place cyclic placement | [Go](41.%20First%20Missing%20Positive/main.go) | [Tests](41.%20First%20Missing%20Positive/main_test.go) | — | — | — |
 | 49 | [Group Anagrams](49.%20Group%20Anagrams/README.md) | **Existing sorted-key methods preserved**; new array-frequency key | [Original](49.%20Group%20Anagrams/main.go) · [Variant](49.%20Group%20Anagrams/variants.go) | [Tests](49.%20Group%20Anagrams/main_test.go) | — | — | — |
 | 94 | [Binary Tree Inorder Traversal](94.%20Binary%20Tree%20Inorder%20Traversal/README.md) | Pointer-to-slice; closure; stack | [Go](94.%20Binary%20Tree%20Inorder%20Traversal/main.go) | [Tests](94.%20Binary%20Tree%20Inorder%20Traversal/main_test.go) | — | — | — |
+| 128 | [Longest Consecutive Sequence](128.%20Longest%20Consecutive%20Sequence/README.md) | Hash-set sequence starts; avoid repeated scans | [Go](128.%20Longest%20Consecutive%20Sequence/main.go) | [Tests](128.%20Longest%20Consecutive%20Sequence/main_test.go) | — | — | — |
 | 146 | [LRU Cache](146.%20LRU%20Cache/README.md) | Map + doubly linked list | [Go](146.%20LRU%20Cache/main.go) | [Tests](146.%20LRU%20Cache/main_test.go) | — | — | — |
 | 208 | [Implement Trie](208.%20Implement%20Trie%20%28Prefix%20Tree%29/README.md) | Prefix paths + terminal flags | [Go](208.%20Implement%20Trie%20%28Prefix%20Tree%29/main.go) | [Tests](208.%20Implement%20Trie%20%28Prefix%20Tree%29/main_test.go) | — | — | — |
 | 217 | [Contains Duplicate](217.%20Contains%20Duplicate/README.md) | Set (`map[int]struct{}`) | [Go](217.%20Contains%20Duplicate/main.go) | [Tests](217.%20Contains%20Duplicate/main_test.go) | — | — | — |
