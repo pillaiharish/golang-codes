@@ -1,6 +1,6 @@
 # 128 — Longest Consecutive Sequence (Go)
 
-[← LeetCode index](../README.md) · [Go solution](main.go) · [Table-driven tests](main_test.go) · [Official LeetCode problem](https://leetcode.com/problems/longest-consecutive-sequence/) · [Unsolved NeetCode practice starter](../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) · [Revision log](../REVISION-LOG.md)
+[← LeetCode index](../README.md) · [Go solution](main.go) · [Table-driven tests](main_test.go) · **[My failed attempts + learned concepts](LEARNING-NOTES.md)** · [Official LeetCode problem](https://leetcode.com/problems/longest-consecutive-sequence/) · [Unsolved NeetCode practice starter](../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) · [Revision log](../REVISION-LOG.md)
 
 **Pattern:** Hash set + identify sequence starts · **Difficulty:** Medium · **Expected:** O(n) average time and O(n) space.
 
@@ -46,6 +46,18 @@ Work through these in order, explaining each Go operation out loud:
 **Second idea (the observed failing experiment):** Put numbers into `map[int]bool`, walk backward from *every* element, and set visited entries to `false`. This loses connections: processing a number can mark part of a run visited before later starts discover the remainder. Removing the `false` assignments avoids that bug but repeatedly rescans prefixes and can take O(n²) time.
 
 **Preferred idea:** Keep the map as an immutable membership set. Skip all numbers that have a predecessor. Only for numbers without predecessors, walk forward counting `num+1`, `num+2`, ... until a gap. Every value gets counted in at most one run.
+
+### My mistakes and Go concepts to revisit
+
+The full [learning notes](LEARNING-NOTES.md) preserve the original unsuccessful Go function **verbatim** and explain each bug with traces, not just the final fix:
+
+- **Incorrect visited state:** `map1[k] = false` keeps the key in the map; `_, ok := map1[k-1]` still finds that key even though `map1[k-1]` may now be false. The original version returns **2** for `[1,2,3,4]` instead of 4.
+- **One-direction traversal:** starting from a middle value and marking it visited while walking only backward can leave its forward neighbors disconnected.
+- **Maximum update on just one exit path:** a `for map1[k]` loop may terminate without reaching the `largest` update. Moving the update outside the loop is needed but not sufficient without correcting the traversal invariant.
+- **TLE after removing marking:** scanning a consecutive prefix again from each element creates `1+2+...+n` checks → O(n²), regardless of average O(1) map lookup.
+- **Syntax and reasoning fundamentals:** `seen[k]` vs `_, ok := seen[k]`; `delete` vs setting false; map keys vs slice elements; map iteration order; zero values; `continue`; nested loops with amortized total O(n); keeping just a running maximum.
+
+The notes also explain why a **two-direction visited** variant is valid, while the preferred immutable-set version is simpler to reason about.
 
 ## 3. Invariant / why it is correct
 
