@@ -9,6 +9,8 @@ Before any optimized solution, know indexing, length, capacity, traversal, swapp
 - `var counts [26]int` creates a comparable, zero-initialized fixed array.
 - `nums := []int{3,1,2}` creates a slice. `nums[i]` indexes, `nums[i:j]` reslices, `len(nums)` measures elements.
 - `make([]int,0,n)` reserves capacity but leaves length zero; append grows length.
+- `append` requires a **slice**: `out := []string{}` followed by `out = append(out, "hi")`. A `string` is not a slice; concatenate strings with `+`/`+=`, or use `strings.Builder` for repeated writes.
+- `var out []string` creates a nil slice, while `out := []string{}` creates a non-nil empty slice; both can be appended to. `var out string` creates one empty string, not a result collection.
 - `for i,v := range nums` traverses indices and *copies* of values. Write to `nums[i]` to modify.
 - `nums[i], nums[j] = nums[j], nums[i]` swaps values, used for cyclic placement.
 
@@ -35,6 +37,8 @@ Swap `[3,1,2]` at indices 0,1 → `[1,3,2]`. `output` length changes from 0 to 1
 Swap first and last of `[9,2,5]` → `[5,2,9]`; explain the length/capacity of `make([]int,0,5)` after 2 appends.
 
 ## Typical mistakes
+- `append("hello", "world")` does not compile: its first argument must be a slice, not a string.
+- `var out string` cannot be returned from a function declared to return `[]string`; read the function's return type before choosing a variable type.
 - Index `i == len(nums)` is out of bounds.
 - Reslicing does not copy; backing-array memory can remain retained.
 - An array such as `[26]int` may be used as a map key; `[]int` cannot.
