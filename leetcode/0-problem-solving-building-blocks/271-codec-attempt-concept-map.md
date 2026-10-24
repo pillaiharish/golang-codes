@@ -17,6 +17,7 @@ This is a **debugging and revision record**, not a claim that the problem has be
 | `var out string` in a function returning `[]string` | A single string is not a slice of strings. | [01. Slice declarations](01-arrays-and-slices/README.md), [20. Return contracts](20-function-signatures-types-and-scope/README.md) |
 | `out := append(out, s)` inside the loop | Once `out` is correctly a slice, `:=` inside the loop creates a shadow variable instead of updating the outer result. | [20. `:=` versus `=` and shadowing](20-function-signatures-types-and-scope/README.md) |
 | No byte-offset scan in `decode` | The decoder needs indices to read the length, then exactly that many payload bytes; slicing ends are exclusive. | [02. Loops and bounds](02-loops-and-bounds/README.md), [04. Byte slicing](04-strings-bytes-runes-and-parsing/README.md) |
+| Trying `unicode.IsDigit(encoded[i])` | `encoded[i]` is a `byte`; `unicode.IsDigit` requires a `rune`. Casting a byte to rune is not UTF-8 decoding. | [04. Byte vs rune and Unicode digits](04-strings-bytes-runes-and-parsing/README.md) |
 
 ## Algorithm invariant — the information you must preserve
 
@@ -35,6 +36,13 @@ During decoding, `#` only separates a length from its payload. Once a length is 
 
 After each record, set `i = end`. Loop invariant: all bytes before `i` have been decoded into complete original strings.
 
+## Follow-up finding: why the two string loops differ
+
+- `for _, r := range "4asdf1a"` produces runes (`int32`). `for i := 0; i < len(s); i++ { b := s[i] }` produces bytes (`uint8`). For this entirely ASCII example the **numeric values are equal**, despite the different types.
+- `unicode.IsDigit(r)` compiles; `unicode.IsDigit(s[i])` does **not**, because Go does not implicitly convert `byte` to `rune`. `unicode.IsDigit(rune(s[i]))` is a conversion of a single byte, not UTF-8 decoding.
+- For `"4٤a"`, `range` sees the Arabic-Indic digit `٤`; byte indexing only sees its two UTF-8 bytes. `unicode.IsDigit` can identify that Unicode digit, but `strconv.Atoi` expects ASCII decimal syntax.
+- For #271, the encoded *length prefix* is ASCII. Scan until `#`, parse its ASCII decimal digits with `strconv.Atoi`, and then use **byte counts** (`len(payload)` and `s[start:end]`). Do not run digit checks across arbitrary payload data.
+
 ## What was already covered vs what was added
 
 - **Already covered:** 01 had basic slice append; 02 had exclusive slice bounds; 04 had `Atoi` and bytes versus runes; 11 had struct fields and pointer receivers. Those explanations remain.
@@ -48,5 +56,6 @@ After each record, set `i = end`. Loop invariant: all bytes before `i` have been
 3. Predict the result when you use `out := append(out, item)` inside a loop block instead of `out = append(out, item)`.
 4. Encode and dry-run decode for `[]string{"ab#cd", "", "é"}`. Remember: `len("é")` is **2 bytes**.
 5. Test encoding and decoding an empty slice and a slice containing one empty string. They are different inputs.
+6. Predict the `range` byte offsets and `len` for `"A😊B"`. Explain the type error in `unicode.IsDigit(s[i])`, and why ASCII prefix parsing should not accept arbitrary Unicode digits.
 
 After practicing, record actual progress—not assumed mastery—in [REVISION-LOG.md](../REVISION-LOG.md).
