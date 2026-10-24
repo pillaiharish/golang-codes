@@ -11,6 +11,7 @@ Strings are immutable UTF-8 byte sequences. Sorting anagram characters, extracti
 - `strings.Join(parts, "")` builds a sorted signature from sorted pieces.
 - `record[11:13]` selects two bytes, provided length is at least 13.
 - `age, err := strconv.Atoi(record[11:13])` converts decimal text; handle `err`.
+- `strconv.Itoa(n)` converts an `int` to decimal text; `strconv.Atoi(text)` converts decimal text back to an `int`. These operate in opposite directions.
 - `s[i]-'a'` is safe only when the input contract limits bytes to lower-case ASCII a–z.
 
 ## Runnable example
@@ -35,6 +36,10 @@ func main() {
 Extract the age from `5303914400F9211`; answer 92. Explain why `[26]int` is not valid for an arbitrary Unicode anagram.
 
 ## Typical mistakes
+- `strings.Split(encoded, "#")` is unsafe for arbitrary payload strings: a payload can itself contain `#`. A reversible framing scheme is `length#payload`: read the decimal length up to the **first** `#`, then consume exactly that many bytes, even if those bytes include `#`.
+- `strconv.Itoa(len(s)) + s + "#"` has no explicit boundary between a potentially multi-digit length and payload. Use `strconv.Itoa(len(s)) + "#" + s` instead.
+- `len("é") == 2` because Go counts UTF-8 bytes. A byte-length prefix is correct if decoding uses byte offsets and slicing, rather than rune counts.
+- Repeated `answer += piece` is fine for a small learning example, but can repeatedly copy accumulated data; prefer `strings.Builder` for substantial output.
 - Unvalidated byte slicing may panic on too-short strings.
 - Unicode code points differ from user-perceived letters/combining sequences.
 - Do not use `s[i]` to represent a Unicode character unless the alphabet is ASCII.

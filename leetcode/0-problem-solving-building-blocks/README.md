@@ -4,7 +4,9 @@
 
 [← Main LeetCode index](../README.md) · [Study rules](../AGENTS.md) · [Review log](../REVISION-LOG.md) · [Run all foundation examples](verify-examples.py)
 
-Every problem in this repository can be broken down into smaller Go operations and one or two reusable invariants. **Choose either direction:** start with a fundamental, or select a LeetCode problem and study its prerequisites in order. These are **19 specific lessons derived from the 24 problem folders on this PR branch**, not a generic topic wishlist.
+Every problem in this repository can be broken down into smaller Go operations and one or two reusable invariants. **Choose either direction:** start with a fundamental, or select a LeetCode problem and study its prerequisites in order. These are **20 specific lessons**, based on the existing problem folders and syntax gaps found during practice, not a generic topic wishlist.
+
+**Debugging-based revision:** [LeetCode 271 Codec attempt — mistake-to-concept map](271-codec-attempt-concept-map.md). This links a real first attempt to the existing Go foundations and new lesson 20; it does not add a purported #271 solution folder.
 
 ## How to learn, revise, and recall (the same cycle every time)
 
@@ -40,6 +42,7 @@ Every problem in this repository can be broken down into smaller Go operations a
 | 17 | [Complexity and constraints](17-complexity-amortization-and-input-contracts/README.md) | Big-O, amortization, preconditions | [#1](../1.%20Two%20Sum/main.go), [#41](../41.%20First%20Missing%20Positive/main.go), [#94](../94.%20Binary%20Tree%20Inorder%20Traversal/main.go), [#146](../146.%20LRU%20Cache/main.go), [#153](../153.%20Find%20Minimum%20in%20Rotated%20Sorted%20Array/main.go), [#167](../167.%20Two%20Sum%20II%20-%20Input%20Array%20Is%20Sorted/main.go), [#217](../217.%20Contains%20Duplicate/main.go), [#239](../239.%20Sliding%20Window%20Maximum/main.go), [#441](../441.%20Arranging%20Coins/main.go), [#757](../757.%20Set%20Intersection%20Size%20At%20Least%20Two/main.go), [#1460](../1460.%20Make%20Two%20Arrays%20Equal%20by%20Reversing%20Subarrays/main.go), [#1508](../1508.%20Range%20Sum%20of%20Sorted%20Subarray%20Sums/main.go), [#128](../128.%20Longest%20Consecutive%20Sequence/main.go) |
 | 18 | [Interfaces and stdlib list](18-interfaces-type-assertions-and-standard-library-containers/README.md) | any, type assertions, container/list | [#353](../353%20-%20Design%20Snake%20Game/main.go) |
 | 19 | [In-place cyclic placement](19-in-place-cyclic-placement/README.md) | x belongs at x-1; duplicate guard | [#41](../41.%20First%20Missing%20Positive/main.go) |
+| 20 | [Function signatures, types and scope](20-function-signatures-types-and-scope/README.md) | Return types, `:=`/`=`, shadowing, types vs values | [#359](../359.%20Logger%20Rate%20Limiter/main.go), [#271 attempt](271-codec-attempt-concept-map.md) |
 
 ## B. Problem → exact prerequisites (all 24 problem folders)
 
@@ -102,6 +105,7 @@ Trace: compare (2,7) → 9 → return `[0,1]`. Time O(n²), auxiliary space O(1)
 - **Stateful O(1) designs:** [maps](03-maps-sets-frequency-and-grouping/README.md) → [pointers and links](11-structs-pointers-methods-and-linked-lists/README.md) → [state transitions](16-stateful-simulation-and-sequential-comparison/README.md) → [LRU Cache #146](../146.%20LRU%20Cache/README.md).
 - **Indices and windows:** [slices](01-arrays-and-slices/README.md) → [circular buffers](12-circular-buffers-and-deques/README.md) → [monotonic deque](08-sliding-window-and-monotonic-deque/README.md) → [Sliding Window Maximum #239](../239.%20Sliding%20Window%20Maximum/README.md).
 - **Reasoning before code:** [index placement](19-in-place-cyclic-placement/README.md) → [amortized analysis](17-complexity-amortization-and-input-contracts/README.md) → [First Missing Positive #41](../41.%20First%20Missing%20Positive/README.md).
+- **When the idea is right but Go does not compile:** [function contracts and scope](20-function-signatures-types-and-scope/README.md) → [slices and append](01-arrays-and-slices/README.md) → [struct ownership and state](11-structs-pointers-methods-and-linked-lists/README.md) → [length-prefixed string parsing](04-strings-bytes-runes-and-parsing/README.md) → [the #271 mistake map](271-codec-attempt-concept-map.md).
 
 ---
 

@@ -22,7 +22,7 @@ def main() -> int:
     foundations = Path(__file__).resolve().parent
     leetcode = foundations.parent
     lessons = sorted(foundations.glob("[0-9][0-9]-*/README.md"))
-    expected_count = 19
+    expected_count = 20
     if len(lessons) != expected_count:
         print(f"ERROR: expected {expected_count} lessons; found {len(lessons)}")
         return 1
