@@ -4,7 +4,7 @@
 
 **Purpose:** turn individual Go solutions into **understandable, revisable, repeatable, recallable** mental patterns. Do not learn every problem from scratch before each new interview.
 
-[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all ten problem tests](test-all.sh)
+[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all 14 guided problem tests](test-all.sh)
 
 ## How to use this index
 
@@ -29,11 +29,26 @@
 
 Leave confidence and dates blank until a genuine attempt. **Reading a solution is not the same as recalling it.**
 
-## Start with basic building blocks (now covers 23 problems)
+### Completed problems reported by the learner
 
-Before solving an unfamiliar question, follow the **[foundation prerequisite map for all 23 problem folders](0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-23-problem-folders)**. It explains which Go operations and DSA patterns each problem assumes, in the order worth learning.
+The learner reports completing **#1, #36, #128, #238, #271 and #359**. Their [quick revision cards](#completed-problem-revision-cards) record steps, invariants and mistakes; this does **not** imply cold recall was verified or assign a confidence score.
 
-Start small: [arrays and slices](0-problem-solving-building-blocks/01-arrays-and-slices/README.md) → [loops and indexing](0-problem-solving-building-blocks/02-loops-and-bounds/README.md) → [maps, sets, and counters](0-problem-solving-building-blocks/03-maps-sets-frequency-and-grouping/README.md) → [Two Sum #1](1.%20Two%20Sum/README.md). Each of the **19 foundation lessons** has a standalone Go example, dry run, tiny exercise, mistakes to avoid, and backlinks to solved problems.
+#### Completed-problem revision cards
+
+| Problem | Quick card | Main concept |
+|---|---|---|
+| [#1 Two Sum](1.%20Two%20Sum/README.md) | [Recall](1.%20Two%20Sum/REVISION-CARD.md) | Map of previously seen value → index |
+| [#36 Valid Sudoku](36.%20Valid%20Sudoku/README.md) | [Recall](36.%20Valid%20Sudoku/REVISION-CARD.md) | Row/column/box membership |
+| [#128 Longest Consecutive Sequence](128.%20Longest%20Consecutive%20Sequence/README.md) | [Recall](128.%20Longest%20Consecutive%20Sequence/REVISION-CARD.md) | Expand only from sequence starts |
+| [#238 Product of Array Except Self](238.%20Product%20of%20Array%20Except%20Self/README.md) | [Recall](238.%20Product%20of%20Array%20Except%20Self/REVISION-CARD.md) | Exclusive prefix/suffix products |
+| [#271 Encode and Decode Strings](271.%20Encode%20and%20Decode%20Strings/README.md) | [Recall](271.%20Encode%20and%20Decode%20Strings/REVISION-CARD.md) | Byte-length framing and cursor bounds |
+| [#359 Logger Rate Limiter](359.%20Logger%20Rate%20Limiter/README.md) | [Recall](359.%20Logger%20Rate%20Limiter/REVISION-CARD.md) | Persistent keyed cooldown state |
+
+## Start with basic building blocks (now covers 27 problems)
+
+Before solving an unfamiliar question, follow the **[foundation prerequisite map for all 27 problem folders](0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-27-problem-folders)**. It explains which Go operations and DSA patterns each problem assumes, in the order worth learning.
+
+Start small: [arrays and slices](0-problem-solving-building-blocks/01-arrays-and-slices/README.md) → [loops and indexing](0-problem-solving-building-blocks/02-loops-and-bounds/README.md) → [maps, sets, and counters](0-problem-solving-building-blocks/03-maps-sets-frequency-and-grouping/README.md) → [Two Sum #1](1.%20Two%20Sum/README.md). Each of the **20 foundation lessons** has a standalone Go example, dry run, tiny exercise, mistakes to avoid, and backlinks to solved problems.
 
 Run the foundation examples and validate links with:
 
@@ -41,18 +56,22 @@ Run the foundation examples and validate links with:
 python3 leetcode/0-problem-solving-building-blocks/verify-examples.py
 ```
 
-This is separate from `bash leetcode/test-all.sh`, which tests the ten newly documented problem implementations.
+This is separate from `bash leetcode/test-all.sh`, which tests the 14 guided problem implementations.
 
 ## Pattern quick-reference
 
 | Trigger in problem | Recall this state / invariant | Relevant questions |
 |---|---|---|
 | Unsorted values + two indices + target | Previously seen value→index; check complement first | [#1](1.%20Two%20Sum/README.md) |
+| 9×9 grid with row/column/box duplicate rules | Three fixed `[9][9]bool` seen tables | [#36](36.%20Valid%20Sudoku/README.md) |
 | Any value repeated? | Seen values in a set | [#217](217.%20Contains%20Duplicate/README.md) |
 | Same letters in a different order | Compare count signatures | [#242](242.%20Valid%20Anagram/README.md), [#49](49.%20Group%20Anagrams/README.md) |
 | Group words with equivalent content | Canonical sorted key or frequency key | [#49](49.%20Group%20Anagrams/README.md) |
 | Max in every moving window | Monotonic deque of indices (front = max) | [#239](239.%20Sliding%20Window%20Maximum/README.md) |
 | Longest run of consecutive values in an unsorted array | Hash set; expand only from a value with no predecessor | [#128](128.%20Longest%20Consecutive%20Sequence/README.md) |
+| Product of all elements except current, no division | Exclusive prefix and suffix running products | [#238](238.%20Product%20of%20Array%20Except%20Self/README.md) |
+| Reversible serialization of arbitrary strings | Byte length, `#`, payload; decode with offsets | [#271](271.%20Encode%20and%20Decode%20Strings/README.md) |
+| Per-key event cooldown with repeated calls | Map of last successfully accepted timestamp | [#359](359.%20Logger%20Rate%20Limiter/README.md) |
 | Fast key lookup + least recent eviction | Map + doubly linked list; head MRU, tail LRU | [#146](146.%20LRU%20Cache/README.md) |
 | Word/prefix insert and search | Trie: character paths plus isEnd | [#208](208.%20Implement%20Trie%20%28Prefix%20Tree%29/README.md) |
 | Inorder traversal | Left → Node → Right; recursion or explicit stack | [#94](94.%20Binary%20Tree%20Inorder%20Traversal/README.md) |
@@ -61,11 +80,12 @@ This is separate from `bash leetcode/test-all.sh`, which tests the ten newly doc
 
 ## Detailed problem index (LeetCode numbers)
 
-These ten problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
+These 14 problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
 
 | # | Problem guide | Primary idea / related new variant | Solution | Tests | Your confidence | Last recall | Next recall |
 |---|---|---|---|---|---|---|---|
 | 1 | [Two Sum](1.%20Two%20Sum/README.md) | Complement hash map | [Go](1.%20Two%20Sum/main.go) | [Tests](1.%20Two%20Sum/main_test.go) | — | — | — |
+| 36 | [Valid Sudoku](36.%20Valid%20Sudoku/README.md) | Three seen tables + 3×3 box indexing | [Go](36.%20Valid%20Sudoku/main.go) | [Tests](36.%20Valid%20Sudoku/main_test.go) | — | — | — |
 | 41 | [First Missing Positive](41.%20First%20Missing%20Positive/README.md) | In-place cyclic placement | [Go](41.%20First%20Missing%20Positive/main.go) | [Tests](41.%20First%20Missing%20Positive/main_test.go) | — | — | — |
 | 49 | [Group Anagrams](49.%20Group%20Anagrams/README.md) | **Existing sorted-key methods preserved**; new array-frequency key | [Original](49.%20Group%20Anagrams/main.go) · [Variant](49.%20Group%20Anagrams/variants.go) | [Tests](49.%20Group%20Anagrams/main_test.go) | — | — | — |
 | 94 | [Binary Tree Inorder Traversal](94.%20Binary%20Tree%20Inorder%20Traversal/README.md) | Pointer-to-slice; closure; stack | [Go](94.%20Binary%20Tree%20Inorder%20Traversal/main.go) | [Tests](94.%20Binary%20Tree%20Inorder%20Traversal/main_test.go) | — | — | — |
@@ -73,8 +93,11 @@ These ten problems use the **same guide structure**: recognition → intuition �
 | 146 | [LRU Cache](146.%20LRU%20Cache/README.md) | Map + doubly linked list | [Go](146.%20LRU%20Cache/main.go) | [Tests](146.%20LRU%20Cache/main_test.go) | — | — | — |
 | 208 | [Implement Trie](208.%20Implement%20Trie%20%28Prefix%20Tree%29/README.md) | Prefix paths + terminal flags | [Go](208.%20Implement%20Trie%20%28Prefix%20Tree%29/main.go) | [Tests](208.%20Implement%20Trie%20%28Prefix%20Tree%29/main_test.go) | — | — | — |
 | 217 | [Contains Duplicate](217.%20Contains%20Duplicate/README.md) | Set (`map[int]struct{}`) | [Go](217.%20Contains%20Duplicate/main.go) | [Tests](217.%20Contains%20Duplicate/main_test.go) | — | — | — |
+| 238 | [Product of Array Except Self](238.%20Product%20of%20Array%20Except%20Self/README.md) | Exclusive prefix/suffix products | [Go](238.%20Product%20of%20Array%20Except%20Self/main.go) | [Tests](238.%20Product%20of%20Array%20Except%20Self/main_test.go) | — | — | — |
 | 239 | [Sliding Window Maximum](239.%20Sliding%20Window%20Maximum/README.md) | Monotonic deque of indices | [Go](239.%20Sliding%20Window%20Maximum/main.go) | [Tests](239.%20Sliding%20Window%20Maximum/main_test.go) | — | — | — |
 | 242 | [Valid Anagram](242.%20Valid%20Anagram/README.md) | **Existing rune maps preserved**; new `[26]int` | [Original](242.%20Valid%20Anagram/main.go) · [Variant](242.%20Valid%20Anagram/variants.go) | [Tests](242.%20Valid%20Anagram/main_test.go) | — | — | — |
+| 271 | [Encode and Decode Strings](271.%20Encode%20and%20Decode%20Strings/README.md) | Byte-length framing; stateless Codec | [Go](271.%20Encode%20and%20Decode%20Strings/main.go) | [Tests](271.%20Encode%20and%20Decode%20Strings/main_test.go) | — | — | — |
+| 359 | [Logger Rate Limiter](359.%20Logger%20Rate%20Limiter/README.md) | Map of last allowed timestamp per message | [Go](359.%20Logger%20Rate%20Limiter/main.go) | [Tests](359.%20Logger%20Rate%20Limiter/main_test.go) | — | — | — |
 
 ## Existing problems still in the repository
 
@@ -84,7 +107,6 @@ These are already present and are **not renamed or rewritten** by this PR. They 
 |---|---|
 | 167 | [Two Sum II — Input Array Is Sorted](167.%20Two%20Sum%20II%20-%20Input%20Array%20Is%20Sorted/main.go) — two pointers, 1-based answers |
 | 353 | [Design Snake Game](353%20-%20Design%20Snake%20Game/README.md) |
-| 359 | [Logger Rate Limiter — problem, example and tests](359.%20Logger%20Rate%20Limiter/README.md) · [Original Go](359.%20Logger%20Rate%20Limiter/main.go) · [Tests](359.%20Logger%20Rate%20Limiter/main_test.go) |
 | 641 | [Design Circular Deque](641.%20Design%20Circular%20Deque/main.go) |
 | 757 | [Set Intersection Size At Least Two](757.%20Set%20Intersection%20Size%20At%20Least%20Two/main.go) |
 | 1366 | [Rank Teams by Votes](1366.%20Rank%20Teams%20by%20Votes/main.go) |

@@ -1,6 +1,6 @@
 # 359. Logger Rate Limiter
 
-[← LeetCode study index](../README.md) · [Existing Go implementation](main.go) · [Runnable tests](main_test.go) · [AlgoMonster problem #359](https://algo.monster/liteproblems/359)
+[← LeetCode study index](../README.md) · [Commented original Go implementation](main.go) · [Runnable tests](main_test.go) · [Quick revision card](REVISION-CARD.md) · [AlgoMonster problem #359](https://algo.monster/liteproblems/359)
 
 **Difficulty:** Easy · **Category:** Design / Hash Table / Data Stream
 
@@ -109,6 +109,18 @@ If a message has never been seen, accept it. Otherwise, accept when at least 10 
 
 An equally valid alternative is to store each message's **next permitted timestamp** instead. The existing [Go solution](main.go) uses the last-accepted timestamp, so that code is preserved unchanged.
 
+## Five-step implementation recipe — and why each step exists
+
+1. **Declare** `logs map[string]int` as a field in `Logger` — messages must remember accepted timestamps across multiple method calls. A map declared **inside** `ShouldPrintMessage` would forget everything on the next invocation.
+2. **Construct** with `Logger{logs: make(map[string]int)}` — writing to an uninitialized nil map panics. `Constructor() Logger` returns a **value** with a writable map inside it.
+3. **Lookup** `previous, exists := this.logs[message]` — distinguishes a never-seen message from an earlier accepted timestamp of zero (a zero map lookup alone cannot distinguish them).
+4. **Reject** when `exists && timestamp-previous < 10` — at nine seconds the cooldown holds; at exactly ten it expires. A rejected call must **not** update state.
+5. **On acceptance**, store `this.logs[message] = timestamp` and return true — this event, not a suppressed one, begins the next ten-second window.
+
+**Your earlier Go concept gaps:** persistent struct fields versus local variables, constructors and `make`, nil maps versus empty maps, `Logger{}` versus `Constructor()`, and receivers. Reconstruct the same stateful pattern in a simple Counter exercise after you can explain this logger. See the [90-second revision card](REVISION-CARD.md) and [structs/pointers foundation](../0-problem-solving-building-blocks/11-structs-pointers-methods-and-linked-lists/README.md).
+
+**30-second explanation:** I keep one last-accepted timestamp per message in a map owned by the logger instance. On each call I return false if that message was accepted less than ten seconds ago; otherwise I save the current timestamp and return true. Only allowed calls update the state. Hash operations are average O(1) per call, with O(number of unique messages) memory.
+
 ## Dry-run the map (existing implementation)
 
 | Call | Stored most-recent print times after call |
@@ -139,4 +151,4 @@ This interview implementation keeps one entry for each distinct message indefini
 
 ## Original implementation notes
 
-The original `main.go` already implements this specification by storing last-printed timestamps. This update only improves the question, examples and tests; it intentionally does not replace your code.
+The original `main.go` already implements this specification by storing last-printed timestamps. Its logic is preserved; numbered explanatory comments have been added to support reconstruction from a blank file.

@@ -9,9 +9,9 @@ Study these in sequence and type the tiny Go example in each before reopening th
 3. [03 maps sets frequency and grouping](../0-problem-solving-building-blocks/03-maps-sets-frequency-and-grouping/README.md)
 4. [17 complexity amortization and input contracts](../0-problem-solving-building-blocks/17-complexity-amortization-and-input-contracts/README.md)
 
-[Full mapping for all 23 LeetCode problems](../0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-23-problem-folders) · [Practice log](../REVISION-LOG.md)
+[Full mapping for all 27 LeetCode problems](../0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-27-problem-folders) · [Practice log](../REVISION-LOG.md)
 
-[← Index](../README.md) · [Building block: previously seen map](../0-problem-solving-building-blocks/README.md#1-a-hash-map-remembers-information-you-already-saw) · [Go solution](main.go) · [Tests](main_test.go) · [Revision log](../REVISION-LOG.md) · [LeetCode](https://leetcode.com/problems/two-sum/)
+[← Index](../README.md) · [Building block: previously seen map](../0-problem-solving-building-blocks/README.md#1-a-hash-map-remembers-information-you-already-saw) · [Go solution with numbered comments](main.go) · [Tests](main_test.go) · [Quick revision card](REVISION-CARD.md) · [Revision log](../REVISION-LOG.md) · [LeetCode](https://leetcode.com/problems/two-sum/)
 
 ## Recognition: how do I know it's this pattern?
 
@@ -36,6 +36,8 @@ Do *not* put the current value in the map before checking: `[3,3], target=6` nee
 3. Compute `need := target - value`.
 4. If `need` exists in the map, return `[storedIndex, i]`.
 5. Otherwise remember `value → i`; return nil if none found (outside the standard guarantee).
+
+**Why in that order:** map values must be indices because the output asks for positions; `need` changes a two-element search into a single lookup; looking up *before* storing proves we never reuse the same element; storing afterwards prepares the next iteration. The [revision card](REVISION-CARD.md) condenses these reasons for cold recall.
 
 ### Trace: `[2,7,11,15]`, target=9
 

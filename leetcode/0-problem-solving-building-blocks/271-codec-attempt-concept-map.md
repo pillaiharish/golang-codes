@@ -1,6 +1,6 @@
 # LeetCode 271 — My Codec attempt: mistake → underlying Go concept
 
-[← Foundations index](README.md) · [LeetCode 271 problem](https://leetcode.com/problems/encode-and-decode-strings/)
+[← Foundations index](README.md) · [Solved #271 guide](../271.%20Encode%20and%20Decode%20Strings/README.md) · [Quick recall card](../271.%20Encode%20and%20Decode%20Strings/REVISION-CARD.md) · [LeetCode 271 problem](https://leetcode.com/problems/encode-and-decode-strings/)
 
 This is a **debugging and revision record**, not a claim that the problem has been mastered. The first attempt had sensible building blocks—`Codec`, `Constructor`, `len`, `strconv.Itoa`, `append` and `Split`—but several type/scope mistakes and one critical serialization ambiguity.
 
