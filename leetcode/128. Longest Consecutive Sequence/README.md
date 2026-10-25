@@ -1,6 +1,6 @@
 # 128 — Longest Consecutive Sequence (Go)
 
-[← LeetCode index](../README.md) · [Go solution](main.go) · [Table-driven tests](main_test.go) · **[My failed attempts + learned concepts](LEARNING-NOTES.md)** · [Official LeetCode problem](https://leetcode.com/problems/longest-consecutive-sequence/) · [Unsolved NeetCode practice starter](../../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) · [Revision log](../REVISION-LOG.md)
+[← LeetCode index](../README.md) · [Go solution with numbered comments](main.go) · [Table-driven tests](main_test.go) · [Quick revision card](REVISION-CARD.md) · **[My failed attempts + learned concepts](LEARNING-NOTES.md)** · [Official LeetCode problem](https://leetcode.com/problems/longest-consecutive-sequence/) · [Unsolved NeetCode practice starter](../../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) · [Revision log](../REVISION-LOG.md)
 
 **Pattern:** Hash set + identify sequence starts · **Difficulty:** Medium · **Expected:** O(n) average time and O(n) space.
 
@@ -72,6 +72,8 @@ Duplicates become one map key and cannot inflate the length. No visited markers 
 3. Visit **unique map keys** with `for num := range seen`.
 4. If `seen[num-1]` is true, `continue`. Otherwise start at `current := num`, `length := 1` and increment both while `seen[current+1]`.
 5. Update `maxLength` after the walk. Return it.
+
+**Why these steps matter:** the set removes duplicates; starting the answer at zero handles empty input; iterating map keys avoids repeated duplicates; testing `num-1` prevents repeated expansion from middle values; updating the maximum *after* the complete run prevents the early-exit bug from the [first failed attempt](LEARNING-NOTES.md).
 
 ## 5. Hand trace
 

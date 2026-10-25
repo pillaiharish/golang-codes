@@ -8,7 +8,7 @@ Study these in sequence and type the tiny Go example in each before reopening th
 2. [11 structs pointers methods and linked lists](../0-problem-solving-building-blocks/11-structs-pointers-methods-and-linked-lists/README.md)
 3. [13 tries and fixed alphabet indexing](../0-problem-solving-building-blocks/13-tries-and-fixed-alphabet-indexing/README.md)
 
-[Full mapping for all 23 LeetCode problems](../0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-23-problem-folders) · [Practice log](../REVISION-LOG.md)
+[Full mapping for all 27 LeetCode problems](../0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-27-problem-folders) · [Practice log](../REVISION-LOG.md)
 
 [← Index](../README.md) · [Building block: trie paths](../0-problem-solving-building-blocks/README.md#6-tries-are-character-by-character-paths) · [Go solution](main.go) · [Tests](main_test.go) · [Revision log](../REVISION-LOG.md) · [LeetCode](https://leetcode.com/problems/implement-trie-prefix-tree/)
 
