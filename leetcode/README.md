@@ -1,6 +1,6 @@
 # LeetCode — Learn Once, Recall Repeatedly
 
-**Independent practice track:** [NeetCode 150 — unsolved Go starters](neetcode/README.md) · [24 prerequisite concepts](neetcode/0-concepts/README.md) · [Numeric index](neetcode/INDEX-BY-NUMBER.md).
+**Independent practice track:** [NeetCode 150 — unsolved Go starters](../neetcode/README.md) · [24 prerequisite concepts](../neetcode/0-concepts/README.md) · [Numeric index](../neetcode/INDEX-BY-NUMBER.md).
 
 **Purpose:** turn individual Go solutions into **understandable, revisable, repeatable, recallable** mental patterns. Do not learn every problem from scratch before each new interview.
 

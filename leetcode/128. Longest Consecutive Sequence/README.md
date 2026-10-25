@@ -1,6 +1,6 @@
 # 128 — Longest Consecutive Sequence (Go)
 
-[← LeetCode index](../README.md) · [Go solution](main.go) · [Table-driven tests](main_test.go) · **[My failed attempts + learned concepts](LEARNING-NOTES.md)** · [Official LeetCode problem](https://leetcode.com/problems/longest-consecutive-sequence/) · [Unsolved NeetCode practice starter](../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) · [Revision log](../REVISION-LOG.md)
+[← LeetCode index](../README.md) · [Go solution](main.go) · [Table-driven tests](main_test.go) · **[My failed attempts + learned concepts](LEARNING-NOTES.md)** · [Official LeetCode problem](https://leetcode.com/problems/longest-consecutive-sequence/) · [Unsolved NeetCode practice starter](../../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) · [Revision log](../REVISION-LOG.md)
 
 **Pattern:** Hash set + identify sequence starts · **Difficulty:** Medium · **Expected:** O(n) average time and O(n) space.
 
@@ -130,4 +130,4 @@ GO111MODULE=off go test -count=1 -race -v
 GO111MODULE=off go run main.go
 ```
 
-The standalone demo prints `4`. The test file runs all three official examples plus boundary/regression tests. On LeetCode submit only `longestConsecutive` from [main.go](main.go), without the demo `main()` or `fmt` import. The [separate NeetCode starter](../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) stays intentionally unsolved for future cold practice.
+The standalone demo prints `4`. The test file runs all three official examples plus boundary/regression tests. On LeetCode submit only `longestConsecutive` from [main.go](main.go), without the demo `main()` or `fmt` import. The [separate NeetCode starter](../../neetcode/128.%20Longest%20Consecutive%20Sequence/README.md) stays intentionally unsolved for future cold practice.

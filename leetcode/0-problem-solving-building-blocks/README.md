@@ -1,6 +1,6 @@
 # 0 — The building-blocks curriculum: Go basics → algorithms → LeetCode
 
-**Additional unsolved practice:** [NeetCode 150 concept-to-problem map](../neetcode/0-concepts/README.md) provides 24 foundation lessons and a prerequisite mapping for all 150 starters.
+**Additional unsolved practice:** [NeetCode 150 concept-to-problem map](../../neetcode/0-concepts/README.md) provides 24 foundation lessons and a prerequisite mapping for all 150 starters.
 
 [← Main LeetCode index](../README.md) · [Study rules](../AGENTS.md) · [Review log](../REVISION-LOG.md) · [Run all foundation examples](verify-examples.py)
 
