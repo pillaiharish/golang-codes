@@ -2,7 +2,7 @@
 
 [Senior preparation index](../README.md) · [Repository index](../../README.md)
 
-A dedicated concurrency track for a Go engineer preparing for senior interviews around eight years of experience: **12 topic guides, 60 representative questions, and 14 unsolved implementation tasks**. It develops the research report's emphasis on correctness, production ownership and distributed-systems judgment. Questions are authored practice prompts, not verified lists of questions from particular employers.
+A dedicated concurrency track for a Go engineer preparing for senior interviews around eight years of experience: **12 topic guides, 60 representative questions, 14 unsolved implementation tasks, and a growing worked-question progression**. It develops the research report's emphasis on correctness, production ownership and distributed-systems judgment. Questions are authored practice prompts, not verified lists of questions from particular employers.
 
 ## How to use this track
 
@@ -13,6 +13,17 @@ A dedicated concurrency track for a Go engineer preparing for senior interviews 
 5. Use the [assessment rubric and mock interviews](ASSESSMENT.md) to defend your choices.
 
 The guides explain concepts; the task directories deliberately contain specifications and acceptance criteria rather than completed solutions. Existing numbered modules remain useful reference material, including their worked examples. This track does not renumber or replace them.
+
+## Beginner coding questions — worked progression
+
+Start here if you are learning goroutines through small coding exercises. The question folders have problem statements, reference implementations, variations, pitfalls, and cold-recall checks. Try writing your own solution **before** reading `main.go`.
+
+| Question | Core contract | Key scenarios |
+|---|---|---|
+| [Q1. Start one goroutine and wait](1-start-goroutine-and-wait/README.md) | Launch one worker, join it, then print the final message | Missing `Wait`/`Done`, `Add` timing, sleep versus completion |
+| [Q2. Launch five goroutines and wait for all](2-start-five-goroutines-and-wait/README.md) | Print indexes 0–4 once each, final message last | Nondeterministic order, incorrect counts, loop captures, shared results |
+
+These are **worked beginner exercises** and do not replace the [14 unsolved senior implementation tasks](tasks/README.md). The solutions are references, not evidence that the exercise has been completed independently. Record actual attempts in [NOTES.md](NOTES.md).
 
 ## Topic index
 
