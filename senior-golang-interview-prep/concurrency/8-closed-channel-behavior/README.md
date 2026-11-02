@@ -1,44 +1,27 @@
 # Q8. What happens when a channel is closed?
 
-[Concurrency index](../README.md) · [Q7: producer-consumer](../7-producer-consumer/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../7-producer-consumer/README.md) · [Next question](../9-directional-channels/README.md)
 
 **Level 2 — channel fundamentals.**
 
-## Task
+## Your task
 
 Write independent tiny programs to demonstrate: receiving from a closed channel, sending to a closed channel, closing twice, and closing a nil channel. Predict whether each returns, blocks, or panics.
 
-## Reference answers
+## Scenario questions — answer before opening the solution
 
-| Operation | Outcome |
-|---|---|
-| Receive from a **closed, drained** channel | Immediately returns element zero value and `ok == false`. |
-| Receive from a **closed, buffered** channel | Yields buffered values with `ok == true` until drained; then zero / `false`. |
-| Send to a closed channel | Panics. |
-| Close an already closed channel | Panics. |
-| Close a nil channel | Panics. |
-| Send to or receive from a nil channel | Blocks forever unless some external mechanism stops the goroutine/process. |
+1. Why can a receiver safely range over a closed channel?
+2. Should the receiver close the channel?
+3. How do many senders close safely?
+4. Can `sync.Once` make repeated `close` harmless?
 
-```go
-ch := make(chan int, 1)
-ch <- 7
-close(ch)
-fmt.Println(<-ch)       // 7
-v, ok := <-ch
-fmt.Println(v, ok)     // 0 false
-```
+## Practice and acceptance
 
-Run each **panic** demonstration in a separate process so the other cases can execute. Never use panic-prone code in one shared demo expecting later lines to run.
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-## What-if scenarios
+## Reveal the answer after your attempt
 
-| Question | Answer |
-|---|---|
-| Why can a receiver safely range over a closed channel? | A close causes range to end after pending values have been read. |
-| Should the receiver close the channel? | Usually no; the designated sender/owner knows when no sends remain. |
-| How do many senders close safely? | Wait for all senders, then have a single coordinator close. |
-| Can `sync.Once` make repeated `close` harmless? | It can serialize a known close owner, but cannot fix concurrent send-versus-close races by itself. |
-
-**Recall:** Distinguish an empty but open channel, closed-and-buffered, closed-and-drained, and nil. Explain how `v, ok := <-ch` differs from checking for a zero payload.
-
-References: [Go specification — close](https://go.dev/ref/spec#Close), [Go specification — receive](https://go.dev/ref/spec#Receive_operator).
+Continue to the **[Q8 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

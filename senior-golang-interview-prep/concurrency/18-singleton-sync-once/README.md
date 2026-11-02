@@ -1,36 +1,27 @@
 # Q18. Initialize a singleton using `sync.Once`
 
-[Concurrency index](../README.md) · [Q17: shared map](../17-protect-shared-map/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../17-protect-shared-map/README.md) · [Next question](../19-errgroup-cancel-on-error/README.md)
 
 **Level 4 — shared state and synchronization.**
 
-## Task
+## Your task
 
 Let many goroutines call `getInstance()` concurrently, but create the underlying configuration object exactly once.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-var once sync.Once
-var instance *Config
+1. What if the initializer panics?
+2. Can `f` recursively call `once.Do` on the same `Once`?
+3. Is the initialized object's mutable state automatically safe?
+4. What if initialization can return an error?
 
-func getInstance() *Config {
-    once.Do(func() { instance = loadConfig() })
-    return instance
-}
-```
+## Practice and acceptance
 
-`once.Do(f)` executes `f` at most once for a given `Once`; all callers return after that execution completes. This synchronizes publication of the initialized object. The naive `if instance == nil { instance = loadConfig() }` races and may initialize more than once.
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-## Scenario Q&A
+## Reveal the answer after your attempt
 
-| Question | Answer |
-|---|---|
-| What if the initializer panics? | `Once` treats it as having returned; future calls do not retry with that `Once`. |
-| Can `f` recursively call `once.Do` on the same `Once`? | It deadlocks waiting for its own initialization to finish. |
-| Is the initialized object's mutable state automatically safe? | No. `Once` protects construction/publication, not subsequent writes. |
-| What if initialization can return an error? | Capture an `err` in the closure or consider `sync.OnceValues`/explicit retry design; choose whether failures should be cached. |
-
-**Recall:** Distinguish *only once* from *retry until success*. Explain what to do for a configuration that must be refreshed dynamically.
-
-Reference: [`sync.Once`](https://pkg.go.dev/sync#Once).
+Continue to the **[Q18 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

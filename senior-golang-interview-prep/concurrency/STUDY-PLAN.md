@@ -2,7 +2,7 @@
 
 [Concurrency index](README.md) · [Theory Q&A](THEORY-REVIEW.md) · [Senior assessment](ASSESSMENT.md) · [Revision evidence](NOTES.md)
 
-This roadmap turns 33 small-to-production exercises into a **spiral learning track**. The question folders contain answers/reference approaches, but begin with recall and a clean implementation before reading them. This is study material, not a claim about questions asked by a particular employer.
+This roadmap turns 33 small-to-production exercises into a **spiral learning track**. Each numbered folder opens with a **question-only README**; its adjacent `solution/` directory holds the reference code and worked explanation. Begin with recall and a clean implementation before opening that solution. This is study material, not a claim about questions asked by a particular employer.
 
 ## How to solve every question
 
@@ -15,7 +15,7 @@ This roadmap turns 33 small-to-production exercises into a **spiral learning tra
    go test -race ./...
    ```
 
-   Use the actual example filenames for Q3/Q4. Do not run a panic demo expecting success, and do not assume every question directory is a complete Go module with tests. Run `go test` only after creating appropriate test packages.
+   Run from a question's `solution/` module. For Q3 use `go run ./unordered` or `go run ./ordered`; for Q4 use `go run ./panic` (expected failure) or `go run ./recovered`. Q19 requires `go mod tidy` once to fetch its pinned `errgroup` dependency. The reference modules include runnable examples, but not a claim that comprehensive tests have been written. Run `go test` after adding tests for the relevant package.
 4. Break one contract intentionally: omit a signal, stop receiving, close early, cancel, or introduce an unsafe shared write.
 5. Fix it and demonstrate the **reason**, not just a different observed output. Not every execution reveals a race or alternate ordering.
 6. State the invariant, ownership, blocking points, failure policy and resource bound. Record what you actually ran in [NOTES.md](NOTES.md), then revisit after 1, 3, 7 and 14 days.

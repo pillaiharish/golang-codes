@@ -1,45 +1,27 @@
 # Q33. Debug goroutines with pprof
 
-[Concurrency index](../README.md) · [Q29: leaks](../29-detect-goroutine-leak/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../32-happens-before/README.md)
 
 **Level 6 — production debugging.**
 
-## Task
+## Your task
 
 Run a small local HTTP server with pprof enabled, deliberately block a goroutine on a channel or mutex, and inspect goroutine profiles/stacks to locate the blocking site.
 
-## Reference approach
+## Scenario questions — answer before opening the solution
 
-```go
-import (
-    "log"
-    "net/http"
-    _ "net/http/pprof"
-)
+1. Does a large goroutine count prove a leak?
+2. What is the difference between a goroutine profile and a CPU profile?
+3. Why not expose pprof publicly?
+4. Can pprof identify who should close a channel?
 
-func main() {
-    log.Fatal(http.ListenAndServe("127.0.0.1:6060", nil))
-}
-```
+## Practice and acceptance
 
-Run the server only in a local disposable test process, then inspect:
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-```sh
-go tool pprof http://127.0.0.1:6060/debug/pprof/goroutine
-curl 'http://127.0.0.1:6060/debug/pprof/goroutine?debug=2'
-```
+## Reveal the answer after your attempt
 
-The `debug=2` endpoint provides goroutine stack traces with wait locations; a pprof goroutine profile helps find frequently blocked stack signatures. Correlate profiles with request logs, queue depth, active worker counts and cancellation events.
-
-## Scenario Q&A
-
-| Question | Answer |
-|---|---|
-| Does a large goroutine count prove a leak? | No. Inspect growth over time, expected concurrency and blocked stacks. |
-| What is the difference between a goroutine profile and a CPU profile? | Goroutine profile shows current goroutine stacks/states; CPU profile shows where CPU time is spent. |
-| Why not expose pprof publicly? | Profiles can reveal sensitive stack/operational information and impose diagnostic overhead. Bind locally or protect tightly. |
-| Can pprof identify who should close a channel? | It locates blocked sites, but ownership and intended lifecycle still require code/design investigation. |
-
-**Recall:** Describe a debugging walkthrough for a Kafka sender blocked behind a full queue: measurements, stack evidence, hypothesis, mitigation, and regression test.
-
-References: [`net/http/pprof`](https://pkg.go.dev/net/http/pprof), [Go diagnostics](https://go.dev/doc/diagnostics).
+Continue to the **[Q33 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

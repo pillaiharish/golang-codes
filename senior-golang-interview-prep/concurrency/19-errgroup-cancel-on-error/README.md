@@ -1,34 +1,27 @@
 # Q19. Run concurrent tasks with `errgroup`
 
-[Concurrency index](../README.md) · [Q13: context](../13-context-cancellation/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../18-singleton-sync-once/README.md) · [Next question](../20-semaphore-limit-concurrency/README.md)
 
 **Level 4 — shared state and synchronization.**
 
-## Task
+## Your task
 
 Run independent tasks concurrently. If a task returns an error, cancel sibling work and return the first non-nil error after all functions exit. Use `golang.org/x/sync/errgroup`.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-g, ctx := errgroup.WithContext(parentCtx)
-g.Go(func() error { return task1(ctx) })
-g.Go(func() error { return task2(ctx) })
-if err := g.Wait(); err != nil { return err }
-return nil
-```
+1. How is this different from `sync.WaitGroup`?
+2. Can `g.Wait()` hang after one task fails?
+3. What if you want at most N tasks executing?
+4. Does the first error guarantee all tasks had no side effects?
 
-This snippet belongs inside a function returning `error` and requires the external `golang.org/x/sync/errgroup` module. `WithContext` cancels its derived context on the first non-nil task error (or after `Wait` returns). `Wait` still waits for **all** started functions; it does not kill noncooperative work.
+## Practice and acceptance
 
-## Scenario Q&A
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-| Question | Answer |
-|---|---|
-| How is this different from `sync.WaitGroup`? | It adds error collection and optional sibling cancellation through context. |
-| Can `g.Wait()` hang after one task fails? | Yes, if another task never returns or ignores cancellation. |
-| What if you want at most N tasks executing? | Use `g.SetLimit(N)` or bound admissions before task creation. |
-| Does the first error guarantee all tasks had no side effects? | No. Other tasks may have already completed or partially performed work. |
+## Reveal the answer after your attempt
 
-**Recall:** Explain fail-fast signaling versus wait-for-all joining. Design partial-result/error reporting if the caller needs more than the first error.
-
-Reference: [`golang.org/x/sync/errgroup`](https://pkg.go.dev/golang.org/x/sync/errgroup).
+Continue to the **[Q19 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

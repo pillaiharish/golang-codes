@@ -1,49 +1,27 @@
 # Q23. Build a cancellable pipeline
 
-[Concurrency index](../README.md) · [Q24: or-done](../24-or-done/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../22-fan-out-fan-in/README.md) · [Next question](../24-or-done/README.md)
 
 **Level 5 — core concurrency patterns.**
 
-## Task
+## Your task
 
 Build `generator -> square -> printer` with independent goroutines and channels. Then add cancellation so stopping the final consumer does not leak upstream producers.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-An example cancellation-aware `square` stage:
+1. Why are both receive and send cancelable?
+2. Does a closed output tell upstream to stop?
+3. What happens when the printer consumes only one value?
+4. How does a slow printer affect generator throughput?
 
-```go
-func square(ctx context.Context, in <-chan int) <-chan int {
-    out := make(chan int)
-    go func() {
-        defer close(out)
-        for {
-            select {
-            case <-ctx.Done(): return
-            case n, ok := <-in:
-                if !ok { return }
-                select {
-                case out <- n*n:
-                case <-ctx.Done(): return
-                }
-            }
-        }
-    }()
-    return out
-}
-```
+## Practice and acceptance
 
-The generator should similarly `select` on cancellation when sending, and close only **its own** output channel. The printer should cancel the shared context if it exits early. Each stage owns closing its output; no receiver should race to close another stage's channel.
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-## Scenario Q&A
+## Reveal the answer after your attempt
 
-| Question | Answer |
-|---|---|
-| Why are both receive and send cancelable? | Either may block indefinitely if an adjacent stage stops. |
-| Does a closed output tell upstream to stop? | Not safely. Sending to a closed output can panic; cancellation is a separate signal. |
-| What happens when the printer consumes only one value? | Without cancellation, upstream sends may block, leaking goroutines. |
-| How does a slow printer affect generator throughput? | Backpressure propagates through channel sends; buffers change burst capacity, not underlying throughput. |
-
-**Recall:** Specify an ownership/close policy and prove every launched stage has an exit path on cancellation.
-
-Reference: [Go blog — pipelines](https://go.dev/blog/pipelines).
+Continue to the **[Q23 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

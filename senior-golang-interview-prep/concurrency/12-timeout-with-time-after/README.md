@@ -1,41 +1,27 @@
 # Q12. Implement a timeout with `time.After`
 
-[Concurrency index](../README.md) · [Q13: context cancellation](../13-context-cancellation/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../11-select-multiple-channels/README.md) · [Next question](../13-context-cancellation/README.md)
 
 **Level 3 — select, timeouts, and cancellation.**
 
-## Task
+## Your task
 
 Start a simulated slow operation. Print `operation timed out` if no result arrives within 500 ms.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-resultCh := make(chan string, 1)
-go func() {
-    time.Sleep(time.Second)
-    resultCh <- "finished"
-}()
+1. What if the result and timer are both ready?
+2. Does `time.After` kill the worker?
+3. Why use `context.WithTimeout` in a server?
+4. What if the worker sends on an unbuffered result channel after the timeout?
 
-select {
-case result := <-resultCh:
-    fmt.Println(result)
-case <-time.After(500 * time.Millisecond):
-    fmt.Println("operation timed out")
-}
-```
+## Practice and acceptance
 
-The buffered result channel lets the slow worker finish its send even after the receiver chose timeout. **A timeout in the caller does not stop the underlying work**; here the worker still sleeps for a second. For cooperative real work, pass a `context.Context` so the callee can abandon work early.
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-## Scenario Q&A
+## Reveal the answer after your attempt
 
-| Question | Answer |
-|---|---|
-| What if the result and timer are both ready? | `select` may choose either ready case; define boundary semantics if strict timeout behavior matters. |
-| Does `time.After` kill the worker? | No. It only provides a timer channel to the waiter. |
-| Why use `context.WithTimeout` in a server? | Deadlines/cancellation can propagate into HTTP, DB and child operations that honor context. |
-| What if the worker sends on an unbuffered result channel after the timeout? | It can block forever without a receiver. Add cancellation, a bounded buffer, or a receiver. |
-
-**Recall:** Convert this into `context.WithTimeout` and ensure you call the returned cancel function. Define what an outstanding operation means after timeout.
-
-References: [`time.After`](https://pkg.go.dev/time#After), [`context.WithTimeout`](https://pkg.go.dev/context#WithTimeout).
+Continue to the **[Q12 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

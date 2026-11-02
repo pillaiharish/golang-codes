@@ -1,32 +1,27 @@
 # Q29. Detect and fix a goroutine leak
 
-[Concurrency index](../README.md) · [Q23: pipeline](../23-cancellable-pipeline/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../28-pub-sub/README.md) · [Next question](../30-graceful-shutdown/README.md)
 
 **Level 6 — production correctness.**
 
-## Task
+## Your task
 
 Deliberately start a goroutine blocked on an unreceived channel operation. Observe goroutine counts and stack dumps; then add cancellation and prove the worker exits.
 
-## Reference approach
+## Scenario questions — answer before opening the solution
 
-```go
-ch := make(chan int)
-go func() { ch <- 1 }() // blocks until somebody receives
-fmt.Println("goroutines:", runtime.NumGoroutine())
-```
+1. Does `WaitGroup` prevent leaks?
+2. Does closing a context force a blocked syscall to finish?
+3. Can a leaked goroutine keep data in memory?
+4. How do you test leak freedom?
 
-This is a **leak candidate** if the intended receiver never arrives. A single `NumGoroutine` observation is not proof: counts change naturally. Reproduce under repeated operations, compare a baseline, inspect goroutine stacks/profiles and verify eventual return to a stable count. Fix the blocked send with cancellation-aware `select`, or guarantee a receiver/drain path.
+## Practice and acceptance
 
-## Scenario Q&A
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-| Question | Answer |
-|---|---|
-| Does `WaitGroup` prevent leaks? | No. It can wait forever if workers never reach `Done`. |
-| Does closing a context force a blocked syscall to finish? | Not generically. The operation must support cancellation or have a deadline/unblock mechanism. |
-| Can a leaked goroutine keep data in memory? | Yes. Its stack and referenced heap objects remain reachable. |
-| How do you test leak freedom? | Deterministically stop work, join workers, and observe profiles/counts over repeated runs; tools such as `goleak` are useful additional checks. |
+## Reveal the answer after your attempt
 
-**Recall:** Map a Kafka telemetry producer stuck on a full queue: identify ownership, escape path, drop policy and the metric that reveals the leak.
-
-References: [Go blog — pipelines](https://go.dev/blog/pipelines), [goroutine profiles](https://pkg.go.dev/runtime/pprof).
+Continue to the **[Q29 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

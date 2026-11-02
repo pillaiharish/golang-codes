@@ -1,47 +1,27 @@
 # Q14. Implement a `done` channel pattern
 
-[Concurrency index](../README.md) · [Q13: context](../13-context-cancellation/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../13-context-cancellation/README.md) · [Next question](../15-select-default-nonblocking/README.md)
 
 **Level 3 — select, timeouts, and cancellation.**
 
-## Task
+## Your task
 
 Use `done := make(chan struct{})` to broadcast a stop signal to several workers without `context.Context`.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-done := make(chan struct{})
-var wg sync.WaitGroup
-for i := 0; i < 3; i++ {
-    wg.Add(1)
-    go func() {
-        defer wg.Done()
-        ticker := time.NewTicker(100 * time.Millisecond)
-        defer ticker.Stop()
-        for {
-            select {
-            case <-done: return
-            case <-ticker.C: /* one short unit of work */
-            }
-        }
-    }()
-}
-close(done) // owner broadcasts to all receivers
-wg.Wait()   // then joins all workers
-```
+1. Why close rather than send one value?
+2. What if two goroutines call `close(done)`?
+3. Does close mean all workers finished?
+4. Does a `done` channel carry errors or deadlines?
 
-Closing `done` makes every current and future receive from it ready. A `chan struct{}` carries only a signal. The ticker here prevents a busy loop; if the worker instead blocks on I/O or a channel operation, use `select { case <-done: ...; case ...: ... }` around that blocking operation.
+## Practice and acceptance
 
-## Scenario Q&A
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-| Question | Answer |
-|---|---|
-| Why close rather than send one value? | One close broadcasts; one sent value is consumed by one receiver. |
-| What if two goroutines call `close(done)`? | A second close panics. Assign a single owner or synchronize closure. |
-| Does close mean all workers finished? | No. Use `WaitGroup` or explicit acknowledgements to join. |
-| Does a `done` channel carry errors or deadlines? | Not by itself; `context` adds standard propagation and deadline APIs. |
+## Reveal the answer after your attempt
 
-**Recall:** Design cancellation for a worker waiting on input and a worker blocked sending output; ensure both can exit after `done` closes.
-
-Reference: [Go blog — pipelines and cancellation](https://go.dev/blog/pipelines).
+Continue to the **[Q14 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

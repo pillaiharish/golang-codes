@@ -1,42 +1,27 @@
 # Q15. Use `default` in `select` for nonblocking operations
 
-[Concurrency index](../README.md) · [Q6: buffering](../6-buffered-channel-capacity/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../14-done-channel-cancellation/README.md) · [Next question](../16-data-race-counter/README.md)
 
 **Level 3 — select, timeouts, and cancellation.**
 
-## Task
+## Your task
 
 Attempt a send only if the channel is ready to accept it; otherwise skip the value. Then implement a nonblocking receive.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-select {
-case ch <- value:
-    fmt.Println("accepted")
-default:
-    fmt.Println("dropped: not ready")
-}
+1. Does default guarantee no blocking anywhere in the branch?
+2. What if you spin in a tight loop around this `select`?
+3. What if the channel is closed during a send?
+4. When is dropping acceptable?
 
-select {
-case v, ok := <-ch:
-    if ok { fmt.Println("received", v) }
-default:
-    fmt.Println("nothing available")
-}
-```
+## Practice and acceptance
 
-`default` runs if no communication case can proceed immediately. For an unbuffered channel, a send needs a ready receiver; for a buffered channel, it needs space. A nonblocking, deliberately lossy queue should measure drops and define whether dropping is acceptable.
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-## Scenario Q&A
+## Reveal the answer after your attempt
 
-| Question | Answer |
-|---|---|
-| Does default guarantee no blocking anywhere in the branch? | No. It only makes the `select` communication decision nonblocking; other code can block. |
-| What if you spin in a tight loop around this `select`? | High CPU usage and potential starvation; use blocking waits, timers, or bounded pacing. |
-| What if the channel is closed during a send? | Sending to a closed channel panics; a `default` branch does not make send/close races safe. |
-| When is dropping acceptable? | For explicitly lossy telemetry or hints, with counters and documented data-loss semantics; not automatically for business-critical writes. |
-
-**Recall:** Explain how nonblocking enqueue differs from delivery acknowledgment and how you would diagnose queue-full drops in a Kafka telemetry pipeline.
-
-Reference: [Go specification — select](https://go.dev/ref/spec#Select_statements).
+Continue to the **[Q15 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

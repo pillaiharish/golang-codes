@@ -1,44 +1,27 @@
 # Q17. Protect a shared map
 
-[Concurrency index](../README.md) · [Q16: data race](../16-data-race-counter/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../16-data-race-counter/README.md) · [Next question](../18-singleton-sync-once/README.md)
 
 **Level 4 — shared state and synchronization.**
 
-## Task
+## Your task
 
 Read and write one ordinary Go map from several goroutines. Observe the unsafe behavior with the race detector, then build versions using `sync.Mutex`, `sync.RWMutex`, and `sync.Map`.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-type Store struct {
-    mu sync.RWMutex
-    values map[string]int
-}
-func (s *Store) Set(k string, v int) {
-    s.mu.Lock()
-    defer s.mu.Unlock()
-    s.values[k] = v
-}
-func (s *Store) Get(k string) (int, bool) {
-    s.mu.RLock()
-    defer s.mu.RUnlock()
-    v, ok := s.values[k]
-    return v, ok
-}
-```
+1. Can many goroutines read a map with no writer?
+2. Does `RWMutex` always outperform `Mutex`?
+3. Is `sync.Map` always ideal for read-heavy traffic?
+4. What about `if _, ok := m[k]; !ok { m[k] = v }`?
 
-Initialize `values` with `make(map[string]int)` before writing. Plain maps are not safe for unsynchronized concurrent reads and writes. `Mutex` is the simpler default; `RWMutex` allows concurrent readers but can add overhead. `sync.Map` has specialized optimizations (such as write-once/read-many or mostly disjoint key sets), and its API/semantics differ from a normal map.
+## Practice and acceptance
 
-## Scenario Q&A
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-| Question | Answer |
-|---|---|
-| Can many goroutines read a map with no writer? | Concurrent reads of a map that is not being mutated are safe. |
-| Does `RWMutex` always outperform `Mutex`? | No. Benchmark the workload; lock hold time, contention and write ratio matter. |
-| Is `sync.Map` always ideal for read-heavy traffic? | No. Its documented specialization and workload shape matter; use a typed map plus lock for ordinary cases. |
-| What about `if _, ok := m[k]; !ok { m[k] = v }`? | Lock the whole check-then-act operation, not individual reads/writes separately. |
+## Reveal the answer after your attempt
 
-**Recall:** Explain the zero-value map versus an initialized map, and why protecting one field but not a related invariant can remain incorrect.
-
-References: [`sync.Map`](https://pkg.go.dev/sync#Map), [`sync.RWMutex`](https://pkg.go.dev/sync#RWMutex).
+Continue to the **[Q17 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

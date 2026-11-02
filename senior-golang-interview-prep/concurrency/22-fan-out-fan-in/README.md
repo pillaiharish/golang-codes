@@ -1,42 +1,27 @@
 # Q22. Implement fan-out and fan-in
 
-[Concurrency index](../README.md) · [Q21: worker pool](../21-worker-pool/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../21-worker-pool/README.md) · [Next question](../23-cancellable-pipeline/README.md)
 
 **Level 5 — core concurrency patterns.**
 
-## Task
+## Your task
 
 Fan-out: multiple workers read the **same** input channel. Fan-in: merge values from several input channels into one output channel. Write `merge(channels ...<-chan int) <-chan int`.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-func merge(inputs ...<-chan int) <-chan int {
-    out := make(chan int)
-    var wg sync.WaitGroup
-    wg.Add(len(inputs))
-    for _, input := range inputs {
-        go func(ch <-chan int) {
-            defer wg.Done()
-            for v := range ch { out <- v }
-        }(input)
-    }
-    go func() { wg.Wait(); close(out) }()
-    return out
-}
-```
+1. What if no inputs are given?
+2. What if one input never closes?
+3. What if the downstream consumer stops early?
+4. Does fan-out make each input item reach every worker?
 
-The fan-in owner closes `out` **after** every forwarder finishes; no worker closes a shared output channel. The function preserves per-input ordering as received, but not a global order between the inputs.
+## Practice and acceptance
 
-## Scenario Q&A
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-| Question | Answer |
-|---|---|
-| What if no inputs are given? | The WaitGroup count is zero; the coordinator closes `out`. |
-| What if one input never closes? | Its forwarder may never finish, so `out` cannot close. |
-| What if the downstream consumer stops early? | Forwarders can block on `out <- v`. Add cancellation-aware sends/receives. |
-| Does fan-out make each input item reach every worker? | No. Workers competing on one channel distribute items; broadcast requires a different design. |
+## Reveal the answer after your attempt
 
-**Recall:** Add `context.Context` to `merge`, and explain how to stop all forwarders without waiting for stalled input sources.
-
-Reference: [Go blog — pipelines and cancellation](https://go.dev/blog/pipelines).
+Continue to the **[Q22 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

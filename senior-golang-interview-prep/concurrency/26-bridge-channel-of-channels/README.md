@@ -1,37 +1,27 @@
 # Q26. Implement a `bridge` for a channel of channels
 
-[Concurrency index](../README.md) · [Q22: fan-in/fan-out](../22-fan-out-fan-in/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../25-tee-broadcast-two-outputs/README.md) · [Next question](../27-rate-limiter/README.md)
 
 **Level 5 — core concurrency patterns.**
 
-## Task
+## Your task
 
 Flatten `streams <-chan <-chan int` into one `<-chan int`. If the outer channel yields streams `[1,2,3]`, `[4,5]`, `[6]`, output should be `1,2,3,4,5,6` for a **sequential bridge**.
 
-## Reference approach
+## Scenario questions — answer before opening the solution
 
-```go
-func bridge(ctx context.Context, streams <-chan <-chan int) <-chan int
-```
+1. What if an inner channel never closes?
+2. What if the outer channel produces a nil inner channel?
+3. What if the consumer stops reading output?
+4. Who closes the flattened output?
 
-Implement one forwarding goroutine:
+## Practice and acceptance
 
-1. Receive the next inner stream from `streams` with a cancellation-aware `select`.
-2. Drain that **one** inner stream in order. Every receive and send must also select on `ctx.Done()`.
-3. Once the inner stream closes, move to the next inner stream.
-4. Close the output when the outer stream closes and all received inner streams have been drained, or on cancellation.
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-The sequential bridge preserves inner-stream order and outer-stream sequence. A concurrently merged bridge is a **different contract**: it can interleave values and needs a WaitGroup to close its output safely.
+## Reveal the answer after your attempt
 
-## Scenario Q&A
-
-| Question | Answer |
-|---|---|
-| What if an inner channel never closes? | Sequential forwarding stalls on that stream; cancellation must provide an escape. |
-| What if the outer channel produces a nil inner channel? | A receive from nil blocks forever unless you skip it or select on cancellation. |
-| What if the consumer stops reading output? | The forwarding send can block; use a cancellation-aware send. |
-| Who closes the flattened output? | The bridge's one owner, after its forwarding goroutine exits. |
-
-**Recall:** State whether your bridge guarantees global order, and compare its throughput and head-of-line blocking to fan-in.
-
-Reference: [Go blog — pipelines](https://go.dev/blog/pipelines).
+Continue to the **[Q26 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

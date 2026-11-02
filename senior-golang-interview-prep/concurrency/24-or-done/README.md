@@ -1,47 +1,27 @@
 # Q24. Implement `orDone`
 
-[Concurrency index](../README.md) · [Q23: pipeline](../23-cancellable-pipeline/README.md) · [Revision notes](../NOTES.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../23-cancellable-pipeline/README.md) · [Next question](../25-tee-broadcast-two-outputs/README.md)
 
 **Level 5 — core concurrency patterns.**
 
-## Task
+## Your task
 
 Implement `func orDone(ctx context.Context, ch <-chan int) <-chan int`: relay values, exit if the source closes or context cancels, and close the returned channel exactly once.
 
-## Reference answer
+## Scenario questions — answer before opening the solution
 
-```go
-func orDone(ctx context.Context, ch <-chan int) <-chan int {
-    out := make(chan int)
-    go func() {
-        defer close(out)
-        for {
-            select {
-            case <-ctx.Done(): return
-            case v, ok := <-ch:
-                if !ok { return }
-                select {
-                case out <- v:
-                case <-ctx.Done(): return
-                }
-            }
-        }
-    }()
-    return out
-}
-```
+1. What if `ctx` is canceled before the first value?
+2. What if `ch` closes normally?
+3. What if both a value and cancellation are ready?
+4. Does this function shut down the original source goroutine?
 
-Both input receive and output send need cancellation paths; otherwise a downstream consumer that stops early can strand this helper. The returned channel's owner is the relay goroutine.
+## Practice and acceptance
 
-## Scenario Q&A
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-| Question | Answer |
-|---|---|
-| What if `ctx` is canceled before the first value? | Output closes without any values. |
-| What if `ch` closes normally? | Relay exits and closes its output after forwarding received values. |
-| What if both a value and cancellation are ready? | `select` may pick either; cancellation is not an exact cutoff unless a stricter protocol is added. |
-| Does this function shut down the original source goroutine? | Not by itself. The source must also observe cancellation. |
+## Reveal the answer after your attempt
 
-**Recall:** Explain what ownership the relay has, what it cannot promise about its upstream producer, and how you would test cancellation while blocked on a send.
-
-Reference: [Go blog — pipelines](https://go.dev/blog/pipelines).
+Continue to the **[Q24 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.

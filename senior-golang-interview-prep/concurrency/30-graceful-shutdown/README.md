@@ -1,38 +1,28 @@
 # Q30. Implement graceful shutdown
 
-[Concurrency index](../README.md) · [Q29: leaks](../29-detect-goroutine-leak/README.md) · [Advanced shutdown task](../tasks/12-graceful-shutdown/README.md)
+[Concurrency index](../README.md) · [Open worked solution](solution/README.md) · [Revision notes](../NOTES.md) · [Previous question](../29-detect-goroutine-leak/README.md) · [Next question](../31-concurrent-url-checker/README.md)
 
 **Level 6 — production correctness.**
 
-## Task
+## Your task
 
 Run a service with workers, listen for SIGINT, stop accepting new work, let admitted jobs finish within a bounded grace period, and then release resources. Use `signal.NotifyContext`.
 
-## Reference approach
+## Scenario questions — answer before opening the solution
 
-```go
-signalCtx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
-defer stop()
-// Start workers; admission and work processing have explicit owners.
-<-signalCtx.Done()
-// 1. Stop accepting new jobs atomically with Submit.
-// 2. Signal the producer that no more jobs can be enqueued.
-// 3. Drain/join accepted work using a SEPARATE shutdown deadline.
-// 4. Close sinks and report work that did not finish.
-```
+1. Why stop admission before closing a jobs channel?
+2. Is canceling workers immediately always graceful?
+3. What if Kafka has buffered records?
+4. What if shutdown is called twice?
+5. Does the deadline guarantee the process has no goroutines?
 
-Use a **separate drain context** if jobs must finish after the signal: the signal context is already canceled. A deadline cannot forcibly kill an uncooperative worker; define what the service reports and what the process does when the budget expires.
+## Practice and acceptance
 
-## Scenario Q&A
+- [ ] Predict the blocking points, output/ordering guarantees and failure behavior before running code.
+- [ ] Write your implementation from scratch, then execute it with `-race` when applicable.
+- [ ] Demonstrate at least one failure or edge case and explain the synchronization mechanism.
+- [ ] Record what you actually observed and what remains uncertain in [revision notes](../NOTES.md).
 
-| Question | Answer |
-|---|---|
-| Why stop admission before closing a jobs channel? | Otherwise a concurrent submitter may send to a closed channel and panic or lose accepted work. |
-| Is canceling workers immediately always graceful? | No. It may abandon already accepted work; choose drain versus abort contract. |
-| What if Kafka has buffered records? | Flush within the deadline, distinguish accepted/enqueued from broker-acknowledged, and report unresolved deliveries. |
-| What if shutdown is called twice? | Make state transitions idempotent; only the owner closes each channel/resource once. |
-| Does the deadline guarantee the process has no goroutines? | No, if uncooperative work ignores shutdown; the process-level policy must be explicit. |
+## Reveal the answer after your attempt
 
-**Recall:** Draw admission-open -> stopping -> draining -> terminated states. Specify invariants and failure accounting at every transition.
-
-References: [`signal.NotifyContext`](https://pkg.go.dev/os/signal#NotifyContext), [advanced task 12](../tasks/12-graceful-shutdown/README.md).
+Continue to the **[Q30 worked solution, runnable code and detailed explanations](solution/README.md)**. The answer lives in `solution/` so this page remains a question-first exercise.
