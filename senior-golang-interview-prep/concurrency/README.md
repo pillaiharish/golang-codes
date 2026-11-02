@@ -2,7 +2,7 @@
 
 [Senior preparation index](../README.md) · [Repository index](../../README.md)
 
-A dedicated concurrency track for a Go engineer preparing for senior interviews around eight years of experience: **12 topic guides, 60 representative questions, 14 unsolved implementation tasks, and a growing worked-question progression**. It develops the research report's emphasis on correctness, production ownership and distributed-systems judgment. Questions are authored practice prompts, not verified lists of questions from particular employers.
+A dedicated concurrency track for a Go engineer preparing for senior interviews around eight years of experience: **12 topic guides, 60 representative questions, 14 unsolved implementation tasks, and 33 staged coding questions with reference answers**. It develops the research report's emphasis on correctness, production ownership and distributed-systems judgment. Questions are authored practice prompts, not verified lists of questions from particular employers.
 
 ## How to use this track
 
@@ -14,16 +14,92 @@ A dedicated concurrency track for a Go engineer preparing for senior interviews 
 
 The guides explain concepts; the task directories deliberately contain specifications and acceptance criteria rather than completed solutions. Existing numbered modules remain useful reference material, including their worked examples. This track does not renumber or replace them.
 
-## Beginner coding questions — worked progression
+## Learn-by-solving progression: Q1–Q33
 
-Start here if you are learning goroutines through small coding exercises. The question folders have problem statements, reference implementations, variations, pitfalls, and cold-recall checks. Try writing your own solution **before** reading `main.go`.
+Start with the [study and revision roadmap](STUDY-PLAN.md), then attempt each question **without looking at the answer**. Each numbered folder contains a task, reference answer or implementation approach, scenario-based follow-ups and cold-recall prompts. Q1–Q4 also include standalone Go programs; Q3 compares unordered execution with explicit channel ordering, and Q4 separates a deliberate panic from its recovered version.
 
-| Question | Core contract | Key scenarios |
-|---|---|---|
-| [Q1. Start one goroutine and wait](1-start-goroutine-and-wait/README.md) | Launch one worker, join it, then print the final message | Missing `Wait`/`Done`, `Add` timing, sleep versus completion |
-| [Q2. Launch five goroutines and wait for all](2-start-five-goroutines-and-wait/README.md) | Print indexes 0–4 once each, final message last | Nondeterministic order, incorrect counts, loop captures, shared results |
+### Level 1: Goroutine basics
 
-These are **worked beginner exercises** and do not replace the [14 unsolved senior implementation tasks](tasks/README.md). The solutions are references, not evidence that the exercise has been completed independently. Record actual attempts in [NOTES.md](NOTES.md).
+Launch, wait, scheduling, panic.
+
+| # | Question |
+|---:|---|
+| Q1 | [Start one goroutine and wait](1-start-goroutine-and-wait/README.md) |
+| Q2 | [Launch five goroutines and wait](2-start-five-goroutines-and-wait/README.md) |
+| Q3 | [Execution order is not guaranteed](3-goroutine-execution-order/README.md) |
+| Q4 | [Goroutine panic and recover](4-goroutine-panic-and-recover/README.md) |
+
+### Level 2: Channel fundamentals
+
+Blocking, buffering, ownership, closure.
+
+| # | Question |
+|---:|---|
+| Q5 | [Unbuffered send/receive](5-unbuffered-channel-send-receive/README.md) |
+| Q6 | [Buffered channel capacity](6-buffered-channel-capacity/README.md) |
+| Q7 | [Producer-consumer](7-producer-consumer/README.md) |
+| Q8 | [Closed channel behavior](8-closed-channel-behavior/README.md) |
+| Q9 | [Directional channels](9-directional-channels/README.md) |
+| Q10 | [Deadlocks and lifecycle](10-channel-deadlocks-and-lifecycle/README.md) |
+
+### Level 3: Select, timeouts, and cancellation
+
+Multiplexing, deadlines, stop signals.
+
+| # | Question |
+|---:|---|
+| Q11 | [Select across channels](11-select-multiple-channels/README.md) |
+| Q12 | [Timeout with time.After](12-timeout-with-time-after/README.md) |
+| Q13 | [Context cancellation](13-context-cancellation/README.md) |
+| Q14 | [Done channel cancellation](14-done-channel-cancellation/README.md) |
+| Q15 | [Nonblocking select/default](15-select-default-nonblocking/README.md) |
+
+### Level 4: Shared state and synchronization
+
+Races, locks, initialization, limits.
+
+| # | Question |
+|---:|---|
+| Q16 | [Fix a data race](16-data-race-counter/README.md) |
+| Q17 | [Protect a shared map](17-protect-shared-map/README.md) |
+| Q18 | [Singleton with sync.Once](18-singleton-sync-once/README.md) |
+| Q19 | [errgroup and sibling cancellation](19-errgroup-cancel-on-error/README.md) |
+| Q20 | [Semaphore concurrency limit](20-semaphore-limit-concurrency/README.md) |
+
+### Level 5: Core concurrency patterns
+
+Worker pools, fan-in, pipelines, broadcast.
+
+| # | Question |
+|---:|---|
+| Q21 | [Worker pool](21-worker-pool/README.md) |
+| Q22 | [Fan-out/fan-in](22-fan-out-fan-in/README.md) |
+| Q23 | [Cancellable pipeline](23-cancellable-pipeline/README.md) |
+| Q24 | [or-done relay](24-or-done/README.md) |
+| Q25 | [Tee to two outputs](25-tee-broadcast-two-outputs/README.md) |
+| Q26 | [Bridge streams](26-bridge-channel-of-channels/README.md) |
+| Q27 | [Rate limiter](27-rate-limiter/README.md) |
+| Q28 | [Pub/sub](28-pub-sub/README.md) |
+
+### Level 6: Production correctness
+
+Leaks, shutdown, diagnostics, memory model.
+
+| # | Question |
+|---:|---|
+| Q29 | [Goroutine leak detection](29-detect-goroutine-leak/README.md) |
+| Q30 | [Graceful shutdown](30-graceful-shutdown/README.md) |
+| Q31 | [Concurrent URL checker](31-concurrent-url-checker/README.md) |
+| Q32 | [Happens-before](32-happens-before/README.md) |
+| Q33 | [pprof goroutine debugging](33-goroutine-pprof/README.md) |
+
+### Revision and capstone resources
+
+- [Study plan, minimum starter set, five interview stages, three capstones and final checklist](STUDY-PLAN.md)
+- [30 concurrency theory questions with concise answers](THEORY-REVIEW.md)
+- [Attempt/evidence log](NOTES.md) and [senior assessment rubric](ASSESSMENT.md)
+
+For runnable demos, execute a named Go file with `go run -race file.go` in its question directory. Deliberate panic demos exit nonzero. The solution snippets in other folders are **reference patterns**, not claims that each folder is a self-contained runnable module or that tests have passed. The [advanced tasks](tasks/README.md) remain intentionally unsolved.
 
 ## Topic index
 

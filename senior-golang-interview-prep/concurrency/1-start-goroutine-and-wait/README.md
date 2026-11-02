@@ -12,7 +12,7 @@ Write a standalone Go program that:
 2. Makes `main` **wait for that goroutine to finish**.
 3. Only then prints `Main finished`.
 
-Do not use `time.Sleep` to coordinate goroutine completion. Use `sync.WaitGroup`.
+First experiment with `time.Sleep(1 * time.Second)` as a deliberately fragile way to keep `main` alive; change the worker duration and notice why it cannot guarantee completion. Then replace the sleep with `sync.WaitGroup` for the final correct solution.
 
 ### Expected output
 
