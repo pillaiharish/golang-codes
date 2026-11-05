@@ -38,6 +38,15 @@ The [concurrency track](concurrency/README.md) adds 12 topic guides, 60 represen
 - [Senior assessment and design-review prompts](concurrency/ASSESSMENT.md)
 - [Recall notes and evidence template](concurrency/NOTES.md)
 
+## Error-handling learning-by-solving track
+
+The [error-handling progression](error-handling/README.md) adds 60 numbered exercises from starter to senior, each with a question-first README, standalone Go solution, failure-case tests and worked explanation. It includes six capstone project specifications, [scenario/anti-pattern drills](error-handling/PITFALLS-AND-SCENARIOS.md) and a [revision plan](error-handling/STUDY-PLAN.md).
+
+- [Q1–Q60 question and solution index](error-handling/README.md)
+- [Six projects](error-handling/projects/README.md)
+- [Learning and validation commands](error-handling/STUDY-PLAN.md)
+- [Senior error-design assessment](error-handling/ASSESSMENT.md)
+
 ## Doubts and focused clarifications
 
 The [doubts study plan and detailed index](doubts/README.md) answers seven foundational questions individually, with runnable examples and interview checkpoints. This supplements the numbered modules without renumbering them.
@@ -426,3 +435,4 @@ The links below cover main topics and meaningful subtopics (including interview 
 - **Interview-prep scope:** illustrative Go code, production trade-offs, and practice questions. Embedded code is not automatically a tested, production-ready implementation.
 - **Follow-up verification:** the complete publisher reference should be assembled, compiled, race-tested, and challenged under shutdown deadlines before treating it as a working library. Review Go-version-dependent claims against the Go release notes and official docs when revisiting them.
 - Existing examples elsewhere in `golang-codes` (including concurrency, syntax traps, and goroutine leaks) are left unchanged.
+
