@@ -4,7 +4,7 @@
 
 **Purpose:** turn individual Go solutions into **understandable, revisable, repeatable, recallable** mental patterns. Do not learn every problem from scratch before each new interview.
 
-[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all 15 guided problem tests](test-all.sh)
+[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all 16 guided problem tests](test-all.sh)
 
 ## How to use this index
 
@@ -56,7 +56,7 @@ Run the foundation examples and validate links with:
 python3 leetcode/0-problem-solving-building-blocks/verify-examples.py
 ```
 
-This is separate from `bash leetcode/test-all.sh`, which tests the 15 guided problem implementations.
+This is separate from `bash leetcode/test-all.sh`, which tests the 16 guided problem implementations.
 
 ## Pattern quick-reference
 
@@ -73,6 +73,7 @@ This is separate from `bash leetcode/test-all.sh`, which tests the 15 guided pro
 | Reversible serialization of arbitrary strings | Byte length, `#`, payload; decode with offsets | [#271](271.%20Encode%20and%20Decode%20Strings/README.md) |
 | Per-key event cooldown with repeated calls | Map of last successfully accepted timestamp | [#359](359.%20Logger%20Rate%20Limiter/README.md) |
 | Longest contiguous interval with equal zeros and ones | `0 → -1`, `1 → +1`; earliest index per prefix balance | [#525](525.%20Contiguous%20Array/README.md) |
+| Shortest grid route with limited obstacle removals | BFS on `(row, col, remaining)` with 3D visited state | [#1293](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md) |
 | Fast key lookup + least recent eviction | Map + doubly linked list; head MRU, tail LRU | [#146](146.%20LRU%20Cache/README.md) |
 | Word/prefix insert and search | Trie: character paths plus isEnd | [#208](208.%20Implement%20Trie%20%28Prefix%20Tree%29/README.md) |
 | Inorder traversal | Left → Node → Right; recursion or explicit stack | [#94](94.%20Binary%20Tree%20Inorder%20Traversal/README.md) |
@@ -81,7 +82,7 @@ This is separate from `bash leetcode/test-all.sh`, which tests the 15 guided pro
 
 ## Detailed problem index (LeetCode numbers)
 
-These 15 problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
+These 16 problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
 
 | # | Problem guide | Primary idea / related new variant | Solution | Tests | Your confidence | Last recall | Next recall |
 |---|---|---|---|---|---|---|---|
@@ -100,6 +101,7 @@ These 15 problems use the **same guide structure**: recognition → intuition �
 | 271 | [Encode and Decode Strings](271.%20Encode%20and%20Decode%20Strings/README.md) | Byte-length framing; stateless Codec | [Go](271.%20Encode%20and%20Decode%20Strings/main.go) | [Tests](271.%20Encode%20and%20Decode%20Strings/main_test.go) | — | — | — |
 | 359 | [Logger Rate Limiter](359.%20Logger%20Rate%20Limiter/README.md) | Map of last allowed timestamp per message | [Go](359.%20Logger%20Rate%20Limiter/main.go) | [Tests](359.%20Logger%20Rate%20Limiter/main_test.go) | — | — | — |
 | 525 | [Contiguous Array](525.%20Contiguous%20Array/README.md) | Equal prefix balances; earliest-index map | [Go](525.%20Contiguous%20Array/main.go) | [Tests](525.%20Contiguous%20Array/main_test.go) | — | — | — |
+| 1293 | [Shortest Path in a Grid with Obstacles Elimination](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md) | BFS with remaining-budget state | [Go](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/main.go) · [Variants](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/variants.go) | [Tests](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/main_test.go) | — | — | — |
 
 ## Existing problems still in the repository
 

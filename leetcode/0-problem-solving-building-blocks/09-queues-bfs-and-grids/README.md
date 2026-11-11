@@ -10,6 +10,7 @@ BFS processes nodes in order of distance/layers using a FIFO queue. Matrix trave
 - For level order, **snapshot `levelSize:=len(queue)`** before processing that level; newly queued children belong to the next level.
 - For grids, a cell is `(row,col)` and neighbors are `(+1,0),(-1,0),(0,+1),(0,-1)`.
 - Mark visited **when enqueuing**, so the same cell is not enqueued repeatedly.
+- When future moves depend on a limited resource, the BFS state must include it. For [#1293](../../1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md), use `(row,col,remaining)` and a 3D visited set; the same cell with different budgets represents different states.
 - If you overwrite grid `'1'` with `'0'`, note that the algorithm mutates its input.
 
 ## Runnable Go micro-example
@@ -52,6 +53,7 @@ For tree `[3,9,20,null,null,15,7]`, write each level size: 1,2,2. Explain why `l
 - [#102 Binary Tree Level Order Traversal](../../102.%20Binary%20Tree%20Level%20Order%20Traversal/main.go)
 - [#200 Number of Islands](../../200.%20Number%20of%20Islands/main.go)
 - [#353 Design Snake Game](../../353%20-%20Design%20Snake%20Game/main.go)
+- [#1293 Shortest Path in a Grid with Obstacles Elimination](../../1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md)
 
 ## Review in 60 seconds
 Name the invariant, rewrite the code without looking, then explain one mistake the tests should catch.
