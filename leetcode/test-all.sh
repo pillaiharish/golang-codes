@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Test all 16 guided Go LeetCode problems independently.
+# Test all 17 guided Go LeetCode problems independently.
 # The repository contains standalone package-main folders rather than a root go.mod.
 set -euo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 problems=(
   "1. Two Sum"
+  "11. Container With Most Water"
   "36. Valid Sudoku"
   "41. First Missing Positive"
   "49. Group Anagrams"
