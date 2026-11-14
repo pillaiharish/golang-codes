@@ -27,14 +27,21 @@ func TestMaxArea(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			original := slices.Clone(tt.input)
-			if got := maxArea(tt.input); got != tt.want {
-				t.Fatalf("maxArea(%v) = %d; want %d", tt.input, got, tt.want)
+			implementations := []struct {
+				name string
+				fn   func([]int) int
+			}{
+				{"Go 1.21+ builtins", maxArea},
+				{"legacy comparisons", maxAreaLegacy},
+				{"brute force", maxAreaBruteForce},
+			}
+			for _, impl := range implementations {
+				if got := impl.fn(tt.input); got != tt.want {
+					t.Fatalf("%s(%v) = %d; want %d", impl.name, tt.input, got, tt.want)
+				}
 			}
 			if !slices.Equal(tt.input, original) {
-				t.Fatal("maxArea modified the input")
-			}
-			if got := maxAreaBruteForce(tt.input); got != tt.want {
-				t.Fatalf("brute force maxArea(%v) = %d; want %d", tt.input, got, tt.want)
+				t.Fatal("an implementation modified the input")
 			}
 		})
 	}
@@ -47,9 +54,17 @@ func TestMaxAreaRandomizedAgainstBruteForce(t *testing.T) {
 		for i := range a {
 			a[i] = rng.Intn(100)
 		}
-		got, want := maxArea(a), maxAreaBruteForce(a)
-		if got != want {
-			t.Fatalf("trial %d, heights=%v: got %d; want %d", trial, a, got, want)
+		want := maxAreaBruteForce(a)
+		for _, impl := range []struct {
+			name string
+			fn   func([]int) int
+		}{
+			{"Go 1.21+ builtins", maxArea},
+			{"legacy comparisons", maxAreaLegacy},
+		} {
+			if got := impl.fn(a); got != want {
+				t.Fatalf("trial %d, %s, heights=%v: got %d; want %d", trial, impl.name, a, got, want)
+			}
 		}
 	}
 }
@@ -59,7 +74,16 @@ func TestMaxAreaLongInput(t *testing.T) {
 	for i := range heights {
 		heights[i] = 10000
 	}
-	if got, want := maxArea(heights), 10000*(len(heights)-1); got != want {
-		t.Fatalf("large constant heights: got %d; want %d", got, want)
+	want := 10000*(len(heights)-1)
+	for _, impl := range []struct {
+		name string
+		fn   func([]int) int
+	}{
+		{"Go 1.21+ builtins", maxArea},
+		{"legacy comparisons", maxAreaLegacy},
+	} {
+		if got := impl.fn(heights); got != want {
+			t.Fatalf("%s: got %d; want %d", impl.name, got, want)
+		}
 	}
 }
