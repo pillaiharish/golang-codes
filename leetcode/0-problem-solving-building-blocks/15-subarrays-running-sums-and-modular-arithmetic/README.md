@@ -11,6 +11,7 @@ A subarray is a contiguous range. Running sums build all subarray sums without r
 - There are exactly `n(n+1)/2` nonempty subarrays; enumerating all is Θ(n²) output size.
 - Sort the sum list if the problem orders subarray sums, then sum the rank range `[left-1,right)` after checking bounds.
 - For nonnegative values, modulo `1_000_000_007` reduces the final result; use sufficiently wide intermediate integers where needed.
+- Equal prefix balances at indices `j` and `i` mean the intervening subarray sums to `0`. For the **longest** such subarray, remember the earliest index of each balance, including balance `0` at virtual index `-1`. In [#525 Contiguous Array](../../525.%20Contiguous%20Array/README.md), convert `0` to `-1` and `1` to `+1` so equal counts become a zero sum.
 
 ## Complete small Go example
 ```go
@@ -45,6 +46,7 @@ Count how many contiguous subarrays length 4 has: 10. Generate sums for `[2,1]`:
 ## Problem links from this repository
 - [#1508 Range Sum of Sorted Subarray Sums](../../1508.%20Range%20Sum%20of%20Sorted%20Subarray%20Sums/main.go)
 - [#441 Arranging Coins](../../441.%20Arranging%20Coins/main.go)
+- [#525 Contiguous Array](../../525.%20Contiguous%20Array/README.md)
 
 ## Blank-screen check
 Close this note. Restate the invariant, retype the operations, then solve the first linked problem without looking.

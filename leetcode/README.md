@@ -4,7 +4,7 @@
 
 **Purpose:** turn individual Go solutions into **understandable, revisable, repeatable, recallable** mental patterns. Do not learn every problem from scratch before each new interview.
 
-[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all 14 guided problem tests](test-all.sh)
+[Start with foundational patterns](0-problem-solving-building-blocks/README.md) · [Rules for new questions](AGENTS.md) · [Track actual revision](REVISION-LOG.md) · [Run all 17 guided problem tests](test-all.sh)
 
 ## How to use this index
 
@@ -44,9 +44,9 @@ The learner reports completing **#1, #36, #128, #238, #271 and #359**. Their [qu
 | [#271 Encode and Decode Strings](271.%20Encode%20and%20Decode%20Strings/README.md) | [Recall](271.%20Encode%20and%20Decode%20Strings/REVISION-CARD.md) | Byte-length framing and cursor bounds |
 | [#359 Logger Rate Limiter](359.%20Logger%20Rate%20Limiter/README.md) | [Recall](359.%20Logger%20Rate%20Limiter/REVISION-CARD.md) | Persistent keyed cooldown state |
 
-## Start with basic building blocks (now covers 27 problems)
+## Start with basic building blocks (now covers 30 problems)
 
-Before solving an unfamiliar question, follow the **[foundation prerequisite map for all 27 problem folders](0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-27-problem-folders)**. It explains which Go operations and DSA patterns each problem assumes, in the order worth learning.
+Before solving an unfamiliar question, follow the **[foundation prerequisite map for all 30 problem folders](0-problem-solving-building-blocks/README.md#b-problem--exact-prerequisites-all-27-problem-folders)**. It explains which Go operations and DSA patterns each problem assumes, in the order worth learning.
 
 Start small: [arrays and slices](0-problem-solving-building-blocks/01-arrays-and-slices/README.md) → [loops and indexing](0-problem-solving-building-blocks/02-loops-and-bounds/README.md) → [maps, sets, and counters](0-problem-solving-building-blocks/03-maps-sets-frequency-and-grouping/README.md) → [Two Sum #1](1.%20Two%20Sum/README.md). Each of the **20 foundation lessons** has a standalone Go example, dry run, tiny exercise, mistakes to avoid, and backlinks to solved problems.
 
@@ -56,7 +56,7 @@ Run the foundation examples and validate links with:
 python3 leetcode/0-problem-solving-building-blocks/verify-examples.py
 ```
 
-This is separate from `bash leetcode/test-all.sh`, which tests the 14 guided problem implementations.
+This is separate from `bash leetcode/test-all.sh`, which tests the 17 guided problem implementations.
 
 ## Pattern quick-reference
 
@@ -72,6 +72,9 @@ This is separate from `bash leetcode/test-all.sh`, which tests the 14 guided pro
 | Product of all elements except current, no division | Exclusive prefix and suffix running products | [#238](238.%20Product%20of%20Array%20Except%20Self/README.md) |
 | Reversible serialization of arbitrary strings | Byte length, `#`, payload; decode with offsets | [#271](271.%20Encode%20and%20Decode%20Strings/README.md) |
 | Per-key event cooldown with repeated calls | Map of last successfully accepted timestamp | [#359](359.%20Logger%20Rate%20Limiter/README.md) |
+| Maximum container area from two lines | Shrink both ends; move the shorter height, retain the best area | [#11](11.%20Container%20With%20Most%20Water/README.md) |
+| Longest contiguous interval with equal zeros and ones | `0 → -1`, `1 → +1`; earliest index per prefix balance | [#525](525.%20Contiguous%20Array/README.md) |
+| Shortest grid route with limited obstacle removals | BFS on `(row, col, remaining)` with 3D visited state | [#1293](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md) |
 | Fast key lookup + least recent eviction | Map + doubly linked list; head MRU, tail LRU | [#146](146.%20LRU%20Cache/README.md) |
 | Word/prefix insert and search | Trie: character paths plus isEnd | [#208](208.%20Implement%20Trie%20%28Prefix%20Tree%29/README.md) |
 | Inorder traversal | Left → Node → Right; recursion or explicit stack | [#94](94.%20Binary%20Tree%20Inorder%20Traversal/README.md) |
@@ -80,11 +83,12 @@ This is separate from `bash leetcode/test-all.sh`, which tests the 14 guided pro
 
 ## Detailed problem index (LeetCode numbers)
 
-These 14 problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
+These 17 problems use the **same guide structure**: recognition → intuition → invariant → reconstruction recipe → trace → complexity/tradeoffs → cold recall.
 
 | # | Problem guide | Primary idea / related new variant | Solution | Tests | Your confidence | Last recall | Next recall |
 |---|---|---|---|---|---|---|---|
 | 1 | [Two Sum](1.%20Two%20Sum/README.md) | Complement hash map | [Go](1.%20Two%20Sum/main.go) | [Tests](1.%20Two%20Sum/main_test.go) | — | — | — |
+| 11 | [Container With Most Water](11.%20Container%20With%20Most%20Water/README.md) | Two pointers: discard shorter endpoint safely | [Go](11.%20Container%20With%20Most%20Water/main.go) · [Brute force](11.%20Container%20With%20Most%20Water/variants.go) | [Tests](11.%20Container%20With%20Most%20Water/main_test.go) | — | — | — |
 | 36 | [Valid Sudoku](36.%20Valid%20Sudoku/README.md) | Three seen tables + 3×3 box indexing | [Go](36.%20Valid%20Sudoku/main.go) | [Tests](36.%20Valid%20Sudoku/main_test.go) | — | — | — |
 | 41 | [First Missing Positive](41.%20First%20Missing%20Positive/README.md) | In-place cyclic placement | [Go](41.%20First%20Missing%20Positive/main.go) | [Tests](41.%20First%20Missing%20Positive/main_test.go) | — | — | — |
 | 49 | [Group Anagrams](49.%20Group%20Anagrams/README.md) | **Existing sorted-key methods preserved**; new array-frequency key | [Original](49.%20Group%20Anagrams/main.go) · [Variant](49.%20Group%20Anagrams/variants.go) | [Tests](49.%20Group%20Anagrams/main_test.go) | — | — | — |
@@ -98,6 +102,8 @@ These 14 problems use the **same guide structure**: recognition → intuition �
 | 242 | [Valid Anagram](242.%20Valid%20Anagram/README.md) | **Existing rune maps preserved**; new `[26]int` | [Original](242.%20Valid%20Anagram/main.go) · [Variant](242.%20Valid%20Anagram/variants.go) | [Tests](242.%20Valid%20Anagram/main_test.go) | — | — | — |
 | 271 | [Encode and Decode Strings](271.%20Encode%20and%20Decode%20Strings/README.md) | Byte-length framing; stateless Codec | [Go](271.%20Encode%20and%20Decode%20Strings/main.go) | [Tests](271.%20Encode%20and%20Decode%20Strings/main_test.go) | — | — | — |
 | 359 | [Logger Rate Limiter](359.%20Logger%20Rate%20Limiter/README.md) | Map of last allowed timestamp per message | [Go](359.%20Logger%20Rate%20Limiter/main.go) | [Tests](359.%20Logger%20Rate%20Limiter/main_test.go) | — | — | — |
+| 525 | [Contiguous Array](525.%20Contiguous%20Array/README.md) | Equal prefix balances; earliest-index map | [Go](525.%20Contiguous%20Array/main.go) | [Tests](525.%20Contiguous%20Array/main_test.go) | — | — | — |
+| 1293 | [Shortest Path in a Grid with Obstacles Elimination](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md) | BFS with remaining-budget state | [Go](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/main.go) · [Variants](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/variants.go) | [Tests](1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/main_test.go) | — | — | — |
 
 ## Existing problems still in the repository
 
