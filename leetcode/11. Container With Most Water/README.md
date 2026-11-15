@@ -1,6 +1,6 @@
 # 11 — Container With Most Water (Go)
 
-[← LeetCode index](../README.md) · [Primary Go solution](main.go) · [Brute-force reference](variants.go) · [Table-driven tests](main_test.go) · [Revision card](REVISION-CARD.md) · [Official problem](https://leetcode.com/problems/container-with-most-water/) · [Revision log](../REVISION-LOG.md)
+[← LeetCode index](../README.md) · [Primary Go 1.21+ solution](main.go) · [Go 1.20-and-earlier variant](variants_pre_go121.go) · [Brute-force reference](variants.go) · [Table-driven tests](main_test.go) · [Revision card](REVISION-CARD.md) · [Official problem](https://leetcode.com/problems/container-with-most-water/) · [Revision log](../REVISION-LOG.md)
 
 **Pattern:** Converging two pointers, eliminating dominated pairs · **Difficulty:** Medium · **Target:** O(n) time, O(1) auxiliary space.
 
@@ -84,50 +84,62 @@ Unlike [#167 Two Sum II](../167.%20Two%20Sum%20II%20-%20Input%20Array%20Is%20Sor
 
 At `left == right` the loop stops. **Answer: 49.**
 
-## 5. Reconstruct the Go code
+## 5. Reconstruct the Go code — learner's Go 1.21+ solution
 
-The [primary implementation](main.go) deliberately avoids helpers so it works on Go releases before 1.21:
+The **[primary `maxArea` implementation](main.go)** is now the learner's concise two-pointer solution. Go **1.21 or later** is required, because `min` and `max` became built-in functions in that release. No helper functions or `math` import are needed.
 
 ```go
 func maxArea(height []int) int {
-    left, right := 0, len(height)-1
-    maxWater := 0
-
+    area := 0
+    n := len(height)
+    left, right := 0, n-1
     for left < right {
-        width := right-left
-        h := height[left]
-        if height[right] < h {
-            h = height[right]
-        }
-        area := width*h
-        if area > maxWater {
-            maxWater = area
-        }
+        area = max(area, min(height[left], height[right])*(right-left))
         if height[left] < height[right] {
             left++
         } else {
             right--
         }
     }
-    return maxWater
+    return area
 }
 ```
 
-**Go 1.21+ alternative:** the built-in `min` makes the height selection one line:
+**Why this is correct:** `min(height[left], height[right])` finds the limiting wall, `right-left` is the width, and `max(area, candidate)` keeps the largest capacity seen. We always discard the shorter wall using the proof in [section 3](#3-optimized-two-pointer-invariant). This is the **same algorithm and O(n)/O(1) complexity** as the previous, more explicit solution.
+
+### Preserve the original code for Go versions before 1.21
+
+The earlier `main.go` implementation has been moved into **[ `variants_pre_go121.go` ](variants_pre_go121.go)** as `maxAreaLegacy`, with its original pointer and comparison logic preserved. Instead of built-ins, it uses:
 
 ```go
-h := min(height[left], height[right])
-area := (right-left) * h
+h := height[left]
+if height[right] < h {
+    h = height[right]
+}
+area := h * (right - left)
+if area > maxWater {
+    maxWater = area
+}
 ```
 
-Do **not** write `height := min(height[left],height[right])` inside this loop: that new local variable shadows the `height` slice, so the following `height[left]` access is invalid. Use `h` or `waterHeight`.
+| Step | New `maxArea` (Go ≥1.21) | Preserved `maxAreaLegacy` (Go ≤1.20) |
+|---|---|---|
+| Pick shorter wall | `min(height[left], height[right])` | Explicit `if height[right] < h` comparison |
+| Keep maximum | `area = max(area, candidate)` | Explicit `if candidate > maxWater` comparison |
+| Choose pointer | Move the shorter height | Identical |
+| Complexity | O(n) time / O(1) space | Identical |
+
+**How to submit with Go 1.20 or earlier:** Copy only the `maxAreaLegacy` function from [`variants_pre_go121.go`](variants_pre_go121.go) into LeetCode and rename it to `maxArea`. The full folder's new `main.go` **will not compile on older Go**, because it calls built-in `min` and `max`; the existing test file also uses `slices` (Go 1.21+). The standalone legacy algorithm does not need these features.
+
+**Go syntax trap:** Do not write `height := min(height[left], height[right])` inside the loop: shadowing the input slice named `height` breaks later indexing. Use `h` or directly call `min` in the area expression, as the current solution does.
 
 ## 6. Complexity and common mistakes
 
 | Approach | Time | Auxiliary space | Usage |
 |---|---|---|---|
 | Brute-force pair enumeration | O(n²) | O(1) | Proof/reference/tests |
-| **Two pointers** | **O(n)** | **O(1)** | Preferred submission |
+| **Two pointers with Go 1.21+ built-ins** | **O(n)** | **O(1)** | Current primary solution |
+| Two pointers with explicit comparisons | O(n) | O(1) | Same algorithm, older Go compatibility |
 
 Each iteration moves exactly one pointer inward, so there can be at most `n-1` iterations.
 
@@ -143,7 +155,7 @@ Each iteration moves exactly one pointer inward, so there can be at most `n-1` i
 
 > Brute force checks each pair in O(n²). To optimize, I start with the widest possible pair using left and right pointers. I compute the area with the smaller height. If I keep the shorter wall and reduce width, I cannot improve this pair's area, so I can safely discard that wall and move its pointer inward. Each move eliminates one endpoint, giving O(n) time and O(1) extra space.
 
-**Blank-screen questions:** Why is the width `right-left`? Why does the **shorter** pointer move? What if heights tie? Why doesn't #11 require sorted input? What changes in Go 1.21 to write `min` safely?
+**Blank-screen questions:** Why is the width `right-left`? Why does the **shorter** pointer move? What if heights tie? Why doesn't #11 require sorted input? What changes in Go 1.21 that lets you use both `min` and `max`? How do you write the same logic in Go 1.20?
 
 Confidence `— / 5` · Last cold recall `—` · Next recall `—`. Log only an actual review attempt in the [revision log](../REVISION-LOG.md).
 
@@ -158,4 +170,4 @@ GO111MODULE=off go vet .
 GO111MODULE=off go run main.go
 ```
 
-The demo prints `49`. On LeetCode submit only `maxArea`, not `main` or the `fmt` import. The [brute-force variant](variants.go) is a correctness reference and used by the tests.
+The demo prints `49`. On LeetCode submit only `maxArea`, not `main` or the `fmt` import. On Go 1.20 or earlier, use [the standalone legacy variant](variants_pre_go121.go) and rename its function before submitting; do **not** compile it alongside the new `main.go`. The [brute-force variant](variants.go) is a correctness reference, and tests compare all three implementations.
