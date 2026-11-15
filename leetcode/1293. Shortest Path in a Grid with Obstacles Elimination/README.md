@@ -28,6 +28,7 @@ func shortestPath(grid [][]int, k int) int
 1. [Arrays and slices](../0-problem-solving-building-blocks/01-arrays-and-slices/README.md): index `grid[r][c]`, build 2D and 3D slices.
 2. [Loops and bounds](../0-problem-solving-building-blocks/02-loops-and-bounds/README.md): four directions, boundary checks, level loops.
 3. [Queues and grid BFS](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/README.md): FIFO exploration, mark visited on enqueue, distance layers.
+   - Begin with the [learner's dynamic queue](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/practice-01-dynamic-queue/README.md), then the [learner's adjacency-list BFS](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/practice-02-graph-bfs/README.md), before handling three-component BFS states here.
 4. [Complexity and constraints](../0-problem-solving-building-blocks/17-complexity-amortization-and-input-contracts/README.md): count states and account for the queue as well as visited memory.
 
 ## 1. Recognition trigger
