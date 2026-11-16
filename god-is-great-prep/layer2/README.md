@@ -1,5 +1,8 @@
 # Layer 2 — Go data structures and reusable building blocks
 
+**Deep follow-on notes (without copying this course):** [Array mastery](../../leetcode/0-problem-solving-building-blocks/01-arrays-and-slices/ARRAY-MASTERY.md) · [Slice mastery](../../leetcode/0-problem-solving-building-blocks/01-arrays-and-slices/SLICE-MASTERY.md) · [Layer 3 traps](../../leetcode/0-problem-solving-building-blocks/01-arrays-and-slices/TRAPS-AND-MEMORY.md) · [Runnable operations](../../leetcode/0-problem-solving-building-blocks/01-arrays-and-slices/practice-02-slice-operations/README.md).
+
+
 **Problem-driven application:** [Mastery system](../../leetcode/0-problem-solving-building-blocks/MASTERY-SYSTEM.md) and worked [Queue](../../leetcode/0-problem-solving-building-blocks/09-queues-bfs-and-grids/QUEUE-MASTERY.md), [Grid](../../leetcode/0-problem-solving-building-blocks/09-queues-bfs-and-grids/GRID-MASTERY.md), [BFS](../../leetcode/0-problem-solving-building-blocks/09-queues-bfs-and-grids/BFS-MASTERY.md) cards. This Layer 2 course remains intact.
 
 

@@ -1,5 +1,8 @@
 # 41 — First Missing Positive
 
+**Quick prerequisites for independent recall:** [Slice lifecycle, bounds and mutation](../0-problem-solving-building-blocks/01-arrays-and-slices/SLICE-MASTERY.md) · [Index operations](../0-problem-solving-building-blocks/01-arrays-and-slices/practice-02-slice-operations/README.md) · [Memory traps](../0-problem-solving-building-blocks/01-arrays-and-slices/TRAPS-AND-MEMORY.md). This remains the canonical #41 solution.
+
+
 ## Before you solve: prerequisite basics
 
 Study these in sequence and type the tiny Go example in each before reopening this solution:

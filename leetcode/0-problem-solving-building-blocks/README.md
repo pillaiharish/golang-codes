@@ -1,5 +1,8 @@
 # 0 — The building-blocks curriculum: Go basics → algorithms → LeetCode
 
+**New detailed mastery cards:** [Arrays](01-arrays-and-slices/ARRAY-MASTERY.md) and [Slices](01-arrays-and-slices/SLICE-MASTERY.md) — complete zero values → creation → operations → comparability → memory semantics → traps → tests → LeetCode use → spaced recall. [Memory trap notebook](01-arrays-and-slices/TRAPS-AND-MEMORY.md) · [Recall drills](01-arrays-and-slices/RECALL-DRILLS.md). The original lesson 01 and solved problems are preserved.
+
+
 **New: [Problem-driven Go mastery system](MASTERY-SYSTEM.md)** — one canonical concept home, quick recall → full lifecycle → Layer 3 traps → tested progression → problem links. Start with [Queue](09-queues-bfs-and-grids/QUEUE-MASTERY.md), [Grid](09-queues-bfs-and-grids/GRID-MASTERY.md), and [BFS](09-queues-bfs-and-grids/BFS-MASTERY.md). The existing #1293 folder is preserved.
 
 

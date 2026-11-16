@@ -1,5 +1,8 @@
 # 01 — Arrays and slices
 
+**Complete mastery pathway:** [Array lifecycle](ARRAY-MASTERY.md) → [Slice lifecycle](SLICE-MASTERY.md) → [Layer 3 traps + memory](TRAPS-AND-MEMORY.md) → [cold-recall drills](RECALL-DRILLS.md). Runnable progression: [array value copies](practice-01-array-values/README.md), [slice operations](practice-02-slice-operations/README.md), [aliasing & retention](practice-03-aliasing-and-memory/README.md). This original foundational lesson and its single runnable Go example remain intact.
+
+
 [← All foundations](../README.md) · [← LeetCode index](../../README.md)
 
 ## Why this matters

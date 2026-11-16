@@ -1,5 +1,8 @@
 # 1293 — Shortest Path in a Grid with Obstacles Elimination (Go)
 
+**Additional foundations for cold recall:** [Array vs slice semantics](../0-problem-solving-building-blocks/01-arrays-and-slices/ARRAY-MASTERY.md) · [Nested slices and initialization](../0-problem-solving-building-blocks/01-arrays-and-slices/SLICE-MASTERY.md) · [Aliasing and deep copy](../0-problem-solving-building-blocks/01-arrays-and-slices/TRAPS-AND-MEMORY.md). This does **not** add a second #1293 solution.
+
+
 **Prerequisite mastery (no duplicate #1293 solution):** [Queue](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/QUEUE-MASTERY.md) → [Grid](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/GRID-MASTERY.md) → [BFS](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/BFS-MASTERY.md) → [cold-recall drills](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/RECALL-DRILLS.md). Keep this folder as the canonical problem solution and revisit it after writing the building blocks from memory.
 
 
