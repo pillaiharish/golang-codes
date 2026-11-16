@@ -1,5 +1,8 @@
 # 36 — Valid Sudoku (Go)
 
+**Quick prerequisite:** [Array mastery — fixed-size zero-initialized, comparable arrays](../0-problem-solving-building-blocks/01-arrays-and-slices/ARRAY-MASTERY.md). This folder remains the canonical #36 solution.
+
+
 [← LeetCode index](../README.md) · [Commented solution](main.go) · [Table-driven tests](main_test.go) · [Quick revision card](REVISION-CARD.md) · [LeetCode question](https://leetcode.com/problems/valid-sudoku/) · [Revision log](../REVISION-LOG.md)
 
 **Pattern:** One traversal + three sets of previously seen digits · **Difficulty:** Medium.

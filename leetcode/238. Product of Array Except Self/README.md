@@ -1,5 +1,8 @@
 # 238 — Product of Array Except Self (Go)
 
+**Quick prerequisites for independent recall:** [Slice lifecycle and indexed traversal](../0-problem-solving-building-blocks/01-arrays-and-slices/SLICE-MASTERY.md) · [Slice insert/copy/clear practice](../0-problem-solving-building-blocks/01-arrays-and-slices/practice-02-slice-operations/README.md) · [Cold recall drills](../0-problem-solving-building-blocks/01-arrays-and-slices/RECALL-DRILLS.md). Preserve this folder as the canonical #238 solution.
+
+
 [← LeetCode index](../README.md) · [Commented solution](main.go) · [Table-driven tests](main_test.go) · [Quick revision card](REVISION-CARD.md) · [LeetCode question](https://leetcode.com/problems/product-of-array-except-self/) · [Revision log](../REVISION-LOG.md)
 
 **Pattern:** Prefix products + suffix products · **Difficulty:** Medium.

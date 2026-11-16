@@ -6,6 +6,8 @@
 
 **One canonical home per concept.** A LeetCode problem owns its solution and trace; a foundation lesson owns the reusable Go mental model, progressively expanded with Layer 2 operations, Layer 3 traps, Layer 4 patterns, and later design/optimization. Cross-link, **do not clone problems or rewrite the learner's original code**.
 
+**Second completed pathway:** [Array](01-arrays-and-slices/ARRAY-MASTERY.md) → [Slice](01-arrays-and-slices/SLICE-MASTERY.md) → [memory traps](01-arrays-and-slices/TRAPS-AND-MEMORY.md) → [existing #238](../238.%20Product%20of%20Array%20Except%20Self/README.md) and [#41](../41.%20First%20Missing%20Positive/README.md). No existing LeetCode problem is cloned.
+
 **First completed pathway:** [Queue](09-queues-bfs-and-grids/QUEUE-MASTERY.md) → [Grid](09-queues-bfs-and-grids/GRID-MASTERY.md) → [BFS](09-queues-bfs-and-grids/BFS-MASTERY.md) → [existing #1293 problem](../1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md).
 
 ## Two axes
@@ -38,7 +40,7 @@
 | Queue | [Queue mastery](09-queues-bfs-and-grids/QUEUE-MASTERY.md) | Learner's original [dynamic queue](09-queues-bfs-and-grids/practice-01-dynamic-queue/README.md); [head-index progression](09-queues-bfs-and-grids/practice-03-head-index-queue/README.md); #102, #1293 |
 | Grid indexing | [Grid mastery](09-queues-bfs-and-grids/GRID-MASTERY.md) | [Four-neighbor practice](09-queues-bfs-and-grids/practice-04-grid-neighbors/README.md); #200, #1293 |
 | BFS | [BFS mastery](09-queues-bfs-and-grids/BFS-MASTERY.md) | Learner's [adjacency-list BFS](09-queues-bfs-and-grids/practice-02-graph-bfs/README.md); [plain-grid BFS](09-queues-bfs-and-grids/practice-05-grid-bfs/README.md); #102, #200, #1293 |
-| Array / slice | [Existing lesson 01](01-arrays-and-slices/README.md) | #238, #41, #1293 (full card extension later) |
+| Array / slice | [Array mastery](01-arrays-and-slices/ARRAY-MASTERY.md), [Slice mastery](01-arrays-and-slices/SLICE-MASTERY.md), [traps](01-arrays-and-slices/TRAPS-AND-MEMORY.md) | [Runnables](01-arrays-and-slices/practice-02-slice-operations/README.md), #36, #238, #41, #1293; full concept cards populated |
 | Map / set | [Existing lesson 03](03-maps-sets-frequency-and-grouping/README.md) | #1, #36, #128 (full card extension later) |
 | Text / runes | [Existing lesson 04](04-strings-bytes-runes-and-parsing/README.md) | #271, #242 (full card extension later) |
 | Stack / recursion | [Existing lesson 10](10-stacks-recursion-and-tree-traversal/README.md) | #94 (full card extension later) |

@@ -1,5 +1,8 @@
 # LeetCode — Learn Once, Recall Repeatedly
 
+**Detailed data structure revision:** [Array mastery](0-problem-solving-building-blocks/01-arrays-and-slices/ARRAY-MASTERY.md) · [Slice mastery](0-problem-solving-building-blocks/01-arrays-and-slices/SLICE-MASTERY.md) · [Layer 3 array/slice memory traps](0-problem-solving-building-blocks/01-arrays-and-slices/TRAPS-AND-MEMORY.md). These link to existing problem folders; they do not duplicate solutions.
+
+
 **Concept recall pathway:** [Mastery system](0-problem-solving-building-blocks/MASTERY-SYSTEM.md) · [Queue](0-problem-solving-building-blocks/09-queues-bfs-and-grids/QUEUE-MASTERY.md) · [Grid](0-problem-solving-building-blocks/09-queues-bfs-and-grids/GRID-MASTERY.md) · [BFS](0-problem-solving-building-blocks/09-queues-bfs-and-grids/BFS-MASTERY.md). Existing problem folders (including #1293) remain canonical.
 
 
