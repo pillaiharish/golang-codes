@@ -1,5 +1,8 @@
 # LeetCode — Learn Once, Recall Repeatedly
 
+**Concept recall pathway:** [Mastery system](0-problem-solving-building-blocks/MASTERY-SYSTEM.md) · [Queue](0-problem-solving-building-blocks/09-queues-bfs-and-grids/QUEUE-MASTERY.md) · [Grid](0-problem-solving-building-blocks/09-queues-bfs-and-grids/GRID-MASTERY.md) · [BFS](0-problem-solving-building-blocks/09-queues-bfs-and-grids/BFS-MASTERY.md). Existing problem folders (including #1293) remain canonical.
+
+
 **Independent practice track:** [NeetCode 150 — unsolved Go starters](../neetcode/README.md) · [24 prerequisite concepts](../neetcode/0-concepts/README.md) · [Numeric index](../neetcode/INDEX-BY-NUMBER.md).
 
 **Purpose:** turn individual Go solutions into **understandable, revisable, repeatable, recallable** mental patterns. Do not learn every problem from scratch before each new interview.
