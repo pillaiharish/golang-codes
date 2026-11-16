@@ -1,5 +1,8 @@
 # God Is Great — permanent Go interview-prep curriculum
 
+**Applied recall bridge:** [LeetCode mastery system](../leetcode/0-problem-solving-building-blocks/MASTERY-SYSTEM.md) extends the existing Layer 1/2 course without duplicating it; first integrated concepts: Queue + Grid + BFS → existing #1293.
+
+
 This folder is a long-lived **revision system**, not a new plan for each interview.
 
 ## Start here

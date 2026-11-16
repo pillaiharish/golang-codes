@@ -1,5 +1,8 @@
 # Rules for the `leetcode/` learning library
 
+**Mastery-card maintenance:** Use the [concept template](0-problem-solving-building-blocks/MASTERY-CARD-TEMPLATE.md). Extend the existing canonical lesson rather than making parallel Layer 3 notes or duplicate problem directories. Preserve learner-written versions, link traps and tested variants from the same concept home, and add problem → concept and concept → problem navigation. Never mark recall complete without an independent attempt.
+
+
 This file is an instruction contract for future contributors and coding assistants working inside `leetcode/`. Its goal is **understandable, revisable, repeatable, recallable** solutions, not collecting answers.
 
 ## Non-negotiable principles

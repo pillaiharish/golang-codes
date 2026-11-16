@@ -1,5 +1,8 @@
 # 1293 — Shortest Path in a Grid with Obstacles Elimination (Go)
 
+**Prerequisite mastery (no duplicate #1293 solution):** [Queue](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/QUEUE-MASTERY.md) → [Grid](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/GRID-MASTERY.md) → [BFS](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/BFS-MASTERY.md) → [cold-recall drills](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/RECALL-DRILLS.md). Keep this folder as the canonical problem solution and revisit it after writing the building blocks from memory.
+
+
 [← LeetCode index](../README.md) · [Primary BFS solution](main.go) · [DFS and memory-optimized BFS variants](variants.go) · [Table-driven tests](main_test.go) · [Cold-recall card](REVISION-CARD.md) · [Official problem](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) · [Revision log](../REVISION-LOG.md)
 
 **Pattern:** Shortest path in an unweighted graph → BFS with extra resource state · **Difficulty:** Hard · **Primary solution:** O(m·n·(k+1)) time and space.

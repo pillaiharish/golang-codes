@@ -1,5 +1,8 @@
 # 09 — Queues, breadth-first search and 2D grids
 
+**Mastery pathway:** [Queue lifecycle + traps](QUEUE-MASTERY.md) → [Grid indexing + memory](GRID-MASTERY.md) → [BFS invariants + state](BFS-MASTERY.md) → [cold-recall drills](RECALL-DRILLS.md) → [existing #1293](../../1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination/README.md). Preserve [learner V1](practice-01-dynamic-queue/README.md) and [learner graph BFS](practice-02-graph-bfs/README.md); add [head-index queue V2](practice-03-head-index-queue/README.md), [grid bounds](practice-04-grid-neighbors/README.md), and [ordinary-grid BFS](practice-05-grid-bfs/README.md) as independent steps.
+
+
 [← Foundations index](../README.md) · [← Problem index](../../README.md)
 
 ## Recognition and intuition

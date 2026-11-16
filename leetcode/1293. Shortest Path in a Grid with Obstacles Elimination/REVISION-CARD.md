@@ -1,5 +1,8 @@
 # #1293 — Shortest Path in a Grid with Obstacles Elimination: cold recall
 
+Before recalling this hard problem, rebuild [Queue](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/QUEUE-MASTERY.md), [Grid](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/GRID-MASTERY.md) and [BFS](../0-problem-solving-building-blocks/09-queues-bfs-and-grids/BFS-MASTERY.md) from memory. Then attempt the existing #1293 code without reading it.
+
+
 [Full guide](README.md) · [Primary solution](main.go) · [Variants](variants.go) · [Tests](main_test.go) · [LeetCode index](../README.md)
 
 **Trigger:** Shortest unweighted grid path, but you have a limited obstacle-removal resource.

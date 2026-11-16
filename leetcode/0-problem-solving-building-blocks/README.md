@@ -1,5 +1,8 @@
 # 0 — The building-blocks curriculum: Go basics → algorithms → LeetCode
 
+**New: [Problem-driven Go mastery system](MASTERY-SYSTEM.md)** — one canonical concept home, quick recall → full lifecycle → Layer 3 traps → tested progression → problem links. Start with [Queue](09-queues-bfs-and-grids/QUEUE-MASTERY.md), [Grid](09-queues-bfs-and-grids/GRID-MASTERY.md), and [BFS](09-queues-bfs-and-grids/BFS-MASTERY.md). The existing #1293 folder is preserved.
+
+
 **Additional unsolved practice:** [NeetCode 150 concept-to-problem map](../../neetcode/0-concepts/README.md) provides 24 foundation lessons and a prerequisite mapping for all 150 starters.
 
 [← Main LeetCode index](../README.md) · [Study rules](../AGENTS.md) · [Review log](../REVISION-LOG.md) · [Run all foundation examples](verify-examples.py)

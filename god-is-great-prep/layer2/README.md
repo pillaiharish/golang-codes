@@ -1,5 +1,8 @@
 # Layer 2 — Go data structures and reusable building blocks
 
+**Problem-driven application:** [Mastery system](../../leetcode/0-problem-solving-building-blocks/MASTERY-SYSTEM.md) and worked [Queue](../../leetcode/0-problem-solving-building-blocks/09-queues-bfs-and-grids/QUEUE-MASTERY.md), [Grid](../../leetcode/0-problem-solving-building-blocks/09-queues-bfs-and-grids/GRID-MASTERY.md), [BFS](../../leetcode/0-problem-solving-building-blocks/09-queues-bfs-and-grids/BFS-MASTERY.md) cards. This Layer 2 course remains intact.
+
+
 [Prep home](../README.md) · [Mandate](../STUDY-MANDATE.md) · [Original detailed course](reference.md) · [Worked examples](WORKED-EXAMPLES.md)
 
 **Goal:** From a blank file, represent data, perform meaningful operations, test corner cases, and justify complexity + copy/alias semantics. Layer 1 teaches syntax; Layer 2 teaches what to *build* with it.
