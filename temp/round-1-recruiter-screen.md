@@ -1,6 +1,8 @@
 # Round 1 — Recruiter Screen
 
-**Reference only · company-neutral**
+**Reference only · company-neutral · privacy-safe template**
+
+**Privacy note:** This public document intentionally uses placeholders rather than anyone's work history, experience duration, employer, or other personal profile details. Fill in the examples only in a private interview-preparation copy; do not commit completed answers to a public repository.
 
 This round is often a roughly **30-minute conversation** about role fit, communication, motivation, experience, and logistics. Exact interview formats vary. Prepare two categories: **questions you may be asked** and **questions you should ask**.
 
@@ -10,15 +12,15 @@ This round is often a roughly **30-minute conversation** about role fit, communi
 
 Prepare a **60–90-second introduction** with:
 
-- Current role and approximate total experience.
-- Primary language: Go, with relevant Python or automation exposure.
-- Kubernetes deployment and debugging experience.
-- Scalable/backend and distributed systems examples.
+- Your current role and relevant experience (use placeholders in public templates).
+- Languages relevant to the role (for example, Go or Python).
+- Kubernetes work, if any, described at your actual level of involvement.
+- Backend or distributed-systems projects you can substantiate.
 - Why the role is a logical next step.
 
-**Example (adapt to your actual experience):**
+**Fill-in template (replace placeholders privately before an interview):**
 
-> I have around four years of experience spanning software development and test automation, with Go as my primary language. I work on DNS-oriented backend and platform components, including policy enforcement and reliability-related functionality. I have deployed and debugged applications on Kubernetes, and I have worked with automation and distributed service behavior. I want to deepen my platform-engineering experience in Kubernetes lifecycle management, controllers, and large-scale automation. This role brings together Go, networking, reliable systems, and the areas in which I want to grow.
+> I have [X years] of experience in [relevant engineering areas]. My strongest language is [language], and I have worked on [general category of systems or projects]. My hands-on experience with [platform or infrastructure technology] includes [tasks you can verify]. I'm interested in growing toward [relevant responsibilities], and this role connects that goal with [the team's engineering problems].
 
 **Honesty check:** Deploying/debugging workloads does **not** automatically mean you have built operators, provisioned clusters, or owned cluster upgrades. Describe those areas as learning goals unless you have done them.
 
@@ -33,19 +35,19 @@ Replace company-specific praise with questions you can substantiate:
 
 **Example:**
 
-> I'm interested in the team's work on cloud-native network automation. I enjoy building reliable infrastructure components, and I want to work more deeply on Kubernetes platform engineering and distributed control systems. The engineering problems described for this role connect well with my Go and networking background.
+> I'm interested in [specific technical problem the organization works on]. I enjoy [type of engineering work], and the role would let me build on [skills I have actually used] while developing [skills I want to learn].
 
 ### 3. Why this platform-engineering role?
 
-Connect Go, network services, automation, reliability, and your interest in Kubernetes internals.
+Connect your relevant programming experience, system-design work, operational experience, and genuine interest in the role's platform responsibilities.
 
-> I like systems where correctness, observability, and operational reliability matter. I've worked on backend/networking components and want to extend that experience toward platform automation, Kubernetes controllers, and infrastructure lifecycle engineering.
+> I like working on systems where [engineering qualities that matter to you] are important. My work on [substantiated project category] motivates me to learn more about [target responsibilities].
 
 ### 4. What is your Go experience?
 
 Have one real example ready for each applicable area:
 
-- Backend services, DNS/networking components, and APIs.
+- Relevant backend services, APIs, and networking components (only if applicable).
 - Goroutines, channels, `context`, synchronization, and cancellation.
 - Interfaces, error handling, testing, and clean package boundaries.
 - Health checks, performance, production debugging, and automation.
@@ -53,7 +55,7 @@ Have one real example ready for each applicable area:
 
 **Example:**
 
-> Go is my primary programming language. I've used it for network-facing backend components and reliability features. I can discuss concurrency, context cancellation, interfaces, error handling, testability, and the trade-offs I made in production code.
+> I've used Go for [verified project types]. One example is [project], where I applied [specific language feature] and had to consider [trade-off]. I can explain the design and how I tested the result.
 
 ### 5. What is your Kubernetes experience?
 
@@ -65,9 +67,9 @@ Know how to discuss these topics, separating hands-on experience from study:
 - Cluster management, provisioning, upgrades, and configuration automation.
 - CRDs, controllers/operators, and the reconciliation model.
 
-**Example grounded in existing experience:**
+**Experience-neutral template (fill only with verified work):**
 
-> My hands-on Kubernetes experience is deploying applications and debugging workloads. I can investigate pod status, logs, events, configuration, and connectivity issues. I am strengthening my knowledge of control-plane internals, controllers, cluster upgrades, and provisioning because those are important responsibilities of this role.
+> My hands-on Kubernetes experience includes [tasks actually performed]. For example, I investigated [issue] using [tools or evidence] and reached [outcome]. I'm currently learning [areas relevant to the role that I have not yet owned].
 
 **Follow-up:** Prepare one concrete workload-debugging story: symptom → commands/evidence → root cause → fix → prevention.
 
@@ -75,7 +77,7 @@ Know how to discuss these topics, separating hands-on experience from study:
 
 Choose a concrete component and explain **retries, timeouts, concurrency, health checks, partial failure, and backpressure** where applicable. Avoid reciting patterns you have not implemented.
 
-> I've worked on network-facing services where upstream health, timeouts, retry behavior, and failures matter. I can walk through a production example, explain the failure mode, and describe the trade-offs in handling it.
+> I've worked on [a system I can discuss] where [one relevant failure mode] mattered. I can describe the observed behavior, my contribution, and why we chose [mitigation or trade-off].
 
 ### 7. What is your network-automation experience?
 
@@ -86,7 +88,7 @@ Useful themes:
 - Automation pipelines, observability, and telemetry.
 - Desired versus observed state and closed-loop remediation.
 
-> My core experience is Go-based network services and automation. I have not necessarily built a full network-device orchestrator, but the underlying reliability, API, and configuration concepts are familiar. I am interested in applying them to closed-loop platform automation.
+> My relevant experience includes [projects and technologies actually used]. I can explain how [a verified project] relates to [target platform concept], while being clear about the parts I have not worked on directly.
 
 ### 8. Are you comfortable with the location and work arrangement?
 
@@ -106,13 +108,13 @@ Answer direct factual questions accurately and distinguish fixed, variable, equi
 
 Be honest and concise.
 
-> I'm exploring a small number of relevant backend/platform roles. This team's focus on Go, Kubernetes, and distributed infrastructure is particularly aligned with the work I want to do.
+> I'm exploring opportunities that match [my genuine interests and skills]. This team's work on [verified team responsibility] is especially relevant because [specific reason].
 
 ### 11. Why should we move your profile forward?
 
 **Suggested response (adapt, do not memorize mechanically):**
 
-> My experience combines Go software development, networking, and building reliable backend components. I've deployed and troubleshot applications on Kubernetes, and I understand how production services must handle failures and remain observable. I'm clear about the platform areas I still need to learn, and I'm motivated to take on deeper Kubernetes lifecycle and automation work. I believe that gives me a solid base for this role.
+> My experience includes [relevant skills] and [specific evidence-backed project]. I contributed [action] and observed [result]. I understand the core responsibilities of this role, and I can be precise about what I've done versus what I'm still learning.
 
 ## B. Questions you should ask the recruiter
 
